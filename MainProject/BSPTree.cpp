@@ -139,7 +139,7 @@ void BSPTreeNode::checkCollisions(Camera &camera, float radius){
 		//or collision reaction  --shouldnt cause another collision
 
 	float distance_from_plane;
-
+	bool collision = false;
 	for(unsigned int i = 0; i < triangles.size(); i++){
 		if((distance_from_plane = triangles[i].planePointDistance(position)) <= collision_distance){ 
 			
@@ -148,14 +148,17 @@ void BSPTreeNode::checkCollisions(Camera &camera, float radius){
 			vec3 vector = position + opposite_normal;
 			vec3 intersection_point = triangles[i].planeVectorIntersection(position, vector);
 
-			if(triangles[i].isPointInPolygon(intersection_point))
+			if(triangles[i].isPointInPolygon(intersection_point)){
 				//react - move position in direction of plane normal a difference between its distance from plane and set collision distance 
 				position = position + (collision_distance - distance_from_plane) * triangles[i].normal;
+				collision = true;
+			}
 		}
 	}
-	
-//update camera position with corrected value
-camera.setPosition(position + Tree->modelToWorldVector);
+
+	if(collision)
+		//update camera position with corrected value
+		camera.setPosition(position + Tree->modelToWorldVector);
 
 }
 
