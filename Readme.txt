@@ -1,10 +1,9 @@
-﻿Požadavky ke spuštění aplikace
-   Počítač s grafickou kartou nejlépe firmy NVidia s podporou OpenGL alespoň ve verzi 3.3.
-   (Na kartu od AMD nebyl projekt vyvíjen ani testován.)
-   Knihovny GLSDK (http://glsdk.sourceforge.net/docs/html/index.html), konkrétně GL Load,
-   GL Utility, OpenGL Mathematics a FreeGLUT. Tyto jsou součástí projektu.
-   Knihovna FreeType.
+﻿Uses GLSDK and Freetype libraries. These are required to build.
+http://glsdk.sourceforge.net/docs/html/index.html ,namely components GL Load,
+GL Utility, OpenGL Mathematics and FreeGLUT.
+FreeType http://www.freetype.org.
 
+--translation pending
 
 Pokyny ke spuštění a ovládání aplikace
    Lze spustit buď z projektu nebo samostatně. 
