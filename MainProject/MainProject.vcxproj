@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{564E6714-44E2-4683-95E3-48B2EB72FDD1}</ProjectGuid>
+    <RootNamespace>MainProject</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\freetype-2.5.1\include;..\GLSDK 0.4.4\glm;..\GLSDK 0.4.4\glutil\include;..\GLSDK 0.4.4\glmesh\include;..\GLSDK 0.4.4\glload\include;..\GLSDK 0.4.4\glimg\include;..\GLSDK 0.4.4\glfw\include;..\GLSDK 0.4.4\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FREEGLUT_STATIC;_LIB;FREEGLUT_LIB_PRAGMAS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <EnablePREfast>false</EnablePREfast>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glloadD.lib;glimgD.lib;glutilD.lib;glmeshD.lib;freeglutD.lib;glfwD.lib;glu32.lib;opengl32.lib;gdi32.lib;winmm.lib;user32.lib;freetype251_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\freetype-2.5.1\objs\win32\vc2010;..\GLSDK 0.4.4\glutil\lib;..\GLSDK 0.4.4\glmesh\lib;..\GLSDK 0.4.4\glload\lib;..\GLSDK 0.4.4\glimg\lib;..\GLSDK 0.4.4\glfw\library;..\GLSDK 0.4.4\freeglut\lib</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+      <AdditionalOptions>  /NODEFAULTLIB:MSVCRT  %(AdditionalOptions)</AdditionalOptions>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+    </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\freetype-2.5.1\include;..\GLSDK 0.4.4\glm;..\GLSDK 0.4.4\glutil\include;..\GLSDK 0.4.4\glmesh\include;..\GLSDK 0.4.4\glload\include;..\GLSDK 0.4.4\glimg\include;..\GLSDK 0.4.4\glfw\include;..\GLSDK 0.4.4\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>FREEGLUT_STATIC;_LIB;FREEGLUT_LIB_PRAGMAS=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glload.lib;glimg.lib;glutil.lib;glmesh.lib;freeglut.lib;glfw.lib;glu32.lib;opengl32.lib;gdi32.lib;winmm.lib;user32.lib;freetype251.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\FTGL\build;..\freetype-2.5.1\objs\win32\vc2010;..\GLSDK 0.4.4\glutil\lib;..\GLSDK 0.4.4\glmesh\lib;..\GLSDK 0.4.4\glload\lib;..\GLSDK 0.4.4\glimg\lib;..\GLSDK 0.4.4\glfw\library;..\GLSDK 0.4.4\freeglut\lib</AdditionalLibraryDirectories>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BSPTreeCreator.cpp" />
+    <ClCompile Include="BSPTree.cpp" />
+    <ClCompile Include="BSPTreePolygon.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CatmullRom.cpp" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="Font.cpp" />
+    <ClCompile Include="fps_counter.cpp" />
+    <ClCompile Include="KeyStates.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="basicPolygon.cpp" />
+    <ClCompile Include="queryBuffer.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Texture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Shaders\FontFS.frag" />
+    <None Include="..\Shaders\FontVS.vert" />
+    <None Include="..\Shaders\MazeFS.frag" />
+    <None Include="..\Shaders\MazeVS.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BSPTreeCreator.h" />
+    <ClInclude Include="BSPTree.h" />
+    <ClInclude Include="BSPTreeNodeTemplate.h" />
+    <ClInclude Include="BSPTreePolygon.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="CatmullRom.h" />
+    <ClInclude Include="Control.h" />
+    <ClInclude Include="Font.h" />
+    <ClInclude Include="fps_counter.h" />
+    <ClInclude Include="KeyStates.h" />
+    <ClInclude Include="Maze.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="basicPolygon.h" />
+    <ClInclude Include="queryBuffer.h" />
+    <ClInclude Include="Resources.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="time_item.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

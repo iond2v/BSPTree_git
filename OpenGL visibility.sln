@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MainProject", "MainProject\MainProject.vcxproj", "{564E6714-44E2-4683-95E3-48B2EB72FDD1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC0BB359-E4A1-4369-A7C9-72109EDD2E82}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{564E6714-44E2-4683-95E3-48B2EB72FDD1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{564E6714-44E2-4683-95E3-48B2EB72FDD1}.Debug|Win32.Build.0 = Debug|Win32
+		{564E6714-44E2-4683-95E3-48B2EB72FDD1}.Release|Win32.ActiveCfg = Release|Win32
+		{564E6714-44E2-4683-95E3-48B2EB72FDD1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

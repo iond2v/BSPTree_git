@@ -1,0 +1,3138 @@
+Generated maze20x15.pvs
+
+58.090000 seconds elapsed since start of main loop.
+46.809402 seconds spent drawing the tree structure.
+That is 80.580826% of overall display time.
+BSP tree nodes: 185
+BSP tree leaves: 93
+BSP tree maximum depth: 8
+BSP avg draw calls: 103.889626 = 103.889626 + 0.000000
+
+BSP min draw calls: 76.000000 = 76 + 0
+BSP max draw calls: 134.000000 = 134 + 0
+Overall samples passed: 83159736555
+Overdraw: 599.625366%
+
+Avg FPS: 342.907959
+Avg render time: 21.438852ms
+Frames rendered: 10002.000000
+________________________________________________
+Generated maze30x30.pvs
+
+33.562000 seconds elapsed since start of main loop.
+22.495741 seconds spent drawing the tree structure.
+That is 67.027412% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 146.185364 = 36.945610 + 109.239754
+
+BSP min draw calls: 94.000000 = 4 + 90
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 164892424235
+Overdraw: 1188.961182%
+
+Avg FPS: 597.467590
+Avg render time: 20.338858ms
+Frames rendered: 10002.000000
+________________________________________________
+Generated maze30x30.pvs
+
+34.073002 seconds elapsed since start of main loop.
+22.932404 seconds spent drawing the tree structure.
+That is 67.303734% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 146.185562 = 36.945812 + 109.239754
+
+BSP min draw calls: 94.000000 = 4 + 90
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 164863909825
+Overdraw: 1188.755493%
+
+Avg FPS: 294.121887
+Avg render time: 16.592848ms
+Frames rendered: 10002.000000
+________________________________________________
+Generated maze30x30.pvs
+
+33.590000 seconds elapsed since start of main loop.
+22.561140 seconds spent drawing the tree structure.
+That is 67.166237% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 146.185364 = 36.945610 + 109.239754
+
+BSP min draw calls: 94.000000 = 4 + 90
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 164928516013
+Overdraw: 1189.221436%
+
+Avg FPS: 3.311494
+Avg render time: 17.083023ms
+Frames rendered: 10002.000000
+________________________________________________
+Generated maze30x30.pvs
+
+33.514000 seconds elapsed since start of main loop.
+22.519938 seconds spent drawing the tree structure.
+That is 67.195610% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 146.185364 = 36.945610 + 109.239754
+
+BSP min draw calls: 94.000000 = 4 + 90
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 164893495935
+Overdraw: 1188.968872%
+
+Avg FPS: 3.288587
+Avg render time: 0.179833ms
+Frames rendered: 10002.000000
+________________________________________________
+Generated maze17x14.pvs
+
+75.500999 seconds elapsed since start of main loop.
+51.855824 seconds spent drawing the tree structure.
+That is 68.682304% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 60.078506 = 59.593658 + 0.484848
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 90065234371
+Overdraw: 324.806274%
+
+Avg FPS: 264.184723
+Avg render time: 7.550790ms
+Frames rendered: 19998.000000
+________________________________________________
+Generated maze30x30.pvs
+
+133.059006 seconds elapsed since start of main loop.
+104.912033 seconds spent drawing the tree structure.
+That is 78.846245% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 150.298218 = 105.218246 + 45.079964
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 698.000000 = 698 + 0
+Overall samples passed: 144289224699
+Overdraw: 447.862823%
+
+Avg FPS: 176.293533
+Avg render time: 11.272853ms
+Frames rendered: 23235.000000
+________________________________________________
+Generated maze17x14.pvs
+
+102.379997 seconds elapsed since start of main loop.
+53.926426 seconds spent drawing the tree structure.
+That is 52.672813% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 20.233040 = 14.693586 + 5.539453
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 91576656579
+Overdraw: 179.948715%
+
+Avg FPS: 357.537659
+Avg render time: 5.248010ms
+Frames rendered: 36702.000000
+________________________________________________
+Generated maze17x14.pvs
+
+15.999000 seconds elapsed since start of main loop.
+5.132854 seconds spent drawing the tree structure.
+That is 32.082348% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 12.331254 = 8.814098 + 3.517155
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 16706100394
+Overdraw: 125.269081%
+
+Avg FPS: 590.769287
+Avg render time: 14.915926ms
+Frames rendered: 9618.000000
+________________________________________________
+Generated maze17x14.pvs
+
+70.477997 seconds elapsed since start of main loop.
+18.430937 seconds spent drawing the tree structure.
+That is 26.151335% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.955369 = 6.188519 + 0.766850
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 29083378806
+Overdraw: 42.853142%
+
+Avg FPS: 703.617798
+Avg render time: 5.205343ms
+Frames rendered: 49629.000000
+________________________________________________
+Generated maze17x14.pvs
+
+88.620003 seconds elapsed since start of main loop.
+304818432.000000 seconds spent drawing the tree structure.
+That is 343961216.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 12.987485 = 10.107213 + 2.880271
+
+BSP min draw calls: 5.000000 = 2 + 3
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 569373347898603207
+Overdraw: 822280128.000000%
+
+Avg FPS: 571.056641
+Avg render time: 3.252203ms
+Frames rendered: 49938.000000
+________________________________________________
+Generated maze17x14.pvs
+
+104.098000 seconds elapsed since start of main loop.
+1104740224.000000 seconds spent drawing the tree structure.
+That is 1061250176.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 8.000000 = 6.000000 + 2.000000
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 3316540262747431608
+Overdraw: 1413280512.000000%
+
+Avg FPS: 1637.417847
+Avg render time: 0.812434ms
+Frames rendered: 169243.000000
+________________________________________________
+Generated maze17x14.pvs
+
+44.095001 seconds elapsed since start of main loop.
+185776016.000000 seconds spent drawing the tree structure.
+That is 421308544.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 9.949517 = 6.697630 + 3.251887
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 789770900072650712
+Overdraw: 2149035264.000000%
+
+Avg FPS: 614.559937
+Avg render time: 2.805568ms
+Frames rendered: 26504.000000
+________________________________________________
+Generated maze17x14.pvs
+
+59.925999 seconds elapsed since start of main loop.
+116186736.000000 seconds spent drawing the tree structure.
+That is 193883680.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 10.265507 = 7.036366 + 3.229141
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 20.000000 = 14 + 6
+Overall samples passed: 491286635243686059
+Overdraw: 2154672640.000000%
+
+Avg FPS: 337.823853
+Avg render time: 3.866813ms
+Frames rendered: 16444.000000
+________________________________________________
+Generated maze17x14.pvs
+
+20.042999 seconds elapsed since start of main loop.
+39526780.000000 seconds spent drawing the tree structure.
+That is 197209904.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 8.696795 = 5.359381 + 3.337415
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 171441466551640080
+Overdraw: 2226198016.000000%
+
+Avg FPS: 287.921692
+Avg render time: 5.060940ms
+Frames rendered: 5554.000000
+________________________________________________
+Generated maze17x14.pvs
+
+55.548000 seconds elapsed since start of main loop.
+140450800.000000 seconds spent drawing the tree structure.
+That is 252845824.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 10.552313 = 7.498932 + 3.053381
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 17.000000 = 12 + 5
+Overall samples passed: 569315375223898551
+Overdraw: 2087384064.000000%
+
+Avg FPS: 362.084229
+Avg render time: 6.907626ms
+Frames rendered: 19670.000000
+________________________________________________
+Generated maze17x14.pvs
+
+27.813999 seconds elapsed since start of main loop.
+44207208.000000 seconds spent drawing the tree structure.
+That is 158938704.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 12.009005 = 8.162083 + 3.846922
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 17.000000 = 12 + 5
+Overall samples passed: 214221885917271178
+Overdraw: 2529406720.000000%
+
+Avg FPS: 303.610321
+Avg render time: 5.638198ms
+Frames rendered: 6108.000000
+________________________________________________
+Generated maze17x14.pvs
+
+42.867001 seconds elapsed since start of main loop.
+17969464.000000 seconds spent drawing the tree structure.
+That is 41919108.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 7.000404 = 5.000404 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 53907179354514716
+Overdraw: 1570815744.000000%
+
+Avg FPS: 239.201172
+Avg render time: 6.823296ms
+Frames rendered: 2475.000000
+________________________________________________
+Generated maze17x14.pvs
+
+58.759998 seconds elapsed since start of main loop.
+101998280.000000 seconds spent drawing the tree structure.
+That is 173584544.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 12.274262 = 8.709562 + 3.564701
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 17.000000 = 12 + 5
+Overall samples passed: 465557690855069769
+Overdraw: 2403083008.000000%
+
+Avg FPS: 303.623016
+Avg render time: 5.936959ms
+Frames rendered: 13972.000000
+________________________________________________
+Generated maze17x14.pvs
+
+47.224998 seconds elapsed since start of main loop.
+134581232.000000 seconds spent drawing the tree structure.
+That is 284978816.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 13.292263 = 9.508688 + 3.783576
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 17.000000 = 12 + 5
+Overall samples passed: 643820174187682196
+Overdraw: 2536996352.000000%
+
+Avg FPS: 459.420868
+Avg render time: 4.808541ms
+Frames rendered: 18302.000000
+________________________________________________
+Generated maze17x14.pvs
+
+19.591000 seconds elapsed since start of main loop.
+9619475.000000 seconds spent drawing the tree structure.
+That is 49101504.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.001537 = 4.001537 + 2.000000
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 28857530489088061
+Overdraw: 1599689344.000000%
+
+Avg FPS: 237.520523
+Avg render time: 5.483789ms
+Frames rendered: 1301.000000
+________________________________________________
+Generated maze17x14.pvs
+
+10.893000 seconds elapsed since start of main loop.
+4585886.500000 seconds spent drawing the tree structure.
+That is 42099392.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.006473 = 4.006473 + 2.000000
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 4585747614865959
+Overdraw: 535149952.000000%
+
+Avg FPS: 238.109543
+Avg render time: 7.876981ms
+Frames rendered: 618.000000
+________________________________________________
+Generated maze17x14.pvs
+
+170.559998 seconds elapsed since start of main loop.
+28515366.000000 seconds spent drawing the tree structure.
+That is 16718672.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 11.965921 = 8.186901 + 3.779020
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 17.000000 = 12 + 5
+Overall samples passed: 136227658770749825
+Overdraw: 2615733760.000000%
+
+Avg FPS: 245.514282
+Avg render time: 5.584809ms
+Frames rendered: 3756.000000
+________________________________________________
+Generated maze17x14.pvs
+
+136.020996 seconds elapsed since start of main loop.
+50512116.000000 seconds spent drawing the tree structure.
+That is 37135528.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 18.029547 = 15.212306 + 2.817240
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 192786236449896583
+Overdraw: 2117527040.000000%
+
+Avg FPS: 157.363449
+Avg render time: 16.302267ms
+Frames rendered: 6566.000000
+________________________________________________
+Generated maze17x14.pvs
+
+219.093994 seconds elapsed since start of main loop.
+1228972928.000000 seconds spent drawing the tree structure.
+That is 560934080.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 33.894444 = 31.210520 + 2.683925
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 4530733153638226889
+Overdraw: 2110193664.000000%
+
+Avg FPS: 716.895081
+Avg render time: 3.231327ms
+Frames rendered: 154846.000000
+________________________________________________
+Generated maze17x14.pvs
+
+89.889999 seconds elapsed since start of main loop.
+944974080.000000 seconds spent drawing the tree structure.
+That is 1051256128.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 86.462433 = 86.048637 + 0.413800
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 108.000000 = 108 + 0
+Overall samples passed: 1335548134530563454
+Overdraw: 1180983168.000000%
+
+Avg FPS: 928.463806
+Avg render time: 1.351468ms
+Frames rendered: 82697.000000
+________________________________________________
+Generated maze17x14.pvs
+
+0.766000 seconds elapsed since start of main loop.
+0.000000 seconds spent drawing the tree structure.
+That is 0.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 8.000000 = 6.000000 + 2.000000
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 444
+Overdraw: 0.032021%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 1.000000
+________________________________________________
+Generated maze17x14.pvs
+
+24.031000 seconds elapsed since start of main loop.
+31793092.000000 seconds spent drawing the tree structure.
+That is 132300328.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.424006 = 4.280592 + 2.143414
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 99935818603970601
+Overdraw: 2808784128.000000%
+
+Avg FPS: 206.388107
+Avg render time: 26.872625ms
+Frames rendered: 2566.000000
+________________________________________________
+Generated maze17x14.pvs
+
+75.660004 seconds elapsed since start of main loop.
+95120880.000000 seconds spent drawing the tree structure.
+That is 125721488.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 14.959019 = 10.496476 + 4.462543
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 35.000000 = 24 + 11
+Overall samples passed: 519426000261054032
+Overdraw: 4889172480.000000%
+
+Avg FPS: 199.303024
+Avg render time: 17.602470ms
+Frames rendered: 7662.000000
+________________________________________________
+Generated maze17x14.pvs
+
+5.359000 seconds elapsed since start of main loop.
+29835880.000000 seconds spent drawing the tree structure.
+That is 556743424.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 8.000000 = 6.000000 + 2.000000
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 89506830517687725
+Overdraw: 2711131648.000000%
+
+Avg FPS: 513.271729
+Avg render time: 1.968881ms
+Frames rendered: 2381.000000
+________________________________________________
+Generated maze60x60.pvs
+
+60.855000 seconds elapsed since start of main loop.
+752929.625000 seconds spent drawing the tree structure.
+That is 1237251.875000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 576.000000 = 361.000000 + 215.000000
+
+BSP min draw calls: 505.000000 = 290 + 215
+BSP max draw calls: 647.000000 = 432 + 215
+Overall samples passed: 162566770254892720
+Overdraw: 124726206464.000000%
+
+Avg FPS: 7.248868
+Avg render time: 140.065155ms
+Frames rendered: 94.000000
+________________________________________________
+Generated maze60x60.pvs
+
+54.022999 seconds elapsed since start of main loop.
+323937.625000 seconds spent drawing the tree structure.
+That is 599629.125000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 575.750000 = 360.750000 + 215.000000
+
+BSP min draw calls: 497.000000 = 282 + 215
+BSP max draw calls: 647.000000 = 432 + 215
+Overall samples passed: 69954964224406460
+Overdraw: 126128242688.000000%
+
+Avg FPS: 6.752546
+Avg render time: 151.621201ms
+Frames rendered: 40.000000
+________________________________________________
+Generated maze17x14.pvs
+
+101.579002 seconds elapsed since start of main loop.
+552967680.000000 seconds spent drawing the tree structure.
+That is 544372032.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 60.896824 = 60.216309 + 0.680515
+
+BSP min draw calls: 8.000000 = 6 + 2
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 929311818608457859
+Overdraw: 1283178112.000000%
+
+Avg FPS: 522.470764
+Avg render time: 4.924041ms
+Frames rendered: 52231.000000
+________________________________________________
+Generated maze17x14.pvs
+
+26.190001 seconds elapsed since start of main loop.
+536494848.000000 seconds spent drawing the tree structure.
+That is 2048472064.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.000000 = 6.000000 + 0.000000
+
+BSP min draw calls: 6.000000 = 6 + 0
+BSP max draw calls: 6.000000 = 6 + 0
+Overall samples passed: 536585263248904089
+Overdraw: 861590976.000000%
+
+Avg FPS: 1765.117920
+Avg render time: 0.614749ms
+Frames rendered: 44915.000000
+________________________________________________
+Generated maze17x14.pvs
+
+8.089000 seconds elapsed since start of main loop.
+178037424.000000 seconds spent drawing the tree structure.
+That is 2200982016.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.000000 = 6.000000 + 0.000000
+
+BSP min draw calls: 6.000000 = 6 + 0
+BSP max draw calls: 6.000000 = 6 + 0
+Overall samples passed: 178019935638299316
+Overdraw: 913659392.000000%
+
+Avg FPS: 1905.284302
+Avg render time: 0.543577ms
+Frames rendered: 14052.000000
+________________________________________________
+Generated maze17x14.pvs
+
+14.532000 seconds elapsed since start of main loop.
+351977344.000000 seconds spent drawing the tree structure.
+That is 2422084864.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.000000 = 6.000000 + 0.000000
+
+BSP min draw calls: 6.000000 = 6 + 0
+BSP max draw calls: 6.000000 = 6 + 0
+Overall samples passed: 351934418880035717
+Overdraw: 916329024.000000%
+
+Avg FPS: 2006.840454
+Avg render time: 0.500914ms
+Frames rendered: 27699.000000
+________________________________________________
+Generated maze17x14.pvs
+
+79.652000 seconds elapsed since start of main loop.
+716302848.000000 seconds spent drawing the tree structure.
+That is 899290496.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 12.568743 = 8.296349 + 4.272395
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 172828812954039240
+Overdraw: 224655920.000000%
+
+Avg FPS: 702.889893
+Avg render time: 1.852803ms
+Frames rendered: 55482.000000
+________________________________________________
+Generated maze60x60.pvs
+
+154.253006 seconds elapsed since start of main loop.
+209823888.000000 seconds spent drawing the tree structure.
+That is 136025792.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 457.340546 = 440.681946 + 16.658602
+
+BSP min draw calls: 6.000000 = 2 + 4
+BSP max draw calls: 783.000000 = 702 + 81
+Overall samples passed: 191300742636307575
+Overdraw: 853746880.000000%
+
+Avg FPS: 155.814575
+Avg render time: 10.827479ms
+Frames rendered: 16160.000000
+________________________________________________
+Generated maze60x60.pvs
+
+68.806000 seconds elapsed since start of main loop.
+40199772.000000 seconds spent drawing the tree structure.
+That is 58424808.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 407.696228 = 371.476257 + 36.219978
+
+BSP min draw calls: 176.000000 = 2 + 174
+BSP max draw calls: 620.000000 = 464 + 156
+Overall samples passed: 34762819195700647
+Overdraw: 937928832.000000%
+
+Avg FPS: 135.119492
+Avg render time: 15.145789ms
+Frames rendered: 2673.000000
+________________________________________________
+Generated maze60x60.pvs
+
+115.141998 seconds elapsed since start of main loop.
+144554768.000000 seconds spent drawing the tree structure.
+That is 125544776.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 650.289856 = 441.260986 + 209.028854
+
+BSP min draw calls: 384.000000 = 164 + 220
+BSP max draw calls: 2968.000000 = 2968 + 0
+Overall samples passed: 11726152878682787708
+Overdraw: 88396201984.000000%
+
+Avg FPS: 141.657471
+Avg render time: 8.472537ms
+Frames rendered: 9567.000000
+________________________________________________
+Generated maze60x60.pvs
+
+71.095001 seconds elapsed since start of main loop.
+52330392.000000 seconds spent drawing the tree structure.
+That is 73606288.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 569.654602 = 379.479828 + 190.174744
+
+BSP min draw calls: 432.000000 = 256 + 176
+BSP max draw calls: 861.000000 = 562 + 299
+Overall samples passed: 10001937992789636038
+Overdraw: 209386520576.000000%
+
+Avg FPS: 148.694244
+Avg render time: 8.413836ms
+Frames rendered: 3445.000000
+________________________________________________
+Generated maze60x60.pvs
+
+68.397003 seconds elapsed since start of main loop.
+44289216.000000 seconds spent drawing the tree structure.
+That is 64753152.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 608.715698 = 399.568329 + 209.147354
+
+BSP min draw calls: 432.000000 = 288 + 144
+BSP max draw calls: 1409.000000 = 920 + 489
+Overall samples passed: 9302214881326973345
+Overdraw: 232055635968.000000%
+
+Avg FPS: 142.880646
+Avg render time: 9.268537ms
+Frames rendered: 2891.000000
+________________________________________________
+Generated maze60x60.pvs
+
+108.783997 seconds elapsed since start of main loop.
+68300632.000000 seconds spent drawing the tree structure.
+That is 62785552.000000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 260.976837 = 186.558746 + 74.418091
+
+BSP min draw calls: 13.000000 = 4 + 9
+BSP max draw calls: 625.000000 = 600 + 25
+Overall samples passed: 21487363853381000
+Overdraw: 373862944.000000%
+
+Avg FPS: 77.935440
+Avg render time: 20.632530ms
+Frames rendered: 4145.000000
+________________________________________________
+Generated maze180x180.pvs
+
+129.701996 seconds elapsed since start of main loop.
+1292324096.000000 seconds spent drawing the tree structure.
+That is 996379520.000000% of overall display time.
+BSP tree nodes: 14669
+BSP tree leaves: 7335
+BSP tree maximum depth: 15
+BSP avg draw calls: 34.128574 = 32.742897 + 1.385675
+
+BSP min draw calls: 6.000000 = 2 + 4
+BSP max draw calls: 14670.000000 = 14670 + 0
+Overall samples passed: 913463879217264655
+Overdraw: 1024217984.000000%
+
+Avg FPS: 765.046204
+Avg render time: 45.861641ms
+Frames rendered: 64321.000000
+________________________________________________
+Generated maze180x180.pvs
+
+71.813004 seconds elapsed since start of main loop.
+9677313.000000 seconds spent drawing the tree structure.
+That is 13475711.000000% of overall display time.
+BSP tree nodes: 14669
+BSP tree leaves: 7335
+BSP tree maximum depth: 15
+BSP avg draw calls: 22.842272 = 20.495758 + 2.346513
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 14670.000000 = 14670 + 0
+Overall samples passed: 29063102557332451
+Overdraw: 56455456.000000%
+
+Avg FPS: 947.360474
+Avg render time: 11.370718ms
+Frames rendered: 37127.000000
+________________________________________________
+Generated maze60x60.pvs
+
+80.167000 seconds elapsed since start of main loop.
+3905414.250000 seconds spent drawing the tree structure.
+That is 4871598.500000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 513.669739 = 296.879028 + 216.790710
+
+BSP min draw calls: 225.000000 = 10 + 215
+BSP max draw calls: 1415.000000 = 926 + 489
+Overall samples passed: 847872988294730259
+Overdraw: 4869660672.000000%
+
+Avg FPS: 168.897903
+Avg render time: 10.151756ms
+Frames rendered: 12557.000000
+________________________________________________
+Generated maze60x60.pvs
+
+56.722000 seconds elapsed since start of main loop.
+4335940.500000 seconds spent drawing the tree structure.
+That is 7644195.500000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 477.940887 = 328.288818 + 149.652054
+
+BSP min draw calls: 217.000000 = 2 + 215
+BSP max draw calls: 647.000000 = 432 + 215
+Overall samples passed: 651545538832722563
+Overdraw: 3968352512.000000%
+
+Avg FPS: 217.140884
+Avg render time: 4.889967ms
+Frames rendered: 11841.000000
+________________________________________________
+Generated maze20x15.pvs
+
+6.861000 seconds elapsed since start of main loop.
+19009260.000000 seconds spent drawing the tree structure.
+That is 277062528.000000% of overall display time.
+BSP tree nodes: 185
+BSP tree leaves: 93
+BSP tree maximum depth: 8
+BSP avg draw calls: 88.790352 = 88.790352 + 0.000000
+
+BSP min draw calls: 88.000000 = 88 + 0
+BSP max draw calls: 94.000000 = 94 + 0
+Overall samples passed: 19008763320597835
+Overdraw: 486309312.000000%
+
+Avg FPS: 421.850189
+Avg render time: 2.378105ms
+Frames rendered: 2819.000000
+________________________________________________
+portals generated 143 portals inserted 286
+At time: 0s starting point
+
+At time: 0.017s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.017s, percent of time taken: 0.67%
+
+At time: 0.28s after creation of RootNode
+Time taken: 0.26s, percent of time taken: 10.34%
+
+At time: 1.09s after generation of BSPTree
+Time taken: 0.81s, percent of time taken: 31.56%
+
+At time: 1.36s after Portal placing
+Time taken: 0.28s, percent of time taken: 10.81%
+
+At time: 2.42s after PVS computation
+Time taken: 1.06s, percent of time taken: 41.43%
+
+At time: 2.42s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.04%
+
+At time: 2.55s after Saving
+Time taken: 0.13s, percent of time taken: 5.17%
+
+Generated maze18x45.pvs
+
+38.073002 seconds elapsed since start of main loop.
+214594192.000000 seconds spent drawing the tree structure.
+That is 563638720.000000% of overall display time.
+BSP tree nodes: 287
+BSP tree leaves: 144
+BSP tree maximum depth: 9
+BSP avg draw calls: 29.879303 = 28.628000 + 1.251303
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 288.000000 = 288 + 0
+Overall samples passed: 465772360557329357
+Overdraw: 1080594304.000000%
+
+Avg FPS: 825.840210
+Avg render time: 2.202069ms
+Frames rendered: 31086.000000
+________________________________________________
+portals generated 145 portals inserted 290
+At time: 0s starting point
+
+At time: 0.011s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.011s, percent of time taken: 0.43%
+
+At time: 0.39s after creation of RootNode
+Time taken: 0.38s, percent of time taken: 14.97%
+
+At time: 1.26s after generation of BSPTree
+Time taken: 0.87s, percent of time taken: 33.84%
+
+At time: 1.43s after Portal placing
+Time taken: 0.17s, percent of time taken: 6.53%
+
+At time: 2.43s after PVS computation
+Time taken: 1.00s, percent of time taken: 39.23%
+
+At time: 2.43s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.04%
+
+At time: 2.56s after Saving
+Time taken: 0.13s, percent of time taken: 4.96%
+
+Generated maze18x45.pvs
+
+88.625999 seconds elapsed since start of main loop.
+178680880.000000 seconds spent drawing the tree structure.
+That is 201612256.000000% of overall display time.
+BSP tree nodes: 291
+BSP tree leaves: 146
+BSP tree maximum depth: 9
+BSP avg draw calls: 14.124329 = 9.214188 + 4.910141
+
+BSP min draw calls: 7.000000 = 2 + 5
+BSP max draw calls: 29.000000 = 20 + 9
+Overall samples passed: 1056069980827775721
+Overdraw: 732291392.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 104007.000000
+________________________________________________
+portals generated 156 portals inserted 312
+At time: 0s starting point
+
+At time: 0.012s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.012s, percent of time taken: 0.48%
+
+At time: 0.21s after creation of RootNode
+Time taken: 0.20s, percent of time taken: 7.80%
+
+At time: 1.07s after generation of BSPTree
+Time taken: 0.86s, percent of time taken: 33.89%
+
+At time: 1.26s after Portal placing
+Time taken: 0.19s, percent of time taken: 7.56%
+
+At time: 2.40s after PVS computation
+Time taken: 1.15s, percent of time taken: 45.41%
+
+At time: 2.40s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.00%
+
+At time: 2.53s after Saving
+Time taken: 0.12s, percent of time taken: 4.87%
+
+Generated maze18x45.pvs
+
+20.209999 seconds elapsed since start of main loop.
+71919976.000000 seconds spent drawing the tree structure.
+That is 355863328.000000% of overall display time.
+BSP tree nodes: 313
+BSP tree leaves: 157
+BSP tree maximum depth: 9
+BSP avg draw calls: 6.452010 = 5.527373 + 0.924636
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 11.000000 = 8 + 3
+Overall samples passed: 138456827253849851
+Overdraw: 1729983232.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 5772.000000
+________________________________________________
+portals generated 140 portals inserted 280
+At time: 0s starting point
+
+At time: 0.021s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.021s, percent of time taken: 0.85%
+
+At time: 0.44s after creation of RootNode
+Time taken: 0.42s, percent of time taken: 16.87%
+
+At time: 1.22s after generation of BSPTree
+Time taken: 0.78s, percent of time taken: 31.36%
+
+At time: 1.39s after Portal placing
+Time taken: 0.17s, percent of time taken: 6.96%
+
+At time: 2.37s after PVS computation
+Time taken: 0.97s, percent of time taken: 39.21%
+
+At time: 2.37s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.00%
+
+At time: 2.48s after Saving
+Time taken: 0.12s, percent of time taken: 4.75%
+
+Generated maze18x45.pvs
+
+27.608000 seconds elapsed since start of main loop.
+225572576.000000 seconds spent drawing the tree structure.
+That is 817055104.000000% of overall display time.
+BSP tree nodes: 281
+BSP tree leaves: 141
+BSP tree maximum depth: 9
+BSP avg draw calls: 15.982455 = 12.165486 + 3.816969
+
+BSP min draw calls: 8.000000 = 2 + 6
+BSP max draw calls: 30.000000 = 20 + 10
+Overall samples passed: 1086729530285003720
+Overdraw: 4337756672.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 18068.000000
+________________________________________________
+portals generated 149 portals inserted 298
+At time: 0s starting point
+
+At time: 0.024s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.024s, percent of time taken: 1.04%
+
+At time: 0.23s after creation of RootNode
+Time taken: 0.21s, percent of time taken: 8.97%
+
+At time: 1.03s after generation of BSPTree
+Time taken: 0.80s, percent of time taken: 34.47%
+
+At time: 1.20s after Portal placing
+Time taken: 0.17s, percent of time taken: 7.38%
+
+At time: 2.20s after PVS computation
+Time taken: 1.00s, percent of time taken: 42.92%
+
+At time: 2.20s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.00%
+
+At time: 2.32s after Saving
+Time taken: 0.12s, percent of time taken: 5.22%
+
+Generated maze18x45.pvs
+
+20.007999 seconds elapsed since start of main loop.
+153613904.000000 seconds spent drawing the tree structure.
+That is 767762432.000000% of overall display time.
+BSP tree nodes: 299
+BSP tree leaves: 150
+BSP tree maximum depth: 9
+BSP avg draw calls: 10.033005 = 6.987369 + 3.045636
+
+BSP min draw calls: 6.000000 = 2 + 4
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 621473443448077302
+Overdraw: 3652552448.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 12271.000000
+________________________________________________
+portals generated 156 portals inserted 312
+At time: 0s starting point
+
+At time: 0.021s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.021s, percent of time taken: 0.83%
+
+At time: 0.23s after creation of RootNode
+Time taken: 0.21s, percent of time taken: 8.29%
+
+At time: 1.06s after generation of BSPTree
+Time taken: 0.82s, percent of time taken: 32.39%
+
+At time: 1.25s after Portal placing
+Time taken: 0.19s, percent of time taken: 7.51%
+
+At time: 2.42s after PVS computation
+Time taken: 1.17s, percent of time taken: 45.99%
+
+At time: 2.42s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.04%
+
+At time: 2.54s after Saving
+Time taken: 0.13s, percent of time taken: 4.95%
+
+Generated maze18x45.pvs
+
+48.422001 seconds elapsed since start of main loop.
+32454540.000000 seconds spent drawing the tree structure.
+That is 67024368.000000% of overall display time.
+BSP tree nodes: 313
+BSP tree leaves: 157
+BSP tree maximum depth: 9
+BSP avg draw calls: 6.010070 = 5.991479 + 0.018590
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 33056792467097570
+Overdraw: 923332928.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 2582.000000
+________________________________________________
+portals generated 137 portals inserted 274
+At time: 0s starting point
+
+At time: 0.018s after copying to BSPTreePolygons.
+2692 polygons created.
+Time taken: 0.018s, percent of time taken: 0.74%
+
+At time: 0.35s after creation of RootNode
+Time taken: 0.33s, percent of time taken: 13.72%
+
+At time: 1.14s after generation of BSPTree
+Time taken: 0.78s, percent of time taken: 32.06%
+
+At time: 1.35s after Portal placing
+Time taken: 0.21s, percent of time taken: 8.56%
+
+At time: 2.33s after PVS computation
+Time taken: 0.98s, percent of time taken: 40.17%
+
+At time: 2.33s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.00%
+
+At time: 2.44s after Saving
+Time taken: 0.12s, percent of time taken: 4.75%
+
+Generated maze18x45.pvs
+
+31.531000 seconds elapsed since start of main loop.
+146768320.000000 seconds spent drawing the tree structure.
+That is 465473088.000000% of overall display time.
+BSP tree nodes: 275
+BSP tree leaves: 138
+BSP tree maximum depth: 9
+BSP avg draw calls: 8.001461 = 7.997594 + 0.003867
+
+BSP min draw calls: 7.000000 = 4 + 3
+BSP max draw calls: 11.000000 = 8 + 3
+Overall samples passed: 147367241640644669
+Overdraw: 913222080.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 11638.000000
+________________________________________________
+Generated maze18x45.pvs
+
+14.732000 seconds elapsed since start of main loop.
+99026024.000000 seconds spent drawing the tree structure.
+That is 672183168.000000% of overall display time.
+BSP tree nodes: 275
+BSP tree leaves: 138
+BSP tree maximum depth: 9
+BSP avg draw calls: 8.003331 = 7.994874 + 0.008457
+
+BSP min draw calls: 7.000000 = 4 + 3
+BSP max draw calls: 11.000000 = 8 + 3
+Overall samples passed: 99859196983945198
+Overdraw: 922836224.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 7804.000000
+________________________________________________
+Generated maze17x14.pvs
+
+267.355988 seconds elapsed since start of main loop.
+118171064.000000 seconds spent drawing the tree structure.
+That is 44199892.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 6.902956 = 5.269160 + 1.633795
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 72.000000 = 72 + 0
+Overall samples passed: 15413133391403106
+Overdraw: 96921296.000000%
+
+Avg FPS: 0.000048
+Avg render time: 20773186.000000ms
+Frames rendered: 11472.000000
+________________________________________________
+Generated maze17x14.pvs
+
+12.204000 seconds elapsed since start of main loop.
+27009148.000000 seconds spent drawing the tree structure.
+That is 221313904.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 5.986324 = 3.990883 + 1.995441
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 16329611239
+Overdraw: 488.058990%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 2413.000000
+________________________________________________
+Generated maze18x45.pvs
+
+494.976013 seconds elapsed since start of main loop.
+333872160.000000 seconds spent drawing the tree structure.
+That is 67452184.000000% of overall display time.
+BSP tree nodes: 275
+BSP tree leaves: 138
+BSP tree maximum depth: 9
+BSP avg draw calls: 40.270142 = 36.470287 + 3.799851
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 276.000000 = 276 + 0
+Overall samples passed: 1516079249654725185
+Overdraw: 4794946048.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 22803.000000
+________________________________________________
+Generated maze30x30.pvs
+
+27.353001 seconds elapsed since start of main loop.
+5483887.500000 seconds spent drawing the tree structure.
+That is 20048578.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 189.163040 = 106.277176 + 82.885872
+
+BSP min draw calls: 72.000000 = 6 + 66
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 460845302880651208
+Overdraw: 90315259904.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 368.000000
+________________________________________________
+Generated maze30x30.pvs
+
+14.254000 seconds elapsed since start of main loop.
+2959905.000000 seconds spent drawing the tree structure.
+That is 20765434.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 145.888885 = 33.808083 + 112.080811
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 2959820327120849
+Overdraw: 1078087424.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 198.000000
+________________________________________________
+Generated maze30x30.pvs
+
+12.992000 seconds elapsed since start of main loop.
+658980.312500 seconds spent drawing the tree structure.
+That is 5072201.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 101.069771 = 13.069767 + 88.000000
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 629008009911708
+Overdraw: 1054973504.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 43.000000
+________________________________________________
+Generated maze30x30.pvs
+
+5.813000 seconds elapsed since start of main loop.
+1259628.625000 seconds spent drawing the tree structure.
+That is 21669166.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 124.072289 = 23.734940 + 100.337349
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 1229601537169378
+Overdraw: 1068415424.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 83.000000
+________________________________________________
+Generated maze30x30.pvs
+
+16.450001 seconds elapsed since start of main loop.
+592255.750000 seconds spent drawing the tree structure.
+That is 3600338.750000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 189.257141 = 101.257141 + 88.000000
+
+BSP min draw calls: 108.000000 = 20 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 52676836419256516
+Overdraw: 108543909888.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 35.000000
+________________________________________________
+Generated maze30x30.pvs
+
+8.165000 seconds elapsed since start of main loop.
+1942531.875000 seconds spent drawing the tree structure.
+That is 23790960.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 231.254242 = 126.440681 + 104.813560
+
+BSP min draw calls: 98.000000 = 10 + 88
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 205542224193589609
+Overdraw: 125624074240.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 118.000000
+________________________________________________
+Generated maze30x30.pvs
+
+30.870001 seconds elapsed since start of main loop.
+98815.640625 seconds spent drawing the tree structure.
+That is 320102.500000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 202.800003 = 114.800003 + 88.000000
+
+BSP min draw calls: 108.000000 = 20 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 8761477006010136
+Overdraw: 126374985728.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 5.000000
+________________________________________________
+Generated maze30x30.pvs
+
+13.371000 seconds elapsed since start of main loop.
+65951.695313 seconds spent drawing the tree structure.
+That is 493244.281250% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 213.333328 = 125.333336 + 88.000000
+
+BSP min draw calls: 108.000000 = 20 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 5836606994076766
+Overdraw: 140311412736.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 3.000000
+________________________________________________
+Generated maze30x30.pvs
+
+71.664001 seconds elapsed since start of main loop.
+72656.218750 seconds spent drawing the tree structure.
+That is 101384.539063% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 294.030090 = 187.503754 + 106.526314
+
+BSP min draw calls: 222.000000 = 134 + 88
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 7678756835337494
+Overdraw: 4163830784.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 133.000000
+________________________________________________
+Generated maze30x30.pvs
+
+711.466003 seconds elapsed since start of main loop.
+51164.019531 seconds spent drawing the tree structure.
+That is 7191.351563% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 231.000000 = 143.000000 + 88.000000
+
+BSP min draw calls: 196.000000 = 108 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 4549705320385736
+Overdraw: 5859344384.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 56.000000
+________________________________________________
+Generated maze30x30.pvs
+
+17.273001 seconds elapsed since start of main loop.
+104009.296875 seconds spent drawing the tree structure.
+That is 602149.562500% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 240.388062 = 152.388062 + 88.000000
+
+BSP min draw calls: 214.000000 = 126 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 8980014588439455
+Overdraw: 9666206720.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 67.000000
+________________________________________________
+Generated maze30x30.pvs
+
+192.957993 seconds elapsed since start of main loop.
+7584.721191 seconds spent drawing the tree structure.
+That is 3930.762939% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 230.666672 = 142.666672 + 88.000000
+
+BSP min draw calls: 160.000000 = 72 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 337421911898618
+Overdraw: 8111587328.000000%
+
+Avg FPS: -1.#IND00
+Avg render time: -1.#IND00ms
+Frames rendered: 3.000000
+________________________________________________
+Generated maze30x30.pvs
+
+40.120998 seconds elapsed since start of main loop.
+269427.593750 seconds spent drawing the tree structure.
+That is 671537.625000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 287.818176 = 192.545456 + 95.272728
+
+BSP min draw calls: 266.000000 = 178 + 88
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 25930484704018341
+Overdraw: 28334821376.000000%
+
+Avg FPS: 5.745715
+Avg render time: 177.960831ms
+Frames rendered: 66.000000
+________________________________________________
+Generated maze30x30.pvs
+
+74.031998 seconds elapsed since start of main loop.
+17213.376953 seconds spent drawing the tree structure.
+That is 23251.265625% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 266.000000 = 178.000000 + 88.000000
+
+BSP min draw calls: 266.000000 = 178 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 1531561061751396
+Overdraw: 27613923328.000000%
+
+Avg FPS: 5.269311
+Avg render time: 189.778122ms
+Frames rendered: 4.000000
+________________________________________________
+Generated maze30x30.pvs
+
+6.981000 seconds elapsed since start of main loop.
+57159.781250 seconds spent drawing the tree structure.
+That is 818790.750000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 266.000000 = 178.000000 + 88.000000
+
+BSP min draw calls: 266.000000 = 178 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 5086519963908186
+Overdraw: 30569848832.000000%
+
+Avg FPS: 6.341357
+Avg render time: 157.779083ms
+Frames rendered: 12.000000
+________________________________________________
+Generated maze17x14.pvs
+
+21.636000 seconds elapsed since start of main loop.
+23098544.000000 seconds spent drawing the tree structure.
+That is 106759776.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 9.629050 = 5.574168 + 4.054882
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 24.000000 = 14 + 10
+Overall samples passed: 43097432417
+Overdraw: 685.072327%
+
+Avg FPS: 210.279480
+Avg render time: 5.654088ms
+Frames rendered: 4537.000000
+________________________________________________
+Generated maze17x14.pvs
+
+35.227001 seconds elapsed since start of main loop.
+58682936.000000 seconds spent drawing the tree structure.
+That is 166585104.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 9.644617 = 5.606668 + 4.037950
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 21.000000 = 12 + 9
+Overall samples passed: 86219412056
+Overdraw: 651.862488%
+
+Avg FPS: 272.188202
+Avg render time: 4.201270ms
+Frames rendered: 9539.000000
+________________________________________________
+Generated maze17x14.pvs
+
+17.046000 seconds elapsed since start of main loop.
+37858464.000000 seconds spent drawing the tree structure.
+That is 222095904.000000% of overall display time.
+BSP tree nodes: 71
+BSP tree leaves: 36
+BSP tree maximum depth: 7
+BSP avg draw calls: 5.428453 = 3.618969 + 1.809484
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 39344443055
+Overdraw: 470.487274%
+
+Avg FPS: 374.382477
+Avg render time: 2.760509ms
+Frames rendered: 6031.000000
+________________________________________________
+Generated maze60x60.pvs
+
+19.827999 seconds elapsed since start of main loop.
+58484.937500 seconds spent drawing the tree structure.
+That is 294961.375000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 647.000000 = 432.000000 + 215.000000
+
+BSP min draw calls: 647.000000 = 432 + 215
+BSP max draw calls: 647.000000 = 432 + 215
+Overall samples passed: 12626577873147486
+Overdraw: 303541616640.000000%
+
+Avg FPS: 3.456513
+Avg render time: 289.308899ms
+Frames rendered: 3.000000
+________________________________________________
+Generated maze60x60.pvs
+
+52.634998 seconds elapsed since start of main loop.
+547552.687500 seconds spent drawing the tree structure.
+That is 1040282.500000% of overall display time.
+BSP tree nodes: 2967
+BSP tree leaves: 1484
+BSP tree maximum depth: 11
+BSP avg draw calls: 647.000000 = 432.000000 + 215.000000
+
+BSP min draw calls: 647.000000 = 432 + 215
+BSP max draw calls: 647.000000 = 432 + 215
+Overall samples passed: 118215467399339800
+Overdraw: 304487923712.000000%
+
+Avg FPS: 2.449012
+Avg render time: 410.100128ms
+Frames rendered: 28.000000
+________________________________________________
+Generated maze30x30.pvs
+
+30.395000 seconds elapsed since start of main loop.
+1276603.375000 seconds spent drawing the tree structure.
+That is 4200044.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 307.353851 = 205.569229 + 101.784615
+
+BSP min draw calls: 266.000000 = 178 + 88
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 131209803789515699
+Overdraw: 145581686784.000000%
+
+Avg FPS: 5.601674
+Avg render time: 181.617004ms
+Frames rendered: 65.000000
+________________________________________________
+Generated maze30x30.pvs
+
+7.171000 seconds elapsed since start of main loop.
+653978.437500 seconds spent drawing the tree structure.
+That is 9119766.000000% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 283.454559 = 189.636368 + 93.818184
+
+BSP min draw calls: 266.000000 = 178 + 88
+BSP max draw calls: 362.000000 = 242 + 120
+Overall samples passed: 62006953036550862
+Overdraw: 135512784896.000000%
+
+Avg FPS: 6.065338
+Avg render time: 166.070694ms
+Frames rendered: 33.000000
+________________________________________________
+Generated maze50x50.pvs
+
+Generated maze50x50.pvs
+
+37.404999 seconds elapsed since start of main loop.
+14428100.000000 seconds spent drawing the tree structure.
+That is 38572652.000000% of overall display time.
+BSP tree nodes: 1037
+BSP tree leaves: 519
+BSP tree maximum depth: 11
+BSP avg draw calls: 1038.000000 = 1038.000000 + 0.000000
+
+BSP min draw calls: 1038.000000 = 1038 + 0
+BSP max draw calls: 1038.000000 = 1038 + 0
+Overall samples passed: 14426646662560627
+Overdraw: 989957376.000000%
+
+Avg FPS: 28.608665
+Avg render time: 35.585266ms
+Frames rendered: 1051.000000
+________________________________________________
+Generated maze30x30.pvs
+
+15.723000 seconds elapsed since start of main loop.
+9.286661 seconds spent drawing the tree structure.
+That is 59.064178% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 174.613037 = 170.021744 + 4.591304
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 2716964492
+Overdraw: 425.970886%
+
+Avg FPS: 48.925350
+Avg render time: 338.976990ms
+Frames rendered: 460.000000
+________________________________________________
+Generated maze30x30.pvs
+
+14.117000 seconds elapsed since start of main loop.
+8.898062 seconds spent drawing the tree structure.
+That is 63.030827% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 177.340439 = 176.443726 + 0.896711
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 12117740376
+Overdraw: 404.783478%
+
+Avg FPS: 193.609131
+Avg render time: 215.109543ms
+Frames rendered: 2159.000000
+________________________________________________
+Generated maze30x30.pvs
+
+21.127001 seconds elapsed since start of main loop.
+13.165606 seconds spent drawing the tree structure.
+That is 62.316490% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 151.060562 = 90.899879 + 60.160690
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 206 + 60
+Overall samples passed: 9479283150
+Overdraw: 845.046814%
+
+Avg FPS: 40.833202
+Avg render time: 36.065231ms
+Frames rendered: 809.000000
+________________________________________________
+Generated maze30x30.pvs
+
+75.204002 seconds elapsed since start of main loop.
+45.256252 seconds spent drawing the tree structure.
+That is 60.177982% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 127.936089 = 45.989735 + 81.946350
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 698.000000 = 698 + 0
+Overall samples passed: 511711277085
+Overdraw: 906.164429%
+
+Avg FPS: 551.609009
+Avg render time: 2.631074ms
+Frames rendered: 40726.000000
+________________________________________________
+Generated maze30x30.pvs
+
+24.739000 seconds elapsed since start of main loop.
+15.889488 seconds spent drawing the tree structure.
+That is 64.228500% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 143.434097 = 47.065086 + 96.369019
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 698.000000 = 698 + 0
+Overall samples passed: 170340409710
+Overdraw: 1047.931152%
+
+Avg FPS: 497.487366
+Avg render time: 3.367187ms
+Frames rendered: 11723.000000
+________________________________________________
+Generated maze30x30.pvs
+
+2.342000 seconds elapsed since start of main loop.
+0.502683 seconds spent drawing the tree structure.
+That is 21.463816% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 104.316277 = 16.316278 + 88.000000
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 15311930057
+Overdraw: 1284.059814%
+
+Avg FPS: 700.238403
+Avg render time: 1.515608ms
+Frames rendered: 860.000000
+________________________________________________
+Generated maze30x30.pvs
+
+1.684000 seconds elapsed since start of main loop.
+0.247878 seconds spent drawing the tree structure.
+That is 14.719580% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 108.595642 = 20.595642 + 88.000000
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 8251144216
+Overdraw: 1440.847168%
+
+Avg FPS: 656.636780
+Avg render time: 1.522912ms
+Frames rendered: 413.000000
+________________________________________________
+Generated maze30x30.pvs
+
+61.903999 seconds elapsed since start of main loop.
+26.358822 seconds spent drawing the tree structure.
+That is 42.580162% of overall display time.
+BSP tree nodes: 697
+BSP tree leaves: 349
+BSP tree maximum depth: 9
+BSP avg draw calls: 133.245255 = 29.295824 + 103.949425
+
+BSP min draw calls: 90.000000 = 2 + 88
+BSP max draw calls: 266.000000 = 178 + 88
+Overall samples passed: 430460568635
+Overdraw: 919.297607%
+
+Avg FPS: 555.912720
+Avg render time: 1.909882ms
+Frames rendered: 33770.000000
+________________________________________________
+portals generated 7 portals inserted 0
+At time: 0s starting point
+
+At time: 0.094s after copying to BSPTreePolygons.
+1156 polygons created.
+Time taken: 0.094s, percent of time taken: 2.41%
+
+At time: 0.17s after creation of RootNode
+Time taken: 0.07s, percent of time taken: 1.82%
+
+At time: 3.69s after generation of BSPTreeCreator
+Time taken: 3.52s, percent of time taken: 90.29%
+
+At time: 3.70s after Portal placing
+Time taken: 0.01s, percent of time taken: 0.31%
+
+At time: 3.70s after PVS computation
+Time taken: 0.00s, percent of time taken: 0.05%
+
+At time: 3.72s after converting back to vertices
+Time taken: 0.02s, percent of time taken: 0.46%
+
+At time: 3.90s after Saving
+Time taken: 0.18s, percent of time taken: 4.66%
+
+Generated maze26x15.pvs
+
+38.695999 seconds elapsed since start of main loop.
+13.289674 seconds spent drawing the tree structure.
+That is 34.343796% of overall display time.
+BSP tree nodes: 117
+BSP tree leaves: 59
+BSP tree maximum depth: 7
+BSP avg draw calls: 5.946778 = 5.946778 + 0.000000
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 118.000000 = 118 + 0
+Overall samples passed: 104979530435
+Overdraw: 119.924721%
+
+Avg FPS: 1646.611206
+Avg render time: 0.699788ms
+Frames rendered: 63132.000000
+________________________________________________
+portals generated 1 portals inserted 0
+At time: 0s starting point
+
+At time: 0.001s after copying to BSPTreePolygons.
+20 polygons created.
+Time taken: 0.001s, percent of time taken: 0.05%
+
+At time: 0.00s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 0.05%
+
+At time: 0.01s after generation of BSPTreeCreator
+Time taken: 0.00s, percent of time taken: 0.22%
+
+At time: 1.85s after Portal placing
+Time taken: 1.84s, percent of time taken: 99.30%
+
+At time: 1.85s after PVS computation
+Time taken: 0.00s, percent of time taken: 0.05%
+
+At time: 1.85s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.00%
+
+At time: 1.85s after Saving
+Time taken: 0.01s, percent of time taken: 0.32%
+
+Generated maze5x4.pvs
+
+9.522000 seconds elapsed since start of main loop.
+2.917743 seconds spent drawing the tree structure.
+That is 30.642118% of overall display time.
+BSP tree nodes: 1
+BSP tree leaves: 1
+BSP tree maximum depth: 0
+BSP avg draw calls: 2.000000 = 2.000000 + 0.000000
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 2.000000 = 2 + 0
+Overall samples passed: 28195950008
+Overdraw: 148.051178%
+
+Avg FPS: 1461.866699
+Avg render time: 0.696618ms
+Frames rendered: 13735.000000
+________________________________________________
+portals generated 2 portals inserted 0
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 0.17%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 0.10%
+
+At time: 0.11s after generation of BSPTreeCreator
+Time taken: 0.11s, percent of time taken: 3.54%
+
+At time: 2.97s after Portal placing
+Time taken: 2.86s, percent of time taken: 95.42%
+
+At time: 2.97s after PVS computation
+Time taken: 0.00s, percent of time taken: 0.13%
+
+At time: 2.98s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.07%
+
+At time: 2.99s after Saving
+Time taken: 0.02s, percent of time taken: 0.57%
+
+Generated maze6x8.pvs
+
+10.570000 seconds elapsed since start of main loop.
+3.963727 seconds spent drawing the tree structure.
+That is 37.499779% of overall display time.
+BSP tree nodes: 5
+BSP tree leaves: 3
+BSP tree maximum depth: 2
+BSP avg draw calls: 4.991933 = 4.991933 + 0.000000
+
+BSP min draw calls: 2.000000 = 2 + 0
+BSP max draw calls: 6.000000 = 6 + 0
+Overall samples passed: 41409910300
+Overdraw: 182.502396%
+
+Avg FPS: 1578.028320
+Avg render time: 0.680531ms
+Frames rendered: 16364.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.004s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.004s, percent of time taken: 0.17%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 0.13%
+
+At time: 0.08s after generation of BSPTreeCreator
+Time taken: 0.07s, percent of time taken: 3.15%
+
+At time: 2.27s after Portal placing
+Time taken: 2.19s, percent of time taken: 94.39%
+
+At time: 2.30s after PVS computation
+Time taken: 0.03s, percent of time taken: 1.34%
+
+At time: 2.30s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.09%
+
+At time: 2.32s after Saving
+Time taken: 0.02s, percent of time taken: 0.73%
+
+Generated maze6x8.pvs
+
+4.881000 seconds elapsed since start of main loop.
+2.596539 seconds spent drawing the tree structure.
+That is 53.196877% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.385938 = 3.982500 + 2.403438
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 23398388200
+Overdraw: 527.338867%
+
+Avg FPS: 651.741882
+Avg render time: 1.567426ms
+Frames rendered: 3200.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 1.43%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 0.71%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 19.29%
+
+At time: 0.13s after Portal placing
+Time taken: 0.03s, percent of time taken: 8.33%
+
+At time: 0.36s after PVS computation
+Time taken: 0.24s, percent of time taken: 55.95%
+
+At time: 0.36s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.48%
+
+At time: 0.42s after Saving
+Time taken: 0.06s, percent of time taken: 13.81%
+
+Generated maze6x8.pvs
+
+15.654000 seconds elapsed since start of main loop.
+9.152749 seconds spent drawing the tree structure.
+That is 58.469074% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.691046 = 4.246723 + 2.444322
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 76287127152
+Overdraw: 550.455505%
+
+Avg FPS: 644.590210
+Avg render time: 1.583586ms
+Frames rendered: 9995.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 2.34%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.87%
+
+At time: 0.10s after generation of BSPTreeCreator
+Time taken: 0.09s, percent of time taken: 42.06%
+
+At time: 0.13s after Portal placing
+Time taken: 0.03s, percent of time taken: 14.49%
+
+At time: 0.20s after PVS computation
+Time taken: 0.07s, percent of time taken: 30.84%
+
+At time: 0.20s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.93%
+
+At time: 0.21s after Saving
+Time taken: 0.02s, percent of time taken: 7.48%
+
+Generated maze6x8.pvs
+
+6.524000 seconds elapsed since start of main loop.
+3.719733 seconds spent drawing the tree structure.
+That is 57.016148% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 31579059497
+Overdraw: 472.210541%
+
+Avg FPS: 755.036987
+Avg render time: 1.331489ms
+Frames rendered: 4823.000000
+________________________________________________
+portals generated 2 portals inserted 4
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 4.42%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.77%
+
+At time: 0.07s after generation of BSPTreeCreator
+Time taken: 0.06s, percent of time taken: 53.10%
+
+At time: 0.09s after Portal placing
+Time taken: 0.02s, percent of time taken: 17.70%
+
+At time: 0.10s after PVS computation
+Time taken: 0.01s, percent of time taken: 8.85%
+
+At time: 0.10s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.77%
+
+At time: 0.11s after Saving
+Time taken: 0.01s, percent of time taken: 12.39%
+
+Generated maze6x8.pvs
+
+10.466000 seconds elapsed since start of main loop.
+7.023009 seconds spent drawing the tree structure.
+That is 67.103096% of overall display time.
+BSP tree nodes: 5
+BSP tree leaves: 3
+BSP tree maximum depth: 2
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 27012364123
+Overdraw: 397.089905%
+
+Avg FPS: 475.192139
+Avg render time: 2.124009ms
+Frames rendered: 4906.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 2.42%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.01s, percent of time taken: 2.42%
+
+At time: 0.14s after generation of BSPTreeCreator
+Time taken: 0.13s, percent of time taken: 52.42%
+
+At time: 0.18s after Portal placing
+Time taken: 0.04s, percent of time taken: 15.73%
+
+At time: 0.21s after PVS computation
+Time taken: 0.03s, percent of time taken: 12.10%
+
+At time: 0.21s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.81%
+
+At time: 0.25s after Saving
+Time taken: 0.03s, percent of time taken: 14.11%
+
+Generated maze6x8.pvs
+
+11.660000 seconds elapsed since start of main loop.
+6.818040 seconds spent drawing the tree structure.
+That is 58.473759% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 5.708092 = 3.805394 + 1.902697
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 42617117330
+Overdraw: 445.697937%
+
+Avg FPS: 599.274048
+Avg render time: 1.707549ms
+Frames rendered: 6896.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 2.60%
+
+At time: 0.02s after creation of RootNode
+Time taken: 0.01s, percent of time taken: 6.49%
+
+At time: 0.13s after generation of BSPTreeCreator
+Time taken: 0.11s, percent of time taken: 48.05%
+
+At time: 0.16s after Portal placing
+Time taken: 0.03s, percent of time taken: 13.42%
+
+At time: 0.19s after PVS computation
+Time taken: 0.03s, percent of time taken: 11.69%
+
+At time: 0.19s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.87%
+
+At time: 0.23s after Saving
+Time taken: 0.04s, percent of time taken: 16.88%
+
+Generated maze6x8.pvs
+
+15.263000 seconds elapsed since start of main loop.
+9.885527 seconds spent drawing the tree structure.
+That is 64.767914% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 59729805748
+Overdraw: 464.141174%
+
+Avg FPS: 613.030334
+Avg render time: 1.641676ms
+Frames rendered: 9281.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.004s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.004s, percent of time taken: 1.99%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.49%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 39.80%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 15.92%
+
+At time: 0.18s after PVS computation
+Time taken: 0.06s, percent of time taken: 31.84%
+
+At time: 0.18s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.50%
+
+At time: 0.20s after Saving
+Time taken: 0.02s, percent of time taken: 8.46%
+
+Generated maze6x8.pvs
+
+5.770000 seconds elapsed since start of main loop.
+3.300535 seconds spent drawing the tree structure.
+That is 57.201653% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 34031124412
+Overdraw: 473.897217%
+
+Avg FPS: 916.069458
+Avg render time: 1.107284ms
+Frames rendered: 5179.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 2.79%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.40%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 39.53%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 13.95%
+
+At time: 0.20s after PVS computation
+Time taken: 0.07s, percent of time taken: 33.95%
+
+At time: 0.20s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.47%
+
+At time: 0.22s after Saving
+Time taken: 0.02s, percent of time taken: 7.91%
+
+Generated maze6x8.pvs
+
+3.507000 seconds elapsed since start of main loop.
+1.917265 seconds spent drawing the tree structure.
+That is 54.669647% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 18707624704
+Overdraw: 473.898071%
+
+Avg FPS: 841.142517
+Avg render time: 1.216164ms
+Frames rendered: 2847.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 2.30%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.84%
+
+At time: 0.10s after generation of BSPTreeCreator
+Time taken: 0.10s, percent of time taken: 44.24%
+
+At time: 0.14s after Portal placing
+Time taken: 0.03s, percent of time taken: 14.29%
+
+At time: 0.20s after PVS computation
+Time taken: 0.06s, percent of time taken: 28.57%
+
+At time: 0.20s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.92%
+
+At time: 0.22s after Saving
+Time taken: 0.02s, percent of time taken: 7.83%
+
+Generated maze6x8.pvs
+
+12.609000 seconds elapsed since start of main loop.
+6.127500 seconds spent drawing the tree structure.
+That is 48.596237% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.198449 = 5.013659 + 1.184790
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 10.000000 = 10 + 0
+Overall samples passed: 75376471409
+Overdraw: 360.438049%
+
+Avg FPS: 1204.510620
+Avg render time: 0.915746ms
+Frames rendered: 15082.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 3.92%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.01s, percent of time taken: 5.23%
+
+At time: 0.08s after generation of BSPTreeCreator
+Time taken: 0.07s, percent of time taken: 42.48%
+
+At time: 0.11s after Portal placing
+Time taken: 0.03s, percent of time taken: 20.26%
+
+At time: 0.14s after PVS computation
+Time taken: 0.03s, percent of time taken: 17.65%
+
+At time: 0.14s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.31%
+
+At time: 0.15s after Saving
+Time taken: 0.01s, percent of time taken: 9.15%
+
+Generated maze6x8.pvs
+
+81.100998 seconds elapsed since start of main loop.
+22.399290 seconds spent drawing the tree structure.
+That is 27.619007% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 7.456192 = 4.249623 + 3.206570
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 696723073138
+Overdraw: 454.189575%
+
+Avg FPS: 1367.355469
+Avg render time: 0.822203ms
+Frames rendered: 110631.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.019s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.019s, percent of time taken: 7.09%
+
+At time: 0.04s after creation of RootNode
+Time taken: 0.02s, percent of time taken: 6.34%
+
+At time: 0.17s after generation of BSPTreeCreator
+Time taken: 0.14s, percent of time taken: 51.12%
+
+At time: 0.20s after Portal placing
+Time taken: 0.03s, percent of time taken: 11.19%
+
+At time: 0.24s after PVS computation
+Time taken: 0.04s, percent of time taken: 13.06%
+
+At time: 0.24s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.37%
+
+At time: 0.27s after Saving
+Time taken: 0.03s, percent of time taken: 10.82%
+
+Generated maze6x8.pvs
+
+3.220000 seconds elapsed since start of main loop.
+1.050187 seconds spent drawing the tree structure.
+That is 32.614498% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 4.967098 = 3.233010 + 1.734088
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 10.000000 = 6 + 4
+Overall samples passed: 5688573869
+Overdraw: 221.282669%
+
+Avg FPS: 600.599854
+Avg render time: 1.687707ms
+Frames rendered: 1854.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 2.51%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.67%
+
+At time: 0.13s after generation of BSPTreeCreator
+Time taken: 0.12s, percent of time taken: 48.12%
+
+At time: 0.16s after Portal placing
+Time taken: 0.03s, percent of time taken: 12.55%
+
+At time: 0.22s after PVS computation
+Time taken: 0.07s, percent of time taken: 28.03%
+
+At time: 0.22s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.42%
+
+At time: 0.24s after Saving
+Time taken: 0.02s, percent of time taken: 6.69%
+
+Generated maze6x8.pvs
+
+34.077999 seconds elapsed since start of main loop.
+13.713962 seconds spent drawing the tree structure.
+That is 40.242859% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 4.756156 = 2.900362 + 1.855794
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 10.000000 = 6 + 4
+Overall samples passed: 153476525075
+Overdraw: 418.064545%
+
+Avg FPS: 845.561829
+Avg render time: 1.259545ms
+Frames rendered: 26476.000000
+________________________________________________
+portals generated 2 portals inserted 4
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 5.71%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 3.81%
+
+At time: 0.06s after generation of BSPTreeCreator
+Time taken: 0.05s, percent of time taken: 51.43%
+
+At time: 0.08s after Portal placing
+Time taken: 0.02s, percent of time taken: 17.14%
+
+At time: 0.09s after PVS computation
+Time taken: 0.01s, percent of time taken: 6.67%
+
+At time: 0.09s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.90%
+
+At time: 0.10s after Saving
+Time taken: 0.01s, percent of time taken: 13.33%
+
+Generated maze6x8.pvs
+
+13.567000 seconds elapsed since start of main loop.
+7.410548 seconds spent drawing the tree structure.
+That is 54.621864% of overall display time.
+BSP tree nodes: 5
+BSP tree leaves: 3
+BSP tree maximum depth: 2
+BSP avg draw calls: 6.000000 = 4.000000 + 2.000000
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 6.000000 = 4 + 2
+Overall samples passed: 50586302380
+Overdraw: 400.908569%
+
+Avg FPS: 674.713074
+Avg render time: 1.534580ms
+Frames rendered: 9100.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 2.72%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.09%
+
+At time: 0.11s after generation of BSPTreeCreator
+Time taken: 0.10s, percent of time taken: 54.89%
+
+At time: 0.14s after Portal placing
+Time taken: 0.03s, percent of time taken: 16.30%
+
+At time: 0.17s after PVS computation
+Time taken: 0.03s, percent of time taken: 15.76%
+
+At time: 0.17s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.54%
+
+At time: 0.18s after Saving
+Time taken: 0.02s, percent of time taken: 8.70%
+
+Generated maze6x8.pvs
+
+55.483002 seconds elapsed since start of main loop.
+17.203936 seconds spent drawing the tree structure.
+That is 31.007580% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.372655 = 4.062370 + 2.310285
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 169904393759
+Overdraw: 491.159637%
+
+Avg FPS: 774.499512
+Avg render time: 2.468553ms
+Frames rendered: 24948.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 3.14%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.05%
+
+At time: 0.10s after generation of BSPTreeCreator
+Time taken: 0.09s, percent of time taken: 46.60%
+
+At time: 0.13s after Portal placing
+Time taken: 0.03s, percent of time taken: 17.80%
+
+At time: 0.17s after PVS computation
+Time taken: 0.04s, percent of time taken: 22.51%
+
+At time: 0.17s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.52%
+
+At time: 0.19s after Saving
+Time taken: 0.02s, percent of time taken: 8.38%
+
+Generated maze6x8.pvs
+
+5.282000 seconds elapsed since start of main loop.
+1.286856 seconds spent drawing the tree structure.
+That is 24.363041% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 5.555306 = 3.703537 + 1.851769
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 9.000000 = 6 + 3
+Overall samples passed: 11993708113
+Overdraw: 485.672272%
+
+Avg FPS: 346.366974
+Avg render time: 3.802930ms
+Frames rendered: 1781.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.007s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.007s, percent of time taken: 4.64%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 2.65%
+
+At time: 0.08s after generation of BSPTreeCreator
+Time taken: 0.07s, percent of time taken: 44.37%
+
+At time: 0.11s after Portal placing
+Time taken: 0.03s, percent of time taken: 19.87%
+
+At time: 0.13s after PVS computation
+Time taken: 0.03s, percent of time taken: 17.22%
+
+At time: 0.14s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.32%
+
+At time: 0.15s after Saving
+Time taken: 0.01s, percent of time taken: 9.93%
+
+Generated maze6x8.pvs
+
+21.754999 seconds elapsed since start of main loop.
+6.216443 seconds spent drawing the tree structure.
+That is 28.574780% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 7.450160 = 4.072092 + 3.378067
+
+BSP min draw calls: 4.000000 = 2 + 2
+BSP max draw calls: 10.000000 = 6 + 4
+Overall samples passed: 46401210215
+Overdraw: 463.945709%
+
+Avg FPS: 334.025543
+Avg render time: 3.297450ms
+Frames rendered: 7213.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 3.23%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 2.58%
+
+At time: 0.08s after generation of BSPTreeCreator
+Time taken: 0.07s, percent of time taken: 43.23%
+
+At time: 0.11s after Portal placing
+Time taken: 0.03s, percent of time taken: 20.00%
+
+At time: 0.14s after PVS computation
+Time taken: 0.03s, percent of time taken: 19.35%
+
+At time: 0.14s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.29%
+
+At time: 0.16s after Saving
+Time taken: 0.02s, percent of time taken: 10.32%
+
+Generated maze6x8.pvs
+
+16.510000 seconds elapsed since start of main loop.
+7.534522 seconds spent drawing the tree structure.
+That is 45.636108% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 5.220529 = 3.351072 + 1.869457
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 85376349379
+Overdraw: 496.477600%
+
+Avg FPS: 761.674500
+Avg render time: 1.557099ms
+Frames rendered: 12402.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.004s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.004s, percent of time taken: 1.94%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.46%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 40.78%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 15.53%
+
+At time: 0.19s after PVS computation
+Time taken: 0.06s, percent of time taken: 31.55%
+
+At time: 0.19s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.97%
+
+At time: 0.21s after Saving
+Time taken: 0.02s, percent of time taken: 7.77%
+
+Generated maze6x8.pvs
+
+32.312000 seconds elapsed since start of main loop.
+17.573086 seconds spent drawing the tree structure.
+That is 54.385632% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.694511 = 4.463008 + 2.231504
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 9.000000 = 6 + 3
+Overall samples passed: 215683085543
+Overdraw: 596.593994%
+
+Avg FPS: 810.191833
+Avg render time: 1.272719ms
+Frames rendered: 26073.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 2.98%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 2.38%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 47.62%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 17.86%
+
+At time: 0.15s after PVS computation
+Time taken: 0.03s, percent of time taken: 16.67%
+
+At time: 0.15s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.19%
+
+At time: 0.17s after Saving
+Time taken: 0.02s, percent of time taken: 11.31%
+
+Generated maze6x8.pvs
+
+18.243999 seconds elapsed since start of main loop.
+10.424617 seconds spent drawing the tree structure.
+That is 57.139977% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 8.110660 = 5.202213 + 2.908447
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 13.000000 = 9 + 4
+Overall samples passed: 112399523130
+Overdraw: 645.348145%
+
+Avg FPS: 694.858032
+Avg render time: 1.486011ms
+Frames rendered: 12561.000000
+________________________________________________
+portals generated 2 portals inserted 4
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 5.10%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 2.04%
+
+At time: 0.06s after generation of BSPTreeCreator
+Time taken: 0.05s, percent of time taken: 50.00%
+
+At time: 0.08s after Portal placing
+Time taken: 0.02s, percent of time taken: 19.39%
+
+At time: 0.08s after PVS computation
+Time taken: 0.01s, percent of time taken: 9.18%
+
+At time: 0.09s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.02%
+
+At time: 0.10s after Saving
+Time taken: 0.01s, percent of time taken: 13.27%
+
+Generated maze6x8.pvs
+
+16.665001 seconds elapsed since start of main loop.
+10.129066 seconds spent drawing the tree structure.
+That is 60.780472% of overall display time.
+BSP tree nodes: 5
+BSP tree leaves: 3
+BSP tree maximum depth: 2
+BSP avg draw calls: 7.077321 = 5.153051 + 1.924269
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 113350659266
+Overdraw: 649.619629%
+
+Avg FPS: 760.714294
+Avg render time: 1.331579ms
+Frames rendered: 12584.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.008s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.008s, percent of time taken: 3.77%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.42%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 35.85%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 14.15%
+
+At time: 0.18s after PVS computation
+Time taken: 0.06s, percent of time taken: 27.83%
+
+At time: 0.18s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.94%
+
+At time: 0.21s after Saving
+Time taken: 0.03s, percent of time taken: 16.04%
+
+Generated maze6x8.pvs
+
+22.194000 seconds elapsed since start of main loop.
+12.533479 seconds spent drawing the tree structure.
+That is 56.472374% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.175046 = 4.129835 + 2.045211
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 12.000000 = 8 + 4
+Overall samples passed: 145424464511
+Overdraw: 590.505371%
+
+Avg FPS: 805.277405
+Avg render time: 1.284719ms
+Frames rendered: 17761.000000
+________________________________________________
+portals generated 5 portals inserted 10
+At time: 0s starting point
+
+At time: 0.005s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.005s, percent of time taken: 2.39%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.44%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 39.23%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 14.83%
+
+At time: 0.19s after PVS computation
+Time taken: 0.07s, percent of time taken: 31.58%
+
+At time: 0.19s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.96%
+
+At time: 0.21s after Saving
+Time taken: 0.02s, percent of time taken: 9.57%
+
+Generated maze6x8.pvs
+
+28.452999 seconds elapsed since start of main loop.
+17.866533 seconds spent drawing the tree structure.
+That is 62.793148% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 7.736909 = 5.157939 + 2.578969
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 9.000000 = 6 + 3
+Overall samples passed: 196632965776
+Overdraw: 665.404724%
+
+Avg FPS: 752.888977
+Avg render time: 1.365856ms
+Frames rendered: 21312.000000
+________________________________________________
+Generated maze6x8.pvs
+
+6.492000 seconds elapsed since start of main loop.
+3.962485 seconds spent drawing the tree structure.
+That is 61.036430% of overall display time.
+BSP tree nodes: 11
+BSP tree leaves: 6
+BSP tree maximum depth: 3
+BSP avg draw calls: 8.201811 = 5.467874 + 2.733937
+
+BSP min draw calls: 6.000000 = 4 + 2
+BSP max draw calls: 9.000000 = 6 + 3
+Overall samples passed: 47334752434
+Overdraw: 736.042969%
+
+Avg FPS: 728.532715
+Avg render time: 1.383598ms
+Frames rendered: 4638.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 3.13%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.56%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 41.15%
+
+At time: 0.12s after Portal placing
+Time taken: 0.04s, percent of time taken: 18.23%
+
+At time: 0.17s after PVS computation
+Time taken: 0.05s, percent of time taken: 27.08%
+
+At time: 0.18s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 1.04%
+
+At time: 0.19s after Saving
+Time taken: 0.02s, percent of time taken: 7.81%
+
+Generated maze6x8.pvs
+
+31.729000 seconds elapsed since start of main loop.
+18.182444 seconds spent drawing the tree structure.
+That is 57.305443% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.709939 = 4.473292 + 2.236646
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 9.000000 = 6 + 3
+Overall samples passed: 187657333826
+Overdraw: 625.897766%
+
+Avg FPS: 685.506958
+Avg render time: 1.514081ms
+Frames rendered: 21623.000000
+________________________________________________
+portals generated 2 portals inserted 4
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 5.66%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.01s, percent of time taken: 6.60%
+
+At time: 0.06s after generation of BSPTreeCreator
+Time taken: 0.05s, percent of time taken: 47.17%
+
+At time: 0.08s after Portal placing
+Time taken: 0.02s, percent of time taken: 16.98%
+
+At time: 0.09s after PVS computation
+Time taken: 0.01s, percent of time taken: 7.55%
+
+At time: 0.09s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.94%
+
+At time: 0.11s after Saving
+Time taken: 0.02s, percent of time taken: 15.09%
+
+Generated maze6x8.pvs
+
+7.512000 seconds elapsed since start of main loop.
+4.338809 seconds spent drawing the tree structure.
+That is 57.758377% of overall display time.
+BSP tree nodes: 5
+BSP tree leaves: 3
+BSP tree maximum depth: 2
+BSP avg draw calls: 4.716036 = 3.185969 + 1.530067
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 8.000000 = 6 + 2
+Overall samples passed: 33429021461
+Overdraw: 447.455444%
+
+Avg FPS: 727.128906
+Avg render time: 1.420087ms
+Frames rendered: 5388.000000
+________________________________________________
+portals generated 4 portals inserted 8
+At time: 0s starting point
+
+At time: 0.006s after copying to BSPTreePolygons.
+100 polygons created.
+Time taken: 0.006s, percent of time taken: 3.68%
+
+At time: 0.01s after creation of RootNode
+Time taken: 0.00s, percent of time taken: 1.23%
+
+At time: 0.09s after generation of BSPTreeCreator
+Time taken: 0.08s, percent of time taken: 47.24%
+
+At time: 0.12s after Portal placing
+Time taken: 0.03s, percent of time taken: 18.40%
+
+At time: 0.14s after PVS computation
+Time taken: 0.03s, percent of time taken: 16.56%
+
+At time: 0.14s after converting back to vertices
+Time taken: 0.00s, percent of time taken: 0.61%
+
+At time: 0.16s after Saving
+Time taken: 0.02s, percent of time taken: 12.27%
+
+Generated maze6x8.pvs
+
+15.770000 seconds elapsed since start of main loop.
+8.295138 seconds spent drawing the tree structure.
+That is 52.600746% of overall display time.
+BSP tree nodes: 9
+BSP tree leaves: 5
+BSP tree maximum depth: 3
+BSP avg draw calls: 6.064665 = 3.832343 + 2.232322
+
+BSP min draw calls: 3.000000 = 2 + 1
+BSP max draw calls: 14.000000 = 10 + 4
+Overall samples passed: 72063593418
+Overdraw: 532.609497%
+
+Avg FPS: 628.935364
+Avg render time: 1.694167ms
+Frames rendered: 9758.000000
+________________________________________________
