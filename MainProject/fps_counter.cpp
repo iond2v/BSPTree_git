@@ -1,19 +1,23 @@
 #include "fps_counter.h"
 
 /*
-reevaluates current_time to last_time difference and computes avg_render_time and fps accordingly.
-INCREMENTS FRAME COUNT - call it only once per frame
+reevaluates current_time to last_update_time difference and computes avg_render_time and fps accordingly.
+INCREMENTS FRAME COUNTER - call it only once per frame
 */
 void fps_counter::update(){
 
 	frame++;
 	frames_count++;
 
-	if (current_time - last_time > update_interval) { 
+	GLuint elapsed_time = current_time - last_frame_time;
+	put_frame_into_time_slot(elapsed_time);
 
-		fps = frame / ((float)(current_time - last_time) / 1000000000.0f);   //extrapolate to whole second  //frame count / elapsed time converted from nanoseconds to seconds 
-		render_time_avg = 1.0f / fps * 1000; 
-		last_time = current_time;
+	//if it's time to update values
+	if (current_time - last_update_time > update_interval) { 
+
+		fps = frame / ((float)(current_time - last_update_time) / 1000000000.0f);   //extrapolate to whole second  //frame count / elapsed time converted from nanoseconds to seconds 
+		render_time_avg = 1.0f / fps * 1000;     //now this I want in ms
+		last_update_time = current_time;
 		frame = 0;
 
 
@@ -24,6 +28,7 @@ void fps_counter::update(){
 				avg_fps = avg_fps + fps;
 				avg_render_time = avg_render_time + render_time_avg;
 			
+			//update text only if it is being currently displayed
 			if(control->stats){
 				std::string msg = "FPS:        "+std::to_string(fps)+
 				"\nAvg FPS: "+std::to_string(avg_fps/update_count)+
@@ -37,7 +42,52 @@ void fps_counter::update(){
 		}
 	}
 
+	last_frame_time = current_time;  //save this time for the next call of this function
+
 }
+
+/* time slots - can be interpreted as fps targets..
+    lower  - greater than 100ms
+	10fps  - smaller than 100ms
+	15fps  - smaller than 66.6ms
+	20fps  - smaller than 50ms
+	30fps  - smaller than 33.3ms
+	60fps  - smaller than 16.7ms
+	120fps - smaller than 8.3ms
+	240fps - smaller than 4.16ms
+	*/
+void fps_counter::put_frame_into_time_slot(GLuint time){
+
+	float time_ms = time / 1000000.0f;
+
+	if (time_ms < 4.16f){
+		frame_time_slots[0]++;
+
+	} else if(time_ms < 8.3f){
+		frame_time_slots[1]++;
+	
+	} else if (time_ms < 16.7f) {
+		frame_time_slots[2]++;
+	
+	} else if (time_ms < 33.3f) {
+		frame_time_slots[3]++;
+
+	} else if (time_ms < 50.0f) {
+		frame_time_slots[4]++;
+
+	} else if (time_ms < 66.6f) {
+		frame_time_slots[5]++;
+
+	} else if (time_ms < 100.0f) {
+		frame_time_slots[6]++;
+
+	} else if (time_ms > 100.0f) {
+		frame_time_slots[7]++;
+	}
+
+}
+
+
 /*
 again in nanoseconds
 */
