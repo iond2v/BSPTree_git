@@ -61,28 +61,28 @@ void fps_counter::put_frame_into_time_slot(GLuint time){
 	float time_ms = time / 1000000.0f;
 
 	if (time_ms < 4.16f){
-		frame_time_slots[0]++;
+		frame_time_slots[0].value++;
 
 	} else if(time_ms < 8.3f){
-		frame_time_slots[1]++;
+		frame_time_slots[1].value++;
 	
 	} else if (time_ms < 16.7f) {
-		frame_time_slots[2]++;
+		frame_time_slots[2].value++;
 	
 	} else if (time_ms < 33.3f) {
-		frame_time_slots[3]++;
+		frame_time_slots[3].value++;
 
 	} else if (time_ms < 50.0f) {
-		frame_time_slots[4]++;
+		frame_time_slots[4].value++;
 
 	} else if (time_ms < 66.6f) {
-		frame_time_slots[5]++;
+		frame_time_slots[5].value++;
 
 	} else if (time_ms < 100.0f) {
-		frame_time_slots[6]++;
+		frame_time_slots[6].value++;
 
 	} else if (time_ms > 100.0f) {
-		frame_time_slots[7]++;
+		frame_time_slots[7].value++;
 	}
 
 }

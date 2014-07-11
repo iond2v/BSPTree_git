@@ -1031,8 +1031,14 @@ int main(int argc, char** argv){
 		"________________________________________________\n";
 
 	control->runReport->append(msg, false);
+	msg.clear();
 
+	for(unsigned int i = 0; i < fps->frame_time_slots.size(); i++){
+		msg.append(fps->frame_time_slots[i].slot_name + std::to_string(fps->frame_time_slots[i].value) + "\n");
+	
+	}
 
+	control->runReport->append(msg, false);
 
 	std::cout << "Exiting." << std::endl;
 	
