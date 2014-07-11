@@ -2,6 +2,8 @@
 http://glsdk.sourceforge.net/docs/html/index.html ,namely components GL Load,
 GL Utility, OpenGL Mathematics and FreeGLUT.
 FreeType http://www.freetype.org.
+Additionally Visual C++ Redistributable Packages are required too http://www.microsoft.com/en-us/download/details.aspx?id=30679
+This is project for Windows and OpenGl 3.3+.
 
 --translation pending
 

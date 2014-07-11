@@ -15,7 +15,7 @@ public:
 		avg_fps(0), avg_render_time(0), update_count(0), frames_count(0) {
 	
 			control = Control::getInstance();
-			stats = new dynamicText(control->font.get());
+			stats = std::unique_ptr<dynamicText> (new dynamicText(control->font.get()));
 	}
 
 
@@ -29,7 +29,7 @@ public:
 	void setUpdateInterval(unsigned int ns);
 
 	Control *control;
-	dynamicText *stats;
+	std::unique_ptr<dynamicText> stats;
 
 private:
 	GLuint64 last_time;		
