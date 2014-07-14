@@ -1,66 +1,78 @@
-﻿Uses GLSDK and Freetype libraries. These are required to build.
+﻿About
+
+This is basically my bachelor's degree project to pet/learning project. 
+It can generate simple maze, put it into BSP tree and compute PVS for its leaves.
+Both BSP tree and its PVS are saved and can be loaded.
+It can also record camera positions and then interpolate camera movement from them in the next run.
+Supports several modes of drawing and writes statistics after each run.
+
+
+Uses GLSDK and Freetype libraries. These are required to build.
 http://glsdk.sourceforge.net/docs/html/index.html ,namely components GL Load,
 GL Utility, OpenGL Mathematics and FreeGLUT.
 FreeType http://www.freetype.org.
 Additionally Visual C++ Redistributable Packages are required too http://www.microsoft.com/en-us/download/details.aspx?id=30679
 This is project for Windows and OpenGl 3.3+.
 
---translation pending
+Instructions for running and controlling the application
+   When running, help can be displayed by pressing 'h'.
+   Run time statistics can be displayed by 'i'.
 
-Pokyny ke spuštění a ovládání aplikace
-   Lze spustit buď z projektu nebo samostatně. 
-   Po spuštění si lze zobrazit nápovědu pomocí klávesy "h".
-   Lze si zobrazit aktuální informace o běhu pomocí klávesy "i".
+   You move around with with WSAD keys
+   Holding SPACE puts you above ground level - currently it's not possible to get above maze because of collision handling.
+   P toggles portal drawing
+   1 switches to BSP Tree drawing method
+   2 switches to BSP with queries
+   3 switches to drawing static PVS
+   4 switches to PVS with queries
+   5 switches to drawing BSP by levels
+		+ to go one level deeper in tree
+		- to go one level higher
+   6 switches to drawing BSP from back to front, no depth test
+   7 switches to drawing PVS from back of set, no depth test
+   N skips all drawing - pause
+   R restarts timer for recording camera movement
+   E adds position with time to recorded camera movement
+   G toggles following recorded movement
 
-   Pohyb pomocí kláves WSAD
-   Držení mezery umístí kameru do výšky, takže si lze lépe prohlédnout okolí
-   P zapne zobrazení portálů mezi listy stromu
-   1 zapne kreslení BSP
-   2 BSP s occlusion query
-   3 PVS
-   4 PVS s occluion query
-   5 zapne kreslení BSP po úrovních
-      + jde o úroveň níže
-      - jde o úroveň výše
-   6 kreslení BSP odzadu bez depth testu
-   7 kreslení PVS odzadu bez depth testu
-   R restartuje časovač pro nahrávání pohybu kamery
-   E přidá pozici kamery s časem do souboru s pohybem kamery bludiště
-   G odstartuje nahraný pohyb kamery 
-
-
-Poznámka
-   Při nahrávání kamery lze jen přidávat a ne přepisovat, aby nedošlo k nechtěné ztrátě
-   záznamů pro měření.
-   Pro přehrání nahraného pohybu je nejlepší aplikaci spustit znova. Pozice kamery se
-   počítá z čísla snímku a ty se nenulují.
+Note
+   When recording camera waypoints it is only possible to add waypoints to prevent
+   involuntary overwriting of previous data.
+   For playing back recorded movement it is neccessary to re-run the application.
+   Camera position is computed from the frame number and those can't be reset.
+		-this is for benchmarking purposes.. adding some switch between this and regular recorded movement is considered.
 
 
-Parametry aplikace
+Application parameters
 
-   Vždy jen v daném formátu bez pomlček. Všechny položky jsou povinné!
-   Poslední číslo určuje úvodní způsob kreslení.
-   Způsobu kreslení odpovídá stejné číslo jako uvedeno výše v pokynech k ovládání.
+   Only in this format without any leading dashes. Curently there is minimal validity checking.
+   None of the parameters are optional.
+   Last number is always starting mode of drawing. Numbers are the same as written above.
    
-   Indexy bludišť
+   Maze indexes
    1 - 17x14
    2 - 20x15
    3 - 30x30
    4 - 60x60
    5 - 50x50
-   6 - 31x31 - nepoužívané při měření
+   6 - 31x31
    7 - 180x180
 	
+   All indexed mazes with exception of no.7 are hard coded. See file Maze.cpp.
+   Numbers 2, 3 and 4 are for mazes of type which cannot be arbitrarily generated with parameters 'generate width depth'.
+   appname is name of the exe file.
+   index and generate are words, width and depth are numbers.
+
    appname index [1-7] [1-7]
    appname width depth [1-7]
-     --otevřou bludiště s daným indexem nebo dimenzemi(pokud existuje takové už vygenerované)
+     --opens maze with set index or dimensions if such exists.
 
    appname generate width depth [1-7]
    appname generate index [1-6] [1-7]
-      --vygeneruje bludiště s dimenzemi. Při vygenerování bludiště s dimenzemi jako už
-        existující, dojde k přepsání. Pozor na přepsání bludišť s indexem. Bludiště s indexem
-        1-6 lze znovu vygenerovat. 7 ne.
+      --generates maze with set dimensions or of set index. When generating maze with dimensions
+	  as one already saved, the older is overwritten. Careful to not overwrite maze no.7 (180x180) as 
+	  it cannot be re-generate exactly the same.
 
    appname go width depth [1-7]
    appname go index [1-7] [1-7]
-      --spustí nahraný pohyb kamery v bludišti s indexem nebo dimenzemi.
+      --runs recorded  camera movement in maze with set index or dimensions.
