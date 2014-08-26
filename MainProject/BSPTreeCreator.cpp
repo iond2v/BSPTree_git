@@ -12,7 +12,10 @@ mazeName is name to save resulting structure as mazeName.pvs
 BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string mazeName) {
 
 	std::cout << "BSPTreeCreator constructed\n";
-
+	if(vertexArray == nullptr || vertexArray->empty()){
+		std::cout << "INVALID vertexArray!\n";
+		return;
+	}
 	Control *control = Control::getInstance();
 
 	time_points.push_back(time_item(clock(), "starting point"));
@@ -34,7 +37,7 @@ BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string ma
 	std::vector<BSPTreePolygon> polygons;
 
 
-	polygons.reserve(vertexArray->size() / 2 / 4 / 3); // 2 - first half are vertices, 4 - coordinates in one point, 3 - points in polygon
+	polygons.reserve(vertexArray->size() / 4 / 3); // 4 - coordinates in one point, 3 - points in polygon
 
 	if((vertexArray->size() / 2) % 24 != 0)   //unit of wall has 6 vertices * 4
 		return;

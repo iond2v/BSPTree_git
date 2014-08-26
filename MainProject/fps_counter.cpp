@@ -96,7 +96,7 @@ void fps_counter::setUpdateInterval(unsigned int ns){
 	update_interval = ns;
 }
 
-float fps_counter::getFrameCount(){
+GLuint fps_counter::getFrameCount(){
 	return frames_count;
 }
 

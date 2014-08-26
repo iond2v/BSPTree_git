@@ -185,6 +185,16 @@ HWND GetConsoleHwnd(void) {
 	return(hwndFound);
 }
 
+/**
+*/
+void parse_parameters(){
+
+
+
+
+}
+
+
 /*
 Called after the window and OpenGL are initialized. Called exactly once, before the main loop.
 Sets all program specific things. Text, shaders, maze, bsptree...
@@ -319,7 +329,20 @@ void init(){
 
 
 
+	//let's redo the parameter parsing - fuck parameters - use config file - or rather combination of persistent settings and dynamic..
+	//first what parameter there will be?
+		//static - methods used as in lighting, collision handling etc..   this should be in file
+		//dynamic - generate/go/nothing and maze dimensions/index, benchmark			this in command line
+
+	//consider http://www.boost.org/doc/libs/1_56_0/doc/html/program_options/overview.html#idp344521056
+	//or getopt?
+	
+	//new -> [generate|go] [ [index num] | [width num depth num] ] [draw_method num] [benchmark]
+	//alt -> [gen|go] [ [i num] | [w num d num] ] [dm num] [b]
+
+
 	/*
+	[generate|go] [ [index num] | [width depth] ] 
 	index num 
 	width depth
 	or
@@ -379,29 +402,31 @@ void init(){
 		draw_method = atoi(control->argv[3]);
 	}
 
-
-	std::string name("maze");
+	////////////////////////////////////////////when redoing parameters.. look at possibility of loading instead of generating maze
+	std::string name;
 
 	{
 		if(maze_index != 0){
 	      maze = std::unique_ptr<Maze> (new Maze(maze_index));	//this uses one of prepared designs..
 		} else {
-		  maze = std::unique_ptr<Maze> (new Maze(width, depth));
+		  maze = std::unique_ptr<Maze> (new Maze(width, depth, "default"));
 		}
 	
-		name.append(std::to_string(maze->x)+"x"+std::to_string(maze->y)+".pvs");
+		name.append(maze->name+".pvs");
+		maze->generateVertexArray();
+		maze->saveMaze(maze->name);
 
 		if(generate && maze_index != 180)// dont want to overwrite it
-			BSPTreeCreator tree(maze->getVertexArray(), name);   //with this line commented out it skips generation and loads the pvs..
+			BSPTreeCreator tree(maze->vertexArray, name);   //with this line commented out it skips generation and loads the pvs..
 
 	control->runReport->append("Generated "+name+"\n\n", true);
-
+	
 	}// to destruct maze and tree
 	
 
 	//creates/loads waypoints file for this maze
 	camera.loadWaypoints("waypoints_"+name+".camera");
-	camera.convertToFrames(10000.0f);
+	camera.convertToFrames(10000);
 
 	cout << name << endl;
 
@@ -434,7 +459,7 @@ void init(){
 
 	float largestAniso;
 	glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &largestAniso);
-	glSamplerParameteri(bspTree->samplerObject->id, GL_TEXTURE_MAX_ANISOTROPY_EXT, largestAniso); //because why not..
+	glSamplerParameteri(bspTree->samplerObject->id, GL_TEXTURE_MAX_ANISOTROPY_EXT, (GLint) largestAniso); //because why not..
 
 
 

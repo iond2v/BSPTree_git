@@ -43,7 +43,7 @@ public:
 	void update();
 	float getAvgRenderTime();
 	float getAvgFps();
-	float getFrameCount();
+	GLuint getFrameCount();
 	void setUpdateInterval(unsigned int ns);
 
 	Control *control;

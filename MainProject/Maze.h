@@ -4,15 +4,21 @@
 #include <glm/glm.hpp>
 
 #include <stdio.h>
+#include <string>
+#include <fstream>
 #include <iostream>
 #include <algorithm> 
 #include <time.h>
 #include <vector>
+#include <Windows.h>   //for CreateFolder
+#include "Shlwapi.h"   //for PathFileExists
 #include "Resources.h"
 
 #define WALL true
 #define SPACE false
 #define STEP 2
+
+#define not !
 
 #define UP 0
 #define DOWN 1
@@ -22,43 +28,46 @@
 
 using namespace std;
 
+const std::string Maze::save_path = ".\\Mazes\\";
+
 class Maze {
 
 public:
 	int x;
 	int y;
 	int max_index;
-	bool *mazeMap;
-	void printMaze();
-	std::vector<float> *getVertexArray(); 
+	std::vector<bool> mazeMap;
+	void printMaze();	//prints mazeMap into std cout
+	void generateVertexArray(); 
+	std::vector<float> *vertexArray;
+	std::string name;
+
+	bool saveMaze(std::string filename); //saves maze in file with map
+	bool loadMaze(std::string filename); //loads map and vertex array
 
 	/*This creates static predefined maze.*/
 	//Maze(void);
 
 	/*This creates random maze with set parameters.*/
-	Maze(int width, int length);
+	Maze(int width, int length, std::string type);
 
 	//this is for pregenerated mazes
 	Maze(int number);
 
 	~Maze(void){
 		//std::cout << "Maze destructed\n";
-
-		if(mazeMap != nullptr)
-			delete[] mazeMap;
-		
-		if(mazeVisitedCell != nullptr)
-			delete[] mazeVisitedCell;
-		}
+		delete vertexArray;
+	}
 
 
 
 private:
 
-	bool *mazeVisitedCell;
-
+	std::string type;
+	std::vector<bool> mazeVisitedCell;
+	static const std::string save_path;
 	void generateMaze();
-
+	
 	void walkMaze(int start);
 	void doStep(int currentPosition, int fromDirection);
 

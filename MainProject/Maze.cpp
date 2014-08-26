@@ -238,10 +238,10 @@ Maze::Maze(void){
 }
 */
 /*This creates random maze with set parameters. Currently clamped to 80x80.*/
-Maze::Maze(int width, int length) : x(width), y(length){
+Maze::Maze(int width, int length, std::string type = "default") : x(width), y(length){
 
-	mazeVisitedCell = nullptr;
-	mazeMap = nullptr;
+	this->type = type;
+	vertexArray = nullptr;
 
 	x = glm::min(200, x);   //generation of bsp from this takes over 20 min
 	y = glm::min(200, y);
@@ -251,6 +251,7 @@ Maze::Maze(int width, int length) : x(width), y(length){
 	srand((unsigned int) time(nullptr));
 	generateMaze();
 	
+	name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
 }
 
 /*
@@ -259,9 +260,6 @@ Creates preset mazeMap.
 Maze::Maze(int number = 1){
 
 	srand((unsigned int) time(nullptr));
-
-	mazeVisitedCell = nullptr;
-	mazeMap = nullptr;
 	
 	char *map;
 
@@ -341,7 +339,8 @@ Maze::Maze(int number = 1){
 	if(map == nullptr)
 		return;
 
-	mazeMap = new bool[x * y];
+	mazeMap.resize(x * y);
+	
 
 	for(unsigned int i = 0; i <= max_index; i++){
 		if(map[i] == '#'){
@@ -350,6 +349,8 @@ Maze::Maze(int number = 1){
 	}
 
 	printMaze();
+
+	name = "preset_maze"+ std::to_string(x) +"x"+ std::to_string(y);
 
 }
 
@@ -362,11 +363,11 @@ void Maze::generateMaze(){
 			y = 14;
 			max_index = x * y - 1;
 
-			mazeMap = new bool[x * y];
-			mazeVisitedCell = new bool[x * y];
+			mazeMap.resize(x * y);
+			mazeVisitedCell.resize(x * y);
 
-			std::fill(mazeMap, mazeMap + x * y * sizeof(bool), SPACE);
-			std::fill(mazeVisitedCell, mazeVisitedCell + x * y * sizeof(bool), false);
+			std::fill(mazeMap.begin(), mazeMap.end(), SPACE);
+			std::fill(mazeVisitedCell.begin(), mazeVisitedCell.end(), false);
 	
 			char map[] = {	//17 x 14
 			"#################"
@@ -397,18 +398,11 @@ void Maze::generateMaze(){
 		}
 		
 
+	mazeMap.resize(x * y);
+	mazeVisitedCell.resize(x * y);
 
-	mazeMap = new bool[x * y];
-	mazeVisitedCell = new bool[x * y];
-
-	std::fill(mazeMap, mazeMap + x * y * sizeof(bool), SPACE);
-	std::fill(mazeVisitedCell, mazeVisitedCell + x * y * sizeof(bool), false);
-
-
-
-
-
-
+	std::fill(mazeMap.begin(), mazeMap.end(), SPACE);
+	std::fill(mazeVisitedCell.begin(), mazeVisitedCell.end(), false);
 
 
 
@@ -503,15 +497,14 @@ void Maze::doStep(int currentPosition, int fromDirection){
 
 /*
 Generates geometry from mazeMap.
+--drop colors? quite useless now..
 */
-vector<float> *Maze::getVertexArray(/*scale?*/){
-
-	vector<GLfloat>* vertexArray = new vector<float>();
-
-	vector<GLfloat> verticesOnlyArray;
-	vector<GLfloat> colorsOnlyArray;
+void Maze::generateVertexArray(/*scale?*/){
 
 	
+	vector<GLfloat> verticesOnlyArray;
+	vector<GLfloat> colorsOnlyArray;
+		
 	
 	for(unsigned int row = 0; row < y; row++){ //y - column => walk rows
 		for(unsigned int column = 0; column < x; column++){
@@ -575,16 +568,23 @@ vector<float> *Maze::getVertexArray(/*scale?*/){
 
 	*/
 	
+if(vertexArray == nullptr)
+	vertexArray = new std::vector<float>();
 
+vertexArray->clear();
 
 //copy inside return vector allocated on heap
 vertexArray->reserve(verticesOnlyArray.size() + colorsOnlyArray.size());
 vertexArray->insert(vertexArray->end(), verticesOnlyArray.begin(), verticesOnlyArray.end());
-vertexArray->insert(vertexArray->end(), colorsOnlyArray.begin(), colorsOnlyArray.end());
+//vertexArray->insert(vertexArray->end(), colorsOnlyArray.begin(), colorsOnlyArray.end());
 
-return vertexArray;
+
 }
 
+
+/*
+Adds item e.g wall/ceiling etc. into vertices/colour array.
+*/
 void Maze::modelAddItem(vector<float> *verticesOnlyArray, vector<float> *colorsOnlyArray, int column, int row, const float *vertices, const float *colors, int size){
 
 	vector<float> tmp;
@@ -651,9 +651,10 @@ bool Maze::hasVisitableNeighbour(int currentPosition){
 	return false;
 	}
 
-//marks current position and all positions between current and last as visited
+/*
+marks current position and all positions between current and last as visited.
+*/
 void Maze::connectVisits(int currentPosition, int fromDirection){
-
 
 	switch(fromDirection){
 		
@@ -687,6 +688,131 @@ void Maze::connectVisits(int currentPosition, int fromDirection){
 		}
 	
 	}
+
+
+
+
+/*
+saves maze in file with its map
+
+---start of file---
+width depth type
+######
+# # ##
+#    #
+######
+0.5 0.5 0.5
+0.5 0.5 0.5
+0.5 0.5 0.5
+...
+..
+.
+.
+---end of file---
+*/
+bool Maze::saveMaze(std::string filename){
+	
+	if(vertexArray == nullptr || vertexArray->empty() || mazeMap.empty()){
+		std::cout << "vertex array missing or mazeMap is empty. Maze not saved\n";
+		return false;
+	}
+
+	if(not PathFileExists)
+		CreateDirectory(save_path.c_str(), NULL);
+
+	ofstream file;
+	file.open(save_path+filename, ios::out);
+
+	if(not file.is_open()){
+		std::cout << "error opening  " << filename << " for writing.";
+	return false;
+	}
+
+	//first line
+	file << this->x << this->y << this->type << std::endl;
+
+
+	//map of maze
+	for(unsigned int row = 0; row < this->y; row++){
+		std::string maze_row;
+
+		for(unsigned int column = 0; column < this->x; column++){
+			
+			if(mazeMap[row * x + column] == WALL){
+				maze_row.append("#");
+			} else {
+				maze_row.append(" ");
+			}
+		}
+	
+		file << maze_row << std::endl;
+		maze_row.clear();
+	}
+
+
+	//vertices
+	for(unsigned int i = 0; i < vertexArray->size(); i = i + 3){
+		file << vertexArray->at(i) << vertexArray->at(i + 1) << vertexArray->at(i + 2) << std::endl;
+	}
+
+return true;
+} 
+
+/*
+Loads the maze from its saved file.
+*/
+bool Maze::loadMaze(std::string filename){
+
+	vertexArray->clear();
+	mazeMap.clear();
+
+	if(not PathFileExists)
+		CreateDirectory(save_path.c_str(), NULL);
+
+	ifstream file;
+	file.open(save_path+filename, ios::in);
+
+	if(not file.is_open()){
+		std::cout << "error opening  " << filename << " for reading.";
+	return false;
+	}
+
+	//first line
+	file >> this->x >> this->y >> this->type;
+
+
+	//map of maze
+	std::string maze_row;
+	std::getline(file, maze_row);
+
+	for(unsigned int row = 0; row < this->y; row++){
+		std::getline(file, maze_row);
+
+		for(unsigned int column = 0; column < this->x; column++){
+			
+			if(maze_row[column] == '#'){
+				mazeMap[row * x + column] = WALL;
+			
+			} else {
+				mazeMap[row * x + column] = SPACE;
+			}
+			
+		}
+	
+	}
+
+	
+	//vertices
+	float tmp;
+	while(file >> tmp)
+		vertexArray->push_back(tmp);
+
+	
+
+return true;
+
+} 
+
 
 void Maze::printMaze(){
 	
