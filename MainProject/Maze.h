@@ -28,7 +28,7 @@
 
 using namespace std;
 
-const std::string Maze::save_path = ".\\Mazes\\";
+
 
 class Maze {
 

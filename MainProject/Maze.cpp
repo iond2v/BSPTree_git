@@ -222,7 +222,7 @@ char map31[] = {	//31 x 31
 			"###############################"};
 using namespace std;
 
-
+const std::string Maze::save_path = ".\\Mazes\\";
 
 /*This creates static predefined maze.*//*
 Maze::Maze(void){
@@ -717,7 +717,7 @@ bool Maze::saveMaze(std::string filename){
 		return false;
 	}
 
-	if(not PathFileExists)
+	if(not PathFileExists(save_path.c_str()))
 		CreateDirectory(save_path.c_str(), NULL);
 
 	ofstream file;
@@ -766,7 +766,7 @@ bool Maze::loadMaze(std::string filename){
 	vertexArray->clear();
 	mazeMap.clear();
 
-	if(not PathFileExists)
+	if(not PathFileExists(save_path.c_str()))
 		CreateDirectory(save_path.c_str(), NULL);
 
 	ifstream file;
