@@ -342,7 +342,7 @@ void init(){
 
 
 	/*
-	[generate|go] [ [index num] | [width depth] ] 
+	[generate|go] [ [index num] | [width depth] ]  [draw_method num]
 	index num 
 	width depth
 	or
@@ -411,7 +411,7 @@ void init(){
 		} else {
 		  maze = std::unique_ptr<Maze> (new Maze(width, depth, "default"));
 		}
-	
+		maze = std::unique_ptr<Maze>(new Maze(20, 20, "columns"));
 		name.append(maze->name+".pvs");
 		maze->generateVertexArray();
 		maze->saveMaze(maze->name);

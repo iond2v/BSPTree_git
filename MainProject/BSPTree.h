@@ -25,6 +25,8 @@
 #include "BSPTreeNodeTemplate.h"
 #include "Camera.h"
 
+#include <Shlwapi.h>
+
 using namespace glm;
 
 class BSPTreeCreatorNode;
@@ -115,6 +117,7 @@ private:
 	void drawNodes(BSPTreeNode *node, vec3 position, int depth);
 	int getDepth(BSPTreeNode *node, int depth);
 	void deleteTree(BSPTreeNode * node);
+	static const std::string save_path;
 
 
 };

@@ -45,8 +45,8 @@ public:
 	bool saveMaze(std::string filename); //saves maze in file with map
 	bool loadMaze(std::string filename); //loads map and vertex array
 
-	/*This creates static predefined maze.*/
-	//Maze(void);
+	/*This loads saved maze.*/
+	Maze(std::string filename);
 
 	/*This creates random maze with set parameters.*/
 	Maze(int width, int length, std::string type);
@@ -69,6 +69,8 @@ private:
 	void generateMaze();
 	
 	void walkMaze(int start);
+	void walkMazeColumns(int start);
+
 	void doStep(int currentPosition, int fromDirection);
 
 	void connectVisits(int currentPosition, int fromDirection);
@@ -79,6 +81,6 @@ private:
 	bool canGoLeft(int currentPosition);
 	bool canGoRight(int currentPosition);
 	
-	void modelAddItem(vector<GLfloat> *verticesOnlyArray, vector<GLfloat> *colorsOnlyArray, int column, int row, const float *vertices, const float *colors, int size);
+	void modelAddItem(vector<GLfloat> *verticesOnlyArray, int column, int row, const float *vertices, int size);
 };
 

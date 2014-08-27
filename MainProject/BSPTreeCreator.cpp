@@ -5,6 +5,8 @@
 //stats
 int leaf = 0, dividers = 0, portalsNumber = 0, portals_inserted = 0;
 
+const std::string BSPTreeCreator::save_path = ".\\PVS\\";
+
 /*
 gets vertex array from Maze->getVertexArray
 mazeName is name to save resulting structure as mazeName.pvs
@@ -12,7 +14,7 @@ mazeName is name to save resulting structure as mazeName.pvs
 BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string mazeName) {
 
 	std::cout << "BSPTreeCreator constructed\n";
-	if(vertexArray == nullptr || vertexArray->empty()){
+	if(vertexArray->empty()){
 		std::cout << "INVALID vertexArray!\n";
 		return;
 	}
@@ -39,7 +41,7 @@ BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string ma
 
 	polygons.reserve(vertexArray->size() / 4 / 3); // 4 - coordinates in one point, 3 - points in polygon
 
-	if((vertexArray->size() / 2) % 24 != 0)   //unit of wall has 6 vertices * 4
+	if(vertexArray->size() % 24 != 0)   //unit of wall has 6 vertices * 4
 		return;
 
 	std::vector<vec3> p;
@@ -47,7 +49,7 @@ BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string ma
 
 
 	//conversion from vec4 into vec3 and BSPTreePolygons   
-	for(unsigned int i = 0; i < vertexArray->size() / 2; i = i + 12){
+	for(unsigned int i = 0; i < vertexArray->size(); i = i + 12){
 	
 		
 		p[0] = vec3(vertexArray->at(i)    , vertexArray->at(i + 1), vertexArray->at(i + 2));
@@ -281,13 +283,16 @@ bool BSPTreeCreator::savePVS(){
 
 using namespace std;
 
-cout << "saving PVS\n" << endl;
+	if(not PathFileExists(save_path.c_str()))
+		CreateDirectory(save_path.c_str(), NULL);
+
+	cout << "saving PVS\n" << endl;
 
 	fstream file;
-	file.open(name, ios::out);
+	file.open(save_path + name, ios::out);
 
 	if(not file.is_open()){
-		cout << "error opening  " << name << " for writing.";
+		cout << "error opening  " << save_path + name << " for writing.";
 	return false;
 	}
 

@@ -4,6 +4,7 @@
 
 GLuint BSPTree::colorUniform = 0; 
 int BSPTreeNode::node_count = 0;
+const std::string BSPTree::save_path = ".\\PVS\\";
 
 BSPTree::BSPTree(std::string filename, vec3 thisToWorldVector, GLuint color)  : sample_query(GL_SAMPLES_PASSED){  ///filename here, leave default constructor enmpty..
 
@@ -169,14 +170,17 @@ bool BSPTree::loadPVS(){
 
 using namespace std;
 
+	if(not PathFileExists(save_path.c_str()))
+		CreateDirectory(save_path.c_str(), NULL);
+
 cout << "loading PVS\n";
 
 	FILE *file;
 
-	fopen_s(&file, name.c_str(),"r");
+	fopen_s(&file, string(save_path + name).c_str(), "r");
 
 	if(file == nullptr){
-		cout << "error opening file " << name << " for load\n";
+		cout << "error opening file " << save_path + name << " for load.\n";
 	return false;
 	}
 

@@ -19,6 +19,8 @@
 #include "Control.h"
 #include "BSPTreePolygon.h"
 
+#include <Shlwapi.h>  //if PathFileExists
+
 using namespace glm;
 
 
@@ -63,6 +65,7 @@ public:
 	
 private:
 //	int threads;
+	static const std::string save_path;
 	void generateBSPTree(BSPTreeCreatorNode *Node);
 	void placePortals();	//takes care of all portal things
 
