@@ -167,7 +167,7 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	}
 
 	//width/depth completeness
-	if(not (gotWidth && gotDepth)){
+	if((gotWidth != gotDepth)){
 		std::cout << "If 'depth' is present, 'width' parameter must be also present and vice versa.\n";
 			
 		if(not gotIndex)
@@ -194,7 +194,7 @@ unsigned int Parameters::isPresent(std::string str){
 	//can skip first as it is the name of the program
 	for(unsigned int i = 1; i < argc; i++){
 	
-		if(std::strcmp(str.c_str(), argv[i]) == 0);
+		if(std::strcmp(str.c_str(), argv[i]) == 0)
 			return i;
 	
 	}

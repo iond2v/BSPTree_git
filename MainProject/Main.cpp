@@ -24,7 +24,7 @@ and its sources at https://bitbucket.org/alfonse/gltut/downloads
 Learning Modern 3D Graphics Programming
 Jason L. McKesson
 
-Copyright © 2012 Jason L. McKesson
+Copyright © 2012 Jason L. McKesson 
 */
 
 /////some links
@@ -183,15 +183,6 @@ HWND GetConsoleHwnd(void) {
 	SetConsoleTitle(pszOldWindowTitle);
  
 	return(hwndFound);
-}
-
-/**
-*/
-void parse_parameters(){
-
-
-
-
 }
 
 
@@ -427,7 +418,7 @@ generate | load [draw_method num] [benchmark]
 	//keyPressed('h', 0, 0);
 	//keys->release('h');
 
-	switch(draw_method){
+	switch(control->parameters->draw_method){
 		case 1:
 			bspTree->drawing_method = BSPTree::drawing_method_enum::BSP;
 		break;
@@ -472,7 +463,7 @@ generate | load [draw_method num] [benchmark]
 	//start camera movement
 	//keyPressed('g', 0, 0); 
 	//keys->release('g');
-	if(go){
+	if(control->parameters->go){
 		keyPressed('g', 0, 0); 
 	    keys->release('g');
 	}
