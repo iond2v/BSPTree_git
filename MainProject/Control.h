@@ -53,6 +53,34 @@ class Error {
 
 };
 */
+
+/*
+Class for parsing and keeping program parameters.
+Handles default values, parameter validation and stuff..
+Not universal, but dont have to use boost for this..
+*/
+class Parameters {
+
+public:
+	Parameters(int argc, char **argv);
+	unsigned int isPresent(std::string str);
+
+	bool benchmark;
+	bool generate;
+	std::string type;
+	bool go;
+	unsigned int width;
+	unsigned int depth;
+	unsigned int draw_method;
+	unsigned int maze_index;
+
+	bool everything_ok;
+
+private:
+	int argc;
+	char **argv;
+};
+
 class Control {
 
 public:
@@ -67,8 +95,8 @@ public:
 	bool pause;
 	bool stats;			//whether to display statistics
 	bool help;			//whether to display help
-	int argc;
-	char** argv;
+
+	std::unique_ptr<Parameters> parameters;    //program parameters
 
 	GLuint globalUniformBlockIndex;
 	GLuint modelToWorldMatrixUniform;

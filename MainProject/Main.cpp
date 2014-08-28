@@ -336,93 +336,44 @@ void init(){
 
 	//consider http://www.boost.org/doc/libs/1_56_0/doc/html/program_options/overview.html#idp344521056
 	//or getopt?
-	
-	//new -> [generate|go] [ [index num] | [width num depth num] ] [draw_method num] [benchmark]
-	//alt -> [gen|go] [ [i num] | [w num d num] ] [dm num] [b]
+		
+	//new -> [generate|go] [ [index num] | [width num depth num [type "default"|"columns"]] ] [draw_method num] [benchmark]
+	//alt -> [gen|go] [ [i num] | [w num d num [t "default"|"columns"]] ] [dm num] [b]
 
 
-	/*
-	[generate|go] [ [index num] | [width depth] ]  [draw_method num]
-	index num 
-	width depth
-	or
-	generate width depth
-	generate index num
-	or 
-	go width depth
-	go index num
-	*/
-	int width = 22, depth = 45;
-	int maze_index = 0;
-	bool generate = false;
-	bool go = false;
-	int draw_method = 2;
+/* ??????????
+file
 
-	if(control->argc == 5){
+[maze]
+generate | load  index num | width num depth num [type "default"|"columns"]
+[PVS]
+generate | load [draw_method num] [benchmark]
 
-		if(std::strcmp(control->argv[1], "generate") == 0){
-			generate = true;	
 
-			if(std::strcmp(control->argv[2], "index") == 0){
-			
-				maze_index = atoi(control->argv[3]);
 
-			} else {
-				width = atoi(control->argv[2]);
-				depth = atoi(control->argv[3]);
-			}
-
-		} else if(std::strcmp(control->argv[1], "go") == 0){
-			go = true;
-	        
-
-			if(std::strcmp(control->argv[2], "index") == 0){
-			
-				maze_index = atoi(control->argv[3]);
-				
-			} else {
-			
-				width = atoi(control->argv[2]);
-				depth = atoi(control->argv[3]);
-			}
-		}
-
-		draw_method = atoi(control->argv[4]);
-
-	}
-
-	if(control->argc == 4){
-		if(std::strcmp(control->argv[1], "index") == 0){
-			maze_index = atoi(control->argv[2]);
-		} else {
-			width = atoi(control->argv[1]);
-			depth = atoi(control->argv[2]);
-		}
-
-		draw_method = atoi(control->argv[3]);
-	}
-
+*/
 	////////////////////////////////////////////when redoing parameters.. look at possibility of loading instead of generating maze
 	std::string name;
+		
+	if(control->parameters->maze_index != 0){
+		maze = std::unique_ptr<Maze> (new Maze(control->parameters->maze_index));	//this uses one of prepared designs..
+	} else {
+		maze = std::unique_ptr<Maze> (new Maze(control->parameters->width, control->parameters->depth, control->parameters->type));
+	}
 
+	//maze = std::unique_ptr<Maze>(new Maze(20, 20, "columns"));
+
+	name.append(maze->name+".pvs");
+	maze->generateVertexArray();
+	maze->saveMaze(maze->name);
+		
 	{
-		if(maze_index != 0){
-	      maze = std::unique_ptr<Maze> (new Maze(maze_index));	//this uses one of prepared designs..
-		} else {
-		  maze = std::unique_ptr<Maze> (new Maze(width, depth, "default"));
-		}
-		maze = std::unique_ptr<Maze>(new Maze(20, 20, "columns"));
-		name.append(maze->name+".pvs");
-		maze->generateVertexArray();
-		maze->saveMaze(maze->name);
-
-		if(generate && maze_index != 180)// dont want to overwrite it
-			BSPTreeCreator tree(maze->vertexArray, name);   //with this line commented out it skips generation and loads the pvs..
+	if(control->parameters->generate && control->parameters->maze_index != 180)// dont want to overwrite it -- only because of that big maze and reproducibility.. not relevant now?
+		BSPTreeCreator tree(maze->vertexArray, name);
+	}	// to destruct tree creator
 
 	control->runReport->append("Generated "+name+"\n\n", true);
-	
-	}// to destruct maze and tree
-	
+		
 
 	//creates/loads waypoints file for this maze
 	camera.loadWaypoints("waypoints_"+name+".camera");
@@ -900,8 +851,11 @@ int main(int argc, char** argv){
 
 	
 	control = std::unique_ptr<Control> (Control::getInstance());
-	control->argc = argc;
-	control->argv = argv;
+
+	control->parameters = std::unique_ptr<Parameters> (new Parameters(argc, argv));
+
+	if(not control->parameters->everything_ok)
+		return 1;
 
 	/*
 	GLUT_SCREEN_WIDTH
