@@ -48,10 +48,10 @@ public:
 	/*This loads saved maze.*/
 	Maze(std::string filename);
 
-	/*This creates random maze with set parameters.*/
+	/*This loads maze or if not available creates random maze with set parameters.*/
 	Maze(int width, int length, std::string type);
 
-	//this is for pregenerated mazes
+	//This loads preset maze or generates new
 	Maze(int number);
 
 	~Maze(void){

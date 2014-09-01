@@ -14,6 +14,13 @@ mazeName is name to save resulting structure as mazeName.pvs
 BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string mazeName) {
 
 	std::cout << "BSPTreeCreator constructed\n";
+	mazeName.append(".pvs");
+
+	if(PathFileExists(std::string(save_path + mazeName).c_str())){
+		std::cout << "Saved PVS of this maze already exists. Skipping PVS creation.\n";
+	return;
+	}
+
 	if(vertexArray->empty()){
 		std::cout << "INVALID vertexArray!\n";
 		return;

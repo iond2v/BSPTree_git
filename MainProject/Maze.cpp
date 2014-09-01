@@ -275,6 +275,13 @@ Maze::Maze(int number = 1){
 
 	srand((unsigned int) time(nullptr));
 	
+	if(PathFileExists(std::string(save_path + "preset_maze_index_"+std::to_string(number)).c_str())){
+		std::cout << "Preset maze with provided index already exists. Loading that.\n";
+		loadMaze(name);
+	return;
+	}
+
+
 	char *map;
 
 	switch (number){
@@ -364,7 +371,7 @@ Maze::Maze(int number = 1){
 
 	printMaze();
 
-	name = "preset_maze"+ std::to_string(x) +"x"+ std::to_string(y);
+	name = "preset_maze_index_"+ std::to_string(number);
 
 }
 

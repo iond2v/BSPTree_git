@@ -52,8 +52,15 @@ logFile.close();
 
 /*
 Here happens parsing and whatever else needs to be done.
-Defaults are no benchmark mode, no maze generation, no camera movement,
-width of 22 and depth of 45 and draw method number 4 - PVS with queries.
+Defaults are no benchmark mode, no camera movement,
+maze width of 22 and depth of 45, type default and draw method number 4 - PVS with queries.
+
+new -> [go] [index num] | [width num depth num [type "default"|"columns"]] [draw_method (1-7)] [benchmark num]
+alt -> [go] [i num] | [w num d num [t "default"|"columns"]]  [dm num] [b num]
+    
+
+Implicit loading of saved PVS or maze with set name.. when file with that name is not found
+new maze and/or PVS is generated.
 */
 Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	
@@ -62,7 +69,7 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	
 	//parameters
 	benchmark = false;
-	generate = false;
+	number_of_frames = 10000;
 	go = false;
 	width = 22;
 	depth = 45;
@@ -76,22 +83,38 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	bool gotIndex = false;
 	bool gotType = false;
 
-	//new -> [generate|go] [ [index num] | [width num depth num [type "default"|"columns"]] ] [draw_method num] [benchmark]
-	//alt -> [gen|go] [ [i num] | [w num d num [t "default"|"columns"]] ] [dm num] [b]
+	//for validation
+	std::vector<std::string> valid_types;
+	valid_types.push_back("default");
+	valid_types.push_back("columns");
+	unsigned int max_draw_method_index = 7;
+	unsigned int min_draw_method_index = 1;
+	unsigned int minimal_width = 3;
+	unsigned int minimal_depth = 3;
+	unsigned int min_number_of_frames = 1;
+
+
+
 
 	unsigned int max_index_counter = 0;
 	unsigned int position = 0;    //index of 0 is program name and marks not present argument
 
 	if(isPresent("benchmark") != 0 || isPresent("b") != 0){
-		benchmark = true;
-		max_index_counter++;
+		if(argc - 1 >= max_index_counter + 2){
+			benchmark = true;
+			
+			if(isNumber(argv[position + 1], strlen(argv[position + 1]))){  		//this is because we are potentially touching memory out of bounds
+				number_of_frames = atoi(argv[position + 1]);
+				
+			} else {
+				std::cout << "benchmark parameter has non numeric part.\n";
+				everything_ok = false;
+			}
+
+			max_index_counter += 2;
+		}
 	}
 
-
-	if(isPresent("generate") != 0 || isPresent("gen") != 0){
-		generate = true;
-		max_index_counter++;		
-	}
 
 	if(isPresent("go") != 0){
 		go = true;
@@ -101,11 +124,17 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 
 	if((position = isPresent("width")) != 0 || (position = isPresent("w")) != 0){
 		
-		//this is because we are potentially touching memory out of bounds
 		if(argc - 1 >= max_index_counter + 2){
-			width = atoi(argv[position + 1]);
-			max_index_counter += 2;
 			gotWidth = true;
+
+			if(isNumber(argv[position + 1], strlen(argv[position + 1]))){
+				width = atoi(argv[position + 1]);
+			} else {
+				std::cout << "width parameter has non numeric part.\n";
+				everything_ok = false;
+			}
+
+			max_index_counter += 2;
 		}
 
 	}
@@ -113,16 +142,29 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	if((position = isPresent("depth")) != 0 || (position = isPresent("d")) != 0){
 
 		if(argc - 1 >= max_index_counter + 2){
-			depth = atoi(argv[position + 1]);
-			max_index_counter += 2;
 			gotDepth = true;
+
+			if(isNumber(argv[position + 1], strlen(argv[position + 1]))){
+				depth = atoi(argv[position + 1]);
+			} else {
+				std::cout << "depth parameter has non numeric part.\n";
+				everything_ok = false;
+			}
+
+			max_index_counter += 2;
 		}
 	}
 
 	if((position = isPresent("draw_method")) != 0 || (position = isPresent("dm")) != 0){
 	
 		if(argc - 1 >= max_index_counter + 2){
-			draw_method = atoi(argv[position + 1]);
+			if(isNumber(argv[position + 1], strlen(argv[position + 1]))){
+				draw_method = atoi(argv[position + 1]);
+			} else {
+				std::cout << "draw_method parameter has non numeric part.\n";
+				everything_ok = false;
+			}
+
 			max_index_counter += 2;
 		}
 	}
@@ -130,19 +172,57 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	if((position = isPresent("type")) != 0 || (position = isPresent("t")) != 0){
 	
 		if(argc - 1 >= max_index_counter + 2){
-			type = argv[position + 1];
-			max_index_counter += 2;
 			gotType = true;
+
+			if(std::find(valid_types.begin(), valid_types.end(), argv[position + 1]) != valid_types.end()){
+				type = argv[position + 1];
+			} else {
+				std::cout << "type parameter has not accepted value " << argv[position + 1] << std::endl;
+				everything_ok = false;
+			}
+			max_index_counter += 2;
+			
 		}
 	}
 
 	if((position = isPresent("index")) != 0 || (position = isPresent("i")) != 0){
 	
 		if(argc - 1 >= max_index_counter + 2){
-			maze_index = atoi(argv[position + 1]);
-			max_index_counter += 2;
 			gotIndex = true;
+
+			if(isNumber(argv[position + 1], strlen(argv[position + 1]))){
+				maze_index = atoi(argv[position + 1]);
+			} else {
+				std::cout << "index parameter has parameter has non numeric part.\n";
+				everything_ok = false;
+			}
+			max_index_counter += 2;
 		}
+	}
+
+
+	////some more validation
+
+
+
+	if(draw_method > max_draw_method_index || draw_method < min_draw_method_index){
+		std::cout << "draw_method is out of valid range (1-7)\n";
+		everything_ok = false;
+	}
+
+	if(width < minimal_width){
+		std::cout << "width is below minimal value (3)\n";
+		everything_ok = false;
+	}
+	
+	if(width < minimal_depth){
+		std::cout << "depth is below minimal value (3)\n";
+		everything_ok = false;
+	}
+
+	if(number_of_frames < min_number_of_frames){
+		std::cout << "value of benchmark parameter number_of_frames is below minimal value (1)\n";
+		everything_ok = false;
 	}
 
 	//check if number of arguments fits number of found and expected arguments
@@ -152,13 +232,7 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 		everything_ok = false;
 	}
 
-	//generate / go exclusivity
-	if(generate && go){
-		std::cout << "'generate' and 'go' parameters are mutually exclusive.\n";
-		std::cout << "Proceeding as if only generate was set.\n";
-			
-	}
-
+	
 	//index / width/dept soft exclusivity
 	if(gotIndex && (gotWidth || gotDepth)){
 		std::cout << "'index' and 'width/depth' parameters are mutually exclusive.\n";
@@ -174,11 +248,6 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 			everything_ok = false;
 	}
 
-
-	if(gotType && not generate){
-		std::cout << "Specifying type when not generating maze and BSPTree is without effect.\n";
-		
-	}
 
 
 }
@@ -200,6 +269,16 @@ unsigned int Parameters::isPresent(std::string str){
 	}
 
 return 0;
+}
+
+bool Parameters::isNumber(char *str, unsigned int length){
+
+	for(unsigned int i = 0; i < length; i++){
+		if(not std::isdigit(str[i]))
+			return false;
+	}
+
+return true;
 }
 
 Control::Control(void)

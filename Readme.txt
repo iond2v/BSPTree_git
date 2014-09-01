@@ -45,9 +45,12 @@ Note
 
 Application parameters
 
-   Only in this format without any leading dashes. Curently there is minimal validity checking.
-   None of the parameters are optional.
-   Last number is always starting mode of drawing. Numbers are the same as written above.
+	new -> [go] [index num] | [width num depth num [type "default"|"columns"]] [draw_method (1-7)] [benchmark num]
+	alt -> [go] [i num] | [w num d num [t "default"|"columns"]]  [dm num] [b num]
+   
+   Parameters can be in random order but pairs of 'argument value' must be respected. There is some 
+   validity checking. All parameters have some default value so all should be more or less optional.
+   draw_method is starting mode of drawing. Numbers are the same as written above.
    
    Maze indexes
    1 - 17x14

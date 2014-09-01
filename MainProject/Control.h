@@ -6,6 +6,7 @@
 #include <glutil/glutil.h>
 #include <iostream>
 #include <memory>
+#include <cctype>   //isdigit
 
 #include "Shader.h"
 
@@ -66,7 +67,7 @@ public:
 	unsigned int isPresent(std::string str);
 
 	bool benchmark;
-	bool generate;
+	unsigned int number_of_frames;
 	std::string type;
 	bool go;
 	unsigned int width;
@@ -79,6 +80,8 @@ public:
 private:
 	int argc;
 	char **argv;
+
+	bool isNumber(char *str, unsigned int length);
 };
 
 class Control {

@@ -320,17 +320,18 @@ void init(){
 
 
 
-	//let's redo the parameter parsing - fuck parameters - use config file - or rather combination of persistent settings and dynamic..
-	//first what parameter there will be?
-		//static - methods used as in lighting, collision handling etc..   this should be in file
-		//dynamic - generate/go/nothing and maze dimensions/index, benchmark			this in command line
-
 	//consider http://www.boost.org/doc/libs/1_56_0/doc/html/program_options/overview.html#idp344521056
 	//or getopt?
 		
-	//new -> [generate|go] [ [index num] | [width num depth num [type "default"|"columns"]] ] [draw_method num] [benchmark]
-	//alt -> [gen|go] [ [i num] | [w num d num [t "default"|"columns"]] ] [dm num] [b]
+	//new -> [go] [index num] | [width num depth num [type "default"|"columns"]] [draw_method num] [benchmark num]
+	//alt -> [go] [i num] | [w num d num [t "default"|"columns"]]  [dm num] [b num]
+	//                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+	//									maze parameters
+	//		 ^^^^											       ^^^^^^^^^^^^^^^^
+	//	program parameters									      program parameters
 
+	//implicit loading of saved PVS or maze with set name.. when file with that name is not found
+	//new maze and/or PVS is generated.    --make forced mode?
 
 /* ??????????
 file
@@ -354,21 +355,23 @@ generate | load [draw_method num] [benchmark]
 
 	//maze = std::unique_ptr<Maze>(new Maze(20, 20, "columns"));
 
-	name.append(maze->name+".pvs");
 	maze->generateVertexArray();
 	maze->saveMaze(maze->name);
-		
-	{
-	if(control->parameters->generate && control->parameters->maze_index != 180)// dont want to overwrite it -- only because of that big maze and reproducibility.. not relevant now?
-		BSPTreeCreator tree(maze->vertexArray, name);
-	}	// to destruct tree creator
+	
 
-	control->runReport->append("Generated "+name+"\n\n", true);
+	{
+	if(control->parameters->maze_index != 180)// dont want to overwrite it -- only because of that big maze and reproducibility.. not relevant now?
+		BSPTreeCreator tree(maze->vertexArray, name);
+	}	// to destruct tree creator immediately
+
+	control->runReport->append("Generated "+name+".pvs\n\n", true);
 		
 
 	//creates/loads waypoints file for this maze
 	camera.loadWaypoints("waypoints_"+name+".camera");
-	camera.convertToFrames(10000);
+	
+	if(control->parameters->benchmark)
+		camera.convertToFrames(control->parameters->number_of_frames);
 
 	cout << name << endl;
 
@@ -463,6 +466,7 @@ generate | load [draw_method num] [benchmark]
 	//start camera movement
 	//keyPressed('g', 0, 0); 
 	//keys->release('g');
+
 	if(control->parameters->go){
 		keyPressed('g', 0, 0); 
 	    keys->release('g');
@@ -498,7 +502,7 @@ void display(){
 	//prepare for drawing
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	if(keys->isPressed('g'))				
+	if(keys->isPressed('g') && control->parameters->benchmark)				
 		camera.loadNextPosition(fps->getFrameCount());		//now that camera position is dependent on frame number, the place is here
 	
 	bspTree->getNode(bspTree->RootNode, camera.position - bspTree->modelToWorldVector)->checkCollisions(camera);
@@ -791,13 +795,12 @@ glutTimerFunc(10, keyActions, 0);   //periodically call this function
 
 
 	
-
-	/*
-	if(keys->isPressed('g')){			
-		//float current_travel_time = time_item().seconds(camera.movement.start_time);
-		
+	
+	if(keys->isPressed('g') && not control->parameters->benchmark){			
+		float current_travel_time = time_item().seconds(camera.movement.start_time);
+		camera.loadNextPosition(current_travel_time);
 	}
-	*/
+	
 //glutPostRedisplay();
 }
 
@@ -845,8 +848,10 @@ int main(int argc, char** argv){
 
 	control->parameters = std::unique_ptr<Parameters> (new Parameters(argc, argv));
 
-	if(not control->parameters->everything_ok)
+	if(not control->parameters->everything_ok){
+		Sleep(5000);
 		return 1;
+	}
 
 	/*
 	GLUT_SCREEN_WIDTH
@@ -854,6 +859,7 @@ int main(int argc, char** argv){
 	GLUT_SCREEN_HEIGHT
 	Height of the screen in pixels. Zero indicates the height is unknown or not available.
 	*/
+
 	//get screen resolution
 	int max_screen_width = glutGet(GLUT_SCREEN_WIDTH);
 	int max_screen_height = glutGet(GLUT_SCREEN_HEIGHT);
@@ -920,7 +926,7 @@ int main(int argc, char** argv){
 	//get version the old way..
 	std::string version((char *)glGetString(GL_VERSION));
 	 
-	//and check if able to run this properly..
+	//and check if able to run this properly.. 
 	if(not (version >= string("3.3.0"))) {
 
 		printf("Your OpenGL version is %i.%i\n You must have at least OpenGL 3.3 to run this.\n",
