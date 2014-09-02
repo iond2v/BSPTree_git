@@ -226,13 +226,23 @@ const std::string Maze::save_path = ".\\Mazes\\";
 
 
 /*
+maze naming 
+
+30x20_index_5.maze
+50x50_default.maze
+
+*/
+
+
+/*
 This creates random maze with set parameters. Currently clamped to 200x200.
 */
 Maze::Maze(int width, int length, std::string type = "default") : x(width), y(length){
 
 	vertexArray = new std::vector<float>();
 
-	name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
+	//name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
+	name = std::to_string(x) +"x"+ std::to_string(y) + "_" + type + ".maze";
 
 	if(PathFileExists(std::string(save_path + name).c_str())){
 		std::cout << "Maze with set dimensions already exists. Loading that.\n";
@@ -371,7 +381,8 @@ Maze::Maze(int number = 1){
 
 	printMaze();
 
-	name = "preset_maze_index_"+ std::to_string(number);
+	//name = "preset_maze_index_"+ std::to_string(number);
+	name = std::to_string(x) +"x"+ std::to_string(y) + "_index_"+ std::to_string(number) + ".maze";
 
 }
 

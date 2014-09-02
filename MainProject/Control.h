@@ -54,7 +54,7 @@ class Error {
 
 };
 */
-
+ 
 /*
 Class for parsing and keeping program parameters.
 Handles default values, parameter validation and stuff..

@@ -389,7 +389,7 @@ generate | load [draw_method num] [benchmark]
 								vec3(-((float)maze->x / 2.0f) + offset, 0.0f, 1.5f), 
 								glGetUniformLocation(control->getProgram("maze")->id, "colorUniform")));
 	
-
+	 
 	//create maze texture sampler
 	bspTree->samplerObject = std::unique_ptr<Sampler> (new Sampler());
 

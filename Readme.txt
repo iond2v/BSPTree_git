@@ -1,14 +1,14 @@
 ﻿About
 
 This is basically my bachelor's degree project to pet/learning project. 
-It can generate simple maze, put it into BSP tree and compute PVS for its leaves.
+It can generate simple mazes, put it into BSP tree and compute PVS for its leaves.
 Both BSP tree and its PVS are saved and can be loaded.
 It can also record camera positions and then interpolate camera movement from them in the next run.
 Supports several modes of drawing and writes statistics after each run.
 
 
 Uses GLSDK and Freetype libraries. These are required to build.
-http://glsdk.sourceforge.net/docs/html/index.html ,namely components GL Load,
+http://glsdk.sourceforge.net/docs/html/index.html, namely components GL Load,
 GL Utility, OpenGL Mathematics and FreeGLUT.
 FreeType http://www.freetype.org.
 Additionally Visual C++ Redistributable Packages are required too http://www.microsoft.com/en-us/download/details.aspx?id=30679
@@ -62,20 +62,22 @@ Application parameters
    7 - 180x180
 	
    All indexed mazes with exception of no.7 are hard coded. See file Maze.cpp.
-   Numbers 2, 3 and 4 are for mazes of type which cannot be arbitrarily generated with parameters 'generate width depth'.
    appname is name of the exe file.
-   index and generate are words, width and depth are numbers.
 
-   appname index [1-7] [1-7]
-   appname width depth [1-7]
-     --opens maze with set index or dimensions if such exists.
+   go - runs camera movement immediately if previously recorded.
 
-   appname generate width depth [1-7]
-   appname generate index [1-6] [1-7]
-      --generates maze with set dimensions or of set index. When generating maze with dimensions
-	  as one already saved, the older is overwritten. Careful to not overwrite maze no.7 (180x180) as 
-	  it cannot be re-generate exactly the same.
+   index num / i num - generates (or loads if present) maze with set index. 
+		If set it overrides width, depth and type parameters.
 
-   appname go width depth [1-7]
-   appname go index [1-7] [1-7]
-      --runs recorded  camera movement in maze with set index or dimensions.
+   width num / w num - sets width of maze to be loaded / generated.
+
+   depth num / d num - sets depth of maze to be loaded / generated.
+
+   type "string" / t "string"- sets type of maze to generate / load. 
+		types are default - regular maze with branching corridors.
+				  columns - one great room filled with "columns".
+
+   draw_method num / dm num - sets the starting draw method as described above in help.
+
+   benchmark num / b num - makes camera movement dependent on frame number instead of time.
+
