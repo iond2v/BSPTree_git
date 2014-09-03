@@ -12,14 +12,14 @@ Sampler::Sampler(void){
 
 	glGenSamplers(1, &id);
 
-	std::cout << "Sampler object constructed\n";
+	//std::cout << "Sampler object constructed\n";
 }
 
 
 Sampler::~Sampler(void){
 	glDeleteSamplers(1, &id);
 
-	std::cout << "Sampler object destructed\n";
+	//std::cout << "Sampler object destructed\n";
 }
 
 void Sampler::bindToUnit(GLuint texture_unit){

@@ -42,7 +42,7 @@ public:
 	std::vector<float> *vertexArray;
 	std::string name;
 
-	bool saveMaze(std::string filename); //saves maze in file with map
+	bool saveMaze(); //saves current maze in file with map
 	bool loadMaze(std::string filename); //loads map and vertex array
 
 	/*This loads saved maze.*/

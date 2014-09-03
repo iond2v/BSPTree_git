@@ -64,7 +64,7 @@ public:
 	int addMe(BSPTreeCreatorNode *node);											//adds node to NodeSet
 	
 private:
-//	int threads;
+//	int threads;    //how to speed it up?
 	static const std::string save_path;
 	void generateBSPTree(BSPTreeCreatorNode *Node);
 	void placePortals();	//takes care of all portal things

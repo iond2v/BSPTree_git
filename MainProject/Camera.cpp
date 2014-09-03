@@ -1,35 +1,39 @@
 #include "Camera.h"
-#include <stdio.h>
 
 
 
+
+const std::string Camera::save_path = ".\\Camera_paths\\";
 
 
 Camera::Camera(float speed, float mouse_speed, float frustum_near, float frustum_far){
 		
 
-		this->speed = abs(speed);
-		this->mouse_speed = abs(mouse_speed);
-		fzNear = frustum_near;
-		fzFar = frustum_far;
+	if(not PathFileExists(save_path.c_str()))
+		CreateDirectory(save_path.c_str(), NULL);
 
-		angleSIDE = 0.0f;  //start with zero angles
-		angleUP = 0.0f;
+	this->speed = abs(speed);
+	this->mouse_speed = abs(mouse_speed);
+	fzNear = frustum_near;
+	fzFar = frustum_far;
 
-		height = 0.0f;    //and on the ground level
+	angleSIDE = 0.0f;  //start with zero angles
+	angleUP = 0.0f;
 
-		position = vec3(0.0f, height, 0.5f);
+	height = 0.0f;    //and on the ground level
+
+	position = vec3(0.0f, height, 0.5f);
 
 		
 
 	updateTarget();
 
-	std::cout << "Camera constructed\n";
+	//std::cout << "Camera constructed\n";
 }
 
 Camera::~Camera(){
 
-	std::cout << "Camera destructed\n";
+	//std::cout << "Camera destructed\n";
 
 }
 
@@ -40,46 +44,46 @@ Enables having saved multiple paths.
 */
 void Camera::loadWaypoints(std::string name){
 
-
-	cameraWaypoints = std::unique_ptr<Log>(new Log(name));
-
-
-		std::ifstream waypoints;
-		waypoints.open(name, std::ios::in);
-
-		if(waypoints.is_open()){
+	std::string file_with_path = save_path + name;
+	cameraWaypoints = std::unique_ptr<Log>(new Log(file_with_path));
 
 
+	std::ifstream waypoints;
+	waypoints.open(file_with_path, std::ios::in);
 
-			//////////load first line with time
+	if(waypoints.is_open()){
 
 
-			std::string line;
-			std::getline(waypoints, line);
+
+		//////////load first line with time
+
+
+		std::string line;
+		std::getline(waypoints, line);
 	
-			while(not line.empty()){
+		while(not line.empty()){
 				
 
-				std::istringstream iss(line);
-				std::vector<float> vector;
+			std::istringstream iss(line);
+			std::vector<float> vector;
 
-				std::copy(std::istream_iterator<float>(iss),
-					std::istream_iterator<float>(),
-						std::back_inserter(vector));
+			std::copy(std::istream_iterator<float>(iss),
+				std::istream_iterator<float>(),
+					std::back_inserter(vector));
 
-				//populate splines
-				movement.positions.addSplinePoint(vec3(vector[0], vector[1], vector[2]));
+			//populate splines
+			movement.positions.addSplinePoint(vec3(vector[0], vector[1], vector[2]));
 				
-				movement.targets.addSplinePoint(vec3(vector[3], vector[4], vector[5]));
+			movement.targets.addSplinePoint(vec3(vector[3], vector[4], vector[5]));
 
-				movement.times.push_back(vector[6]);
+			movement.times.push_back(vector[6]);
 
-				//load next line
-				std::getline(waypoints, line);
-
-			}
+			//load next line
+			std::getline(waypoints, line);
 
 		}
+
+	}
 
 
 

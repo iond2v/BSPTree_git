@@ -13,7 +13,7 @@ mazeName is name to save resulting structure as mazeName.pvs
 */
 BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string mazeName) {
 
-	std::cout << "BSPTreeCreator constructed\n";
+	//std::cout << "BSPTreeCreator constructed\n";
 	mazeName.append(".pvs");
 
 	if(PathFileExists(std::string(save_path + mazeName).c_str())){
@@ -25,6 +25,7 @@ BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string ma
 		std::cout << "INVALID vertexArray!\n";
 		return;
 	}
+
 	Control *control = Control::getInstance();
 
 	time_points.push_back(time_item(clock(), "starting point"));
@@ -124,6 +125,7 @@ BSPTreeCreator::BSPTreeCreator(std::vector<GLfloat> *vertexArray, std::string ma
 	}
 
 	control->runReport->append(string.str(), true);
+
 }
 
 
@@ -135,7 +137,7 @@ BSPTreeCreator::~BSPTreeCreator(void)
 		delete NodeSet[i];	
 	}
 
-	std::cout << "BSPTreeCreator destructed\n";
+	//std::cout << "BSPTreeCreator destructed\n";
 }
 
 

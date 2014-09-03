@@ -345,35 +345,32 @@ generate | load [draw_method num] [benchmark]
 
 */
 	////////////////////////////////////////////when redoing parameters.. look at possibility of loading instead of generating maze
-	std::string name;
-		
+			
 	if(control->parameters->maze_index != 0){
 		maze = std::unique_ptr<Maze> (new Maze(control->parameters->maze_index));	//this uses one of prepared designs..
 	} else {
 		maze = std::unique_ptr<Maze> (new Maze(control->parameters->width, control->parameters->depth, control->parameters->type));
 	}
 
-	//maze = std::unique_ptr<Maze>(new Maze(20, 20, "columns"));
-
 	maze->generateVertexArray();
-	maze->saveMaze(maze->name);
+	maze->saveMaze();
 	
 
 	{
 	if(control->parameters->maze_index != 180)// dont want to overwrite it -- only because of that big maze and reproducibility.. not relevant now?
-		BSPTreeCreator tree(maze->vertexArray, name);
+		BSPTreeCreator tree(maze->vertexArray, maze->name);
 	}	// to destruct tree creator immediately
 
-	control->runReport->append("Generated "+name+".pvs\n\n", true);
+	
 		
 
 	//creates/loads waypoints file for this maze
-	camera.loadWaypoints("waypoints_"+name+".camera");
+	camera.loadWaypoints("waypoints_"+maze->name+".camera");
 	
 	if(control->parameters->benchmark)
 		camera.convertToFrames(control->parameters->number_of_frames);
 
-	cout << name << endl;
+	cout << maze->name << endl;
 
 	float offset;
 	if(maze->x % 2 == 0){
@@ -385,7 +382,7 @@ generate | load [draw_method num] [benchmark]
 	
 
 
-	bspTree = std::unique_ptr<BSPTree> (new BSPTree(	name, 
+	bspTree = std::unique_ptr<BSPTree> (new BSPTree(	maze->name+".pvs", 
 								vec3(-((float)maze->x / 2.0f) + offset, 0.0f, 1.5f), 
 								glGetUniformLocation(control->getProgram("maze")->id, "colorUniform")));
 	
@@ -451,21 +448,7 @@ generate | load [draw_method num] [benchmark]
 	
 	
 	}
-	//set drawing with preferred method
-	//bspTree->drawing_method = BSPTreeCreator::drawing_method_enum::BSP;
-
-	//bspTree->drawing_method = BSPTree::drawing_method_enum::BSP_QUERY;
 	
-	//bspTree->drawing_method = BSPTree::drawing_method_enum::PVS;
-
-	//bspTree->drawing_method = BSPTree::drawing_method_enum::PVS_QUERY;
-
-	//bspTree->drawing_method = BSPTreeCreator::drawing_method_enum::BSP_BACK;
-	//bspTree->drawing_method = BSPTree::drawing_method_enum::PVS_BACK;
-
-	//start camera movement
-	//keyPressed('g', 0, 0); 
-	//keys->release('g');
 
 	if(control->parameters->go){
 		keyPressed('g', 0, 0); 
@@ -801,7 +784,6 @@ glutTimerFunc(10, keyActions, 0);   //periodically call this function
 		camera.loadNextPosition(current_travel_time);
 	}
 	
-//glutPostRedisplay();
 }
 
 /*
@@ -834,7 +816,6 @@ void mouse(int x, int y){
      glutWarpPointer(centerX, centerY);
      }
 
-//glutPostRedisplay();
 }
 
 
@@ -927,6 +908,7 @@ int main(int argc, char** argv){
 	std::string version((char *)glGetString(GL_VERSION));
 	 
 	//and check if able to run this properly.. 
+	//but if it fails to create requested context version it fails then and does not get here..
 	if(not (version >= string("3.3.0"))) {
 
 		printf("Your OpenGL version is %i.%i\n You must have at least OpenGL 3.3 to run this.\n",
@@ -939,15 +921,12 @@ int main(int argc, char** argv){
 		printf("Supported OpenGL version %i.%i\n",	glload::GetMajorVersion(), glload::GetMinorVersion());
 	}
 
-		
-
 
 
 
 	//sets and constructs everything else..
 	init();
 	
-
 
 	//register glut callbacks
 	glutDisplayFunc(display); 
@@ -964,7 +943,9 @@ int main(int argc, char** argv){
 	/////////////////////////////////////////////////////
 	////main loop and post main loop logic and reports.
 
-	time_item start(clock(), "Starting"); //there is probably some overhead when starting main loop.. so it gets more accurate with time..
+	//there is probably some overhead when starting main loop.. 
+	//but it gets more accurate with time..
+	time_item start(clock(), "Starting"); 
 
 		glutMainLoop();
 
@@ -1016,8 +997,13 @@ int main(int argc, char** argv){
 
 	control->runReport->append(msg, false);
 
-	std::cout << "Exiting." << std::endl;
+
+	//just to be able to read what's up.. remove when convenient
+	std::cout << "Press enter when done.." << std::endl;
+
+	std::cin.ignore();
 	
+	std::cout << "Exiting." << std::endl;
 
 	Sleep(1000);
 

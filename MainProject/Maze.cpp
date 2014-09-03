@@ -242,7 +242,7 @@ Maze::Maze(int width, int length, std::string type = "default") : x(width), y(le
 	vertexArray = new std::vector<float>();
 
 	//name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
-	name = std::to_string(x) +"x"+ std::to_string(y) + "_" + type + ".maze";
+	name = std::to_string(x) +"x"+ std::to_string(y) + "_" + type;
 
 	if(PathFileExists(std::string(save_path + name).c_str())){
 		std::cout << "Maze with set dimensions already exists. Loading that.\n";
@@ -382,7 +382,7 @@ Maze::Maze(int number = 1){
 	printMaze();
 
 	//name = "preset_maze_index_"+ std::to_string(number);
-	name = std::to_string(x) +"x"+ std::to_string(y) + "_index_"+ std::to_string(number) + ".maze";
+	name = std::to_string(x) +"x"+ std::to_string(y) + "_index_"+ std::to_string(number);
 
 }
 
@@ -704,6 +704,7 @@ void Maze::connectVisits(int currentPosition, int fromDirection){
 
 /*
 saves maze in file with its map
+Appends to maze name .maze
 
 ---start of file---
 width depth type
@@ -720,18 +721,20 @@ width depth type
 .
 ---end of file---
 */
-bool Maze::saveMaze(std::string filename){
+bool Maze::saveMaze(){
 	
 	if(vertexArray->empty() || mazeMap.empty()){
 		std::cout << "vertex array missing or mazeMap is empty. Maze not saved\n";
 		return false;
 	}
 
+	std::string filename = save_path + name + ".maze";
+
 	if(not PathFileExists(save_path.c_str()))
 		CreateDirectory(save_path.c_str(), NULL);
 
 	ofstream file;
-	file.open(save_path+filename, ios::out);
+	file.open(filename, ios::out);
 
 	if(not file.is_open()){
 		std::cout << "error opening  " << filename << " for writing.";
@@ -821,6 +824,8 @@ bool Maze::loadMaze(std::string filename){
 	name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
 
 
+	std::cout << "Maze "+ name + "loaded.\n";
+
 return true;
 
 } 
@@ -830,7 +835,6 @@ Prints mazeMap to std cout.
 */
 void Maze::printMaze(){
 	
-		std::cout << "created maze\n";
 
 		if(x > 50){
 			std::cout << "Maze is too big to fit in here.\n";

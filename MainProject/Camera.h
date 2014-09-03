@@ -6,7 +6,9 @@
 #include "time_item.h"
 #include "Control.h"		//Log class
 #include <GL/freeglut.h>
+#include <stdio.h>
 #include <memory>
+#include <Shlwapi.h>
 
 class Log;
 
@@ -57,6 +59,9 @@ class Camera {
 	void convertToFrames(unsigned int frame_count_at_end);   //converts loaded times in movement.times to frame numbers - makes every camera position deterministic at set frame..
 	void recordWaypoint();
 	void loadNextPosition(float valueToInterpolate);	//computes and sets camera position from movement
+
+private:
+	static const std::string save_path;
 };
 
 

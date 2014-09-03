@@ -99,7 +99,7 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	unsigned int max_index_counter = 0;
 	unsigned int position = 0;    //index of 0 is program name and marks not present argument
 
-	if(isPresent("benchmark") != 0 || isPresent("b") != 0){
+	if((position = isPresent("benchmark")) != 0 || (position = isPresent("b")) != 0){
 		if(argc - 1 >= max_index_counter + 2){
 			benchmark = true;
 			
