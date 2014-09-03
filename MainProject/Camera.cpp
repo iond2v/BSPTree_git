@@ -207,11 +207,10 @@ Sets camera position depending on step and calls updateTarget to set target for 
 void Camera::moveForward(float step){
 
 step = abs(step / speed);	
-vec3 direction(0.0f, 0.0f, 0.0f);
+vec3 direction = normalize(target - position);
 
-		direction.x = sinf(DegToRad(angleSIDE));
-		direction.z = -cosf(DegToRad(angleSIDE));
-
+		//direction.x = sinf(DegToRad(angleSIDE));
+		//direction.z = -cosf(DegToRad(angleSIDE));
 
 	 //in direction of camera.target
 	this->position.x += step * direction.x;
@@ -227,13 +226,14 @@ Sets camera position depending on step and calls updateTarget to set target for 
 void Camera::moveBack(float step){
 
 step = abs(step / speed);
-vec3 direction(0.0f, 0.0f, 0.0f);
+vec3 direction = normalize(target - position);
 
-		direction.x = -sinf(DegToRad(angleSIDE));
-		direction.z = +cosf(DegToRad(angleSIDE));	
-	
-	this->position.x += step * direction.x;
-	this->position.z += step * direction.z; //in direction of camera.target
+		//direction.x = -sinf(DegToRad(angleSIDE));
+		//direction.z = +cosf(DegToRad(angleSIDE));	
+
+
+	this->position.x -= step * direction.x;
+	this->position.z -= step * direction.z; //in direction of camera.target
 	this->position.y = height;
 
 updateTarget();
@@ -245,15 +245,15 @@ Sets camera position depending on step and calls updateTarget to set target for 
 void Camera::moveLeft(float step){
 
 step = abs(step / speed);	
-vec3 direction(0.0f, 0.0f, 0.0f);
+vec3 direction = normalize(target - position);
 
-		direction.x = -cosf(DegToRad(angleSIDE));
-		direction.z = -sinf(DegToRad(angleSIDE));
+		//direction.x = -cosf(DegToRad(angleSIDE));
+		//direction.z = -sinf(DegToRad(angleSIDE));
 
 
 	 //in direction of camera.target
-	this->position.x += step * direction.x;
-	this->position.z += step * direction.z;
+	this->position.x += step * direction.z;
+	this->position.z -= step * direction.x;
 	this->position.y = height;
 
 updateTarget();
@@ -265,15 +265,15 @@ Sets camera position depending on step and calls updateTarget to set target for 
 void Camera::moveRight(float step){
 
 step = abs(step / speed);	
-vec3 direction(0.0f, 0.0f, 0.0f);
+vec3 direction = normalize(target - position);
 
-		direction.x = cosf(DegToRad(angleSIDE));
-		direction.z = sinf(DegToRad(angleSIDE));
+		//direction.x = cosf(DegToRad(angleSIDE));
+		//direction.z = sinf(DegToRad(angleSIDE));
 
 
 	 //in direction of camera.target
-	this->position.x += step * direction.x;
-	this->position.z += step * direction.z;
+	this->position.x -= step * direction.z;
+	this->position.z += step * direction.x;
 	this->position.y = height;
 
 updateTarget();
