@@ -59,7 +59,7 @@ Texture::~Texture(void){
 	glDeleteTextures(1, &id);
 }
 
-bool Texture::loadFromFile(std::string filename){
+bool Texture::loadFromFile(std::string filename, GLint data_format, GLint internal_format){
 	using namespace glimg;
 	ImageSet *imageSet;
 
@@ -94,7 +94,7 @@ bool Texture::loadFromFile(std::string filename){
 
 
 	if(expected_format){
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, dim.width, dim.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+		glTexImage2D(GL_TEXTURE_2D, 0, data_format, dim.width, dim.height, 0, internal_format, GL_UNSIGNED_BYTE, data);
 
 		width = dim.width;
 		height = dim.height;

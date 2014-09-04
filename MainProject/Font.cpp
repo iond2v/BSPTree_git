@@ -446,6 +446,17 @@ Text::Text(Font *font) {
 	colorUniform = glGetUniformLocation(font->program, "colorUniform");
 }  
 
+Text::~Text(){
+
+if(VAO != 0)
+	glDeleteBuffers(1, &VAO);
+
+if(VBO != 0)
+	glDeleteBuffers(1, &VBO);
+
+
+}
+
 ////////////////////////////////////////////
 /////////////dynamicText/////////
 ///////////////////////////

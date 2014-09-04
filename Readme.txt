@@ -40,7 +40,7 @@ Note
    involuntary overwriting of previous data.
    For playing back recorded movement it is neccessary to re-run the application.
    Camera position is computed from the frame number and those can't be reset.
-		-this is for benchmarking purposes.. adding some switch between this and regular recorded movement is considered.
+		-this is for benchmarking purposes..
 
 
 Application parameters

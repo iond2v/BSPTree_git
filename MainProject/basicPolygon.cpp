@@ -1,6 +1,24 @@
 #include "basicPolygon.h"
 
 
+/*
+Returns length of vector.
+*/
+float length(vec3 vector){
+
+	return sqrtf(dot(vector, vector));
+}
+
+/*
+Does just dot(vector, vector) to save sqrt operation.
+Useful when the exact length is not needed e.g. comparison of length of 2 vectors.
+*/
+float cheap_length(vec3 vector){
+
+	return dot(vector, vector);
+}
+
+
 basicPolygon::basicPolygon(void){
 
 	p.insert(p.end(), vec3(0.0f, 0.0f, 0.0f));
@@ -320,7 +338,6 @@ int basicPolygon::classifyPoint(const vec3 point){
 /*
 return dot(normalize(this->normal), point - this->p[0]).
 */
-
 float basicPolygon::planePointDistance(const vec3 point){
 
 return dot(normalize(this->normal), point - this->p[0]);
@@ -386,12 +403,6 @@ return in;
 
 
 
-/*Add cheap length without that sqrt?*/
-
-float length(vec3 vector){
-
-	return sqrtf(dot(vector, vector));
-}
 
 
 /*

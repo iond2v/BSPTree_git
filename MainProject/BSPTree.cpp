@@ -61,7 +61,7 @@ BSPTree::BSPTree(std::string filename, vec3 thisToWorldVector, GLuint color)  : 
 	drawCalls->uploadData();
 
 
-	mazeTexture.loadFromFile("../Textures/compositeTexture/compositeTextureStarryCeiling2.png");
+	mazeTexture.loadFromFile("../Textures/compositeTexture/compositeTextureStarryCeiling2.png", GL_RGBA, GL_RGBA);
 
 	program = control->getProgram("maze")->id;
 	mazeSamplerUniform = glGetUniformLocation(program, "mazeSampler");

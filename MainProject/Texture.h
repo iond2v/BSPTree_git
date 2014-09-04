@@ -28,7 +28,7 @@ public:
 	GLuint width;
 	GLuint height;
 
-	bool loadFromFile(std::string filename);
+	bool loadFromFile(std::string filename, GLint data_format, GLint internal_format);
 
 };
 

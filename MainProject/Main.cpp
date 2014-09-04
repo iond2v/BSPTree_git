@@ -43,6 +43,7 @@ Copyright © 2012 Jason L. McKesson
 #include "Shader.h"
 #include "fps_counter.h"
 #include "Control.h"
+#include "Cursor.h"
 
 #include "Font.h"
 
@@ -99,6 +100,8 @@ Camera camera = Camera();							//can set fzNear and fzFar - but constructor sup
 
 std::unique_ptr<Maze> maze;
 std::unique_ptr<BSPTree> bspTree;									//all of data in BSP tree form
+std::unique_ptr<Cursor> cursor;
+
 
 std::unique_ptr<keyStates> keys;			
 std::unique_ptr<fps_counter> fps;
@@ -107,7 +110,7 @@ std::unique_ptr<fps_counter> fps;
 GLuint globalMatricesUBO;					
 const int globalMatricesBindingIndex = 0;	
 
-std::unique_ptr<Control> control;  //carry-all structure..
+std::unique_ptr<Control> control;  //carry-all structure..  later maybe consider splitting it if it gets bigger..
 
 
 
@@ -147,7 +150,6 @@ void APIENTRY DebugFunc(GLenum source, GLenum type, GLuint id, GLenum severity, 
 	printf("%s from %s,\t%s priority\nMessage: %s\n",
 		errorType.c_str(), srcName.c_str(), typeSeverity.c_str(), message);
 
-	//Sleep(3000);//because error causes crash and I want to be able to read it..
 }
 
 /*
@@ -203,7 +205,7 @@ void init(){
 		program->addShader(&Fshader);
 
 		if(not program->linkProgram()){
-			Sleep(3000);	//some time to read whats up
+			std::cin.ignore();
 			exit(1);
 		}
 
@@ -220,7 +222,7 @@ void init(){
 		program->addShader(&Fshader);
 
 		if(not program->linkProgram()){
-			Sleep(3000);	//some time to read whats up   -- not necessary? caught by DebugFunc?
+			std::cin.ignore();
 			exit(1);
 		}
 
@@ -271,7 +273,7 @@ void init(){
 	control->font->UBO = globalMatricesUBO;  //put to constructor or something.. setFunction
 	control->font->loadFont("../Fonts/TECHKR__.ttf", 20);
 
-	//control->font->loadFont("../Fonts/r-technical_8.ttf", 64);  //different fonts behave differently..?
+	//control->font->loadFont("../Fonts/r-technical_8.ttf", 64);  //different fonts behave differently..? they are probably just specified a bit differently.. - know your font
 	
 
 	keys = std::unique_ptr<keyStates>(keyStates::getInstance());
@@ -279,7 +281,21 @@ void init(){
 
 	control->runReport = std::unique_ptr<Log> (new Log("report.txt"));
 
-
+	//use the same sampler as font, 
+	//creates quad for one simple texture
+	//maybe later make it part of some gui class to handle such small things..
+	//what to consider a part of gui?
+	//gui->setFont();
+	//gui->draw()
+		//gui->showHelp();
+		//gui->showFPS();
+		//gui->drawCursor();
+	cursor = std::unique_ptr<Cursor> (new Cursor(0.3f));
+	cursor->UBO = control->font->UBO;
+	cursor->colorUniform = glGetUniformLocation(control->font->program, "colorUniform");     ///come up wit better interface than this..
+	cursor->sampler_id = glGetUniformLocation(control->font->program, "fontSampler");
+	//after creation of bspTree it gets pointer to its sampler object..
+	cursor->program = control->font->program;
 
 	glEnable(GL_CULL_FACE);  
 	glCullFace(GL_BACK);
@@ -341,10 +357,8 @@ generate | load  index num | width num depth num [type "default"|"columns"]
 [PVS]
 generate | load [draw_method num] [benchmark]
 
-
-
 */
-	////////////////////////////////////////////when redoing parameters.. look at possibility of loading instead of generating maze
+
 			
 	if(control->parameters->maze_index != 0){
 		maze = std::unique_ptr<Maze> (new Maze(control->parameters->maze_index));	//this uses one of prepared designs..
@@ -403,7 +417,7 @@ generate | load [draw_method num] [benchmark]
 	glGetFloatv(GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT, &largestAniso);
 	glSamplerParameteri(bspTree->samplerObject->id, GL_TEXTURE_MAX_ANISOTROPY_EXT, (GLint) largestAniso); //because why not..
 
-
+	cursor->sampler = bspTree->samplerObject.get();
 
 
 	
@@ -444,9 +458,7 @@ generate | load [draw_method num] [benchmark]
 		default:
 			bspTree->drawing_method = BSPTree::drawing_method_enum::PVS;
 		break;
-	
-	
-	
+		
 	}
 	
 
@@ -518,8 +530,8 @@ void display(){
 
 
 	///////////////////////////////////
-	/////////////done drawing now display text on screen
-	control->getProgram("font")->useProgram();
+	/////////////done drawing now display 2D stuff
+	control->getProgram("font")->useProgram();  //maybe rename to 2D from font
 
 		camMatrix.SetIdentity();
 
@@ -530,6 +542,9 @@ void display(){
 			glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(camMatrix.Top())); 
 		
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+		//i'd like to draw some cursor here..
+		cursor->draw();
 
 
 		if(control->help)
@@ -571,8 +586,8 @@ void reshape (int w, int h) {
 
 	glViewport(0, 0, (GLsizei) w, (GLsizei) h); //This tells OpenGL what area of the available area we are rendering to
 	
-	control->windowHeight = (float)h;
-	control->windowWidth = (float)w;
+	control->windowHeight = (float) h;
+	control->windowWidth = (float) w;
 	control->aspectRatio = control->windowWidth / control->windowHeight;
 
 	//recompute the projection matrices
@@ -1001,7 +1016,7 @@ int main(int argc, char** argv){
 	//just to be able to read what's up.. remove when convenient
 	std::cout << "Press enter when done.." << std::endl;
 
-	std::cin.ignore();
+	//std::cin.ignore();
 	
 	std::cout << "Exiting." << std::endl;
 

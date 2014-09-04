@@ -6,6 +6,17 @@
 const std::string Camera::save_path = ".\\Camera_paths\\";
 
 
+/*
+Defined in Camera.cpp
+converts degrees to radians
+
+const float fDegToRad = 3.14159f * 2.0f / 360.0f; =~ 0,0174532777777778
+*/
+float DegToRad(float fAngDeg) {
+	return fAngDeg * 0.017453278f; ///probably slightly too many numbers..
+}
+
+
 Camera::Camera(float speed, float mouse_speed, float frustum_near, float frustum_far){
 		
 
@@ -90,15 +101,6 @@ void Camera::loadWaypoints(std::string name){
 }
 
 
-/*
-Defined in Camera.cpp
-converts degrees to radians
-
-const float fDegToRad = 3.14159f * 2.0f / 360.0f; =~ 0,0174532777777778
-*/
-float DegToRad(float fAngDeg) {
-	return fAngDeg * 0.017453278f; ///probably slightly too big..
-}
 
 /*
 Responsible for moving target around depending on position and angles of look.

@@ -84,6 +84,7 @@ class Text { // issue when resized it stays fixed distance from bottom.. - reloa
 
 public:
 	Text(Font *font, const std::string message, uint position_x, uint position_y, uint size);
+	~Text();
 
 	int msg_length;
 	Font *font;
