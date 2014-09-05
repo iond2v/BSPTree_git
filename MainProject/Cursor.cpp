@@ -5,8 +5,10 @@ Cursor::Cursor(float scale) : scale(scale)
 {
 	control = Control::getInstance();
 
-	texture.loadFromFile("../Textures/cursor.png", GL_RGBA, GL_RGBA);
-
+	if(not texture.loadFromFile("../Textures/cursor.png", GL_RGBA, GL_RGBA)){
+		ready = false;
+		return;
+	}
 
 	//two triangles
 		//left bottom
@@ -51,6 +53,8 @@ Cursor::Cursor(float scale) : scale(scale)
 	
 	initVAO();
 	uploadData();
+
+	ready = true;
 }
 
 
@@ -104,7 +108,8 @@ void Cursor::uploadData(){
 
 void Cursor::draw(){
 
-	
+	if(not ready)
+		return;
 
 	glDisable(GL_CULL_FACE);  //dont cull.. 
 	glDisable(GL_DEPTH_TEST);

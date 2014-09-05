@@ -243,10 +243,12 @@ Maze::Maze(int width, int length, std::string type = "default") : x(width), y(le
 
 	//name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
 	name = std::to_string(x) +"x"+ std::to_string(y) + "_" + type;
+	string path = save_path + name + ".maze";
 
-	if(PathFileExists(std::string(save_path + name).c_str())){
+	if(PathFileExists(std::string(path).c_str())){
 		std::cout << "Maze with set dimensions already exists. Loading that.\n";
-		loadMaze(name);
+		loadMaze(name + ".maze");
+		printMaze();
 	return;
 	}
 
@@ -260,6 +262,7 @@ Maze::Maze(int width, int length, std::string type = "default") : x(width), y(le
 	max_index = x * y - 1;
 	srand((unsigned int) time(nullptr));
 	generateMaze();
+	printMaze();
 	
 }
 
@@ -271,7 +274,7 @@ Maze::Maze(std::string filename){
 	vertexArray = new std::vector<float>();
 
 	loadMaze(filename);
-
+	printMaze();
 	
 }
 
@@ -426,8 +429,6 @@ void Maze::generateMaze(){
 	}
 
 	
-
-	printMaze();
 		
 }
 
@@ -520,8 +521,8 @@ void Maze::generateVertexArray(/*scale?*/){
 	vector<GLfloat> verticesOnlyArray;
 		
 	
-	for(unsigned int row = 0; row < y; row++){ //y - column => walk rows
-		for(unsigned int column = 0; column < x; column++){
+	for(int row = 0; row < y; row++){ //y - column => walk rows
+		for(int column = 0; column < x; column++){
 			
 			if(mazeMap[column + row * x] == SPACE){
 				modelAddItem(&verticesOnlyArray,  column, row, floorVertices, sizeof(floorVertices));
@@ -733,6 +734,13 @@ bool Maze::saveMaze(){
 	if(not PathFileExists(save_path.c_str()))
 		CreateDirectory(save_path.c_str(), NULL);
 
+	if(PathFileExists(filename.c_str())){
+		std::cout << "Maze with such name is already saved.\n";
+		return false;
+
+	}
+
+
 	ofstream file;
 	file.open(filename, ios::out);
 
@@ -798,11 +806,12 @@ bool Maze::loadMaze(std::string filename){
 
 	//map of maze
 	std::string maze_row;
-	
+	std::getline(file, maze_row);   //read endline
+
 	for(unsigned int row = 0; row < this->y; row++){
 		std::getline(file, maze_row);
 		 
-		for(unsigned int column = 0; column < this->x; column++){
+		for(int column = this->x - 1; column > 0; column--){
 			
 			if(maze_row[column] == '#'){
 				mazeMap[row * x + column] = WALL;
@@ -821,10 +830,10 @@ bool Maze::loadMaze(std::string filename){
 	while(file >> tmp)
 		vertexArray->push_back(tmp);
 
-	name = "maze"+ std::to_string(x) +"x"+ std::to_string(y);
+	name = std::to_string(x) +"x"+ std::to_string(y) + "_" + type;
 
-
-	std::cout << "Maze "+ name + "loaded.\n";
+	
+	std::cout << "Maze "+ name + " loaded.\n";
 
 return true;
 

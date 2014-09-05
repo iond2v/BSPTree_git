@@ -66,7 +66,6 @@ bool Texture::loadFromFile(std::string filename, GLint data_format, GLint intern
 	try {
 
 		imageSet = glimg::loaders::stb::LoadFromFile(filename);
-		
   
 	} catch(glimg::loaders::stb::StbLoaderException &e) {
 		std::cout << e.what() << std::endl;

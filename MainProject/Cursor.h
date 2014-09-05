@@ -33,9 +33,9 @@ public:
 	Control *control;
 
 	~Cursor(void);
-
+private:
 	void initVAO();
 	void uploadData();
-
+	bool ready;		//if false skips initialization and drawing. 
 };
 
