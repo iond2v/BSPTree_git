@@ -139,10 +139,8 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="..\Models\simple_bunny_fixed_holes.obj">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-    </Object>
+    <Object Include="..\Models\simple_bunny_fixed_holes.obj" />
+    <Object Include="..\Models\sphere_fixed_winding.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

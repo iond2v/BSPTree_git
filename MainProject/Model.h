@@ -31,5 +31,7 @@ public:
 	void initVAO();
 	bool loadModel();
 	void draw();
+	bool isReady();
+
 };
 

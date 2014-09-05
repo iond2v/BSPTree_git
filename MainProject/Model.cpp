@@ -6,9 +6,17 @@ Model::Model(std::string filename)
 {
 	this->filename = filename;
 
+	VAO = 0;
+	VBO = 0;
+	IBO = 0;
+	textureVBO = 0;
 }
 
+bool Model::isReady(){
 
+
+return (VAO != 0 && VBO != 0 && IBO != 0 && textureVBO != 0);
+}
 Model::~Model(void)
 {
 	glDeleteBuffers(1, &VAO);
@@ -147,6 +155,8 @@ void Model::initVAO(){
 
 void Model::draw(){
 
+	if(not isReady())
+		return;
 
 	glBindVertexArray(VAO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);

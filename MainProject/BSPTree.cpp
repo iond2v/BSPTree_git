@@ -44,6 +44,13 @@ BSPTree::BSPTree(std::string filename, vec3 thisToWorldVector, GLuint color)  : 
 	model->loadModel();
 	model->initVAO();
 
+
+	//load light model
+	light = std::unique_ptr<Model>(new Model("../Models/sphere_fixed_winding.obj"));
+	light->loadModel();
+	light->initVAO();
+
+
 	srand(::time(nullptr));
 	initVAOs(this->RootNode);
 
@@ -1287,6 +1294,12 @@ void BSPTreeNode::initVBO(){
 	modelMatrix.Translate(Tree->modelToWorldVector);
 	//modelMatrix.Scale(0.02f);
 
+	//place model representing light
+	lightMatrix.Translate(vec3(center.x, +0.52f, center.z));
+	lightMatrix.Translate(Tree->modelToWorldVector);
+	lightMatrix.Scale(0.1f);
+
+
 }
 
 void BSPTreeNode::deleteVBO(){
@@ -1337,6 +1350,13 @@ void BSPTreeNode::drawPolygonSet(){
 	Tree->model->draw();
 	Tree->draw_calls++;
 	//glEnable(GL_CULL_FACE);  
+
+	//glCullFace(GL_FRONT);
+	glUniformMatrix4fv(Tree->control->modelToWorldMatrixUniform, 1, GL_FALSE, glm::value_ptr(lightMatrix.Top()));  
+	Tree->light->draw();
+	Tree->draw_calls++;
+	//glCullFace(GL_BACK);
+
 }
 
 /*

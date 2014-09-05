@@ -82,6 +82,7 @@ public:
 
 	//It's a static model only shifted into all nodes. Drawn in every leaf
 	std::unique_ptr<Model> model;		//model to draw in every rendered leaf to simulate more expensive leaf and mask small overhead of some draw methods
+	std::unique_ptr<Model> light;		//model to draw in every rendered leaf in place of light
 
 
 	GLuint mazeSamplerUniform;
@@ -185,6 +186,7 @@ public:
 	
 	vec3 center;
 	glutil::MatrixStack modelMatrix;	//transform for placing model in node
+	glutil::MatrixStack lightMatrix;
 
 	BSPTree *Tree;						//The tree this node belongs to.
 	

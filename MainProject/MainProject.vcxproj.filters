@@ -138,6 +138,9 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <Object Include="..\Models\sphere_fixed_winding.obj">
+      <Filter>Resource Files</Filter>
+    </Object>
     <Object Include="..\Models\simple_bunny_fixed_holes.obj">
       <Filter>Resource Files</Filter>
     </Object>
