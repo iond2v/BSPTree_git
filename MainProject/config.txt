@@ -1,0 +1,5 @@
+#lighting none | goraud
+lighting none
+
+#collisions none | basic
+collisions none

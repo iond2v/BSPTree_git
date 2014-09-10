@@ -3,6 +3,8 @@
 
 Control* Control::instance = nullptr;
 
+const std::string Parameters::config_filename = "config.txt";
+
 /*
 Opens file for appending.
 */
@@ -76,6 +78,13 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	type = "default";
 	draw_method = 4;
 	maze_index = 0;
+
+	//from file
+	lighting = false;
+	collisions = false;
+
+	collisions_type = "basic";
+	lighting_type = "none";
 
 	//helpers
 	bool gotWidth = false;
@@ -249,8 +258,90 @@ Parameters::Parameters(int argc, char **argv) : argc(argc), argv(argv){
 	}
 
 
+	parseConfigFile();
+}
+
+/*
+#lighting none | goraud
+lighting none
+
+#collisions none | basic
+collisions none
+
+*/
+void Parameters::parseConfigFile(){
+
+	if(not PathFileExists(config_filename.c_str()))
+		CreateDirectory(config_filename.c_str(), NULL);
+
+	using namespace std;
+
+	bool gotCollisions = true;
+	bool gotLighting = true;
+
+
+
+	ifstream file;
+
+	file.open(config_filename, ios::in);
+
+	if(not file.is_open()){
+		std::cout << "Error opening  " << config_filename << " for reading.";
+	return;
+	}
+
+
+	string line;
+
+	while(not file.eof()){
+		
+		getline(file, line);
+
+		//throw out comments
+		if(line[0] == '#' || line == ""){
+			continue;
+		}
+
+
+		//create small string stream
+		istringstream item_stream(line);
+		string item;
+
+		item_stream >> item;
+
+		if(strcmp(item.c_str(), "collisions") == 0){
+			gotCollisions = true;
+			item_stream >> item;
+
+			if(strcmp(item.c_str(), "none") == 0 || strcmp(item.c_str(), "basic")){
+				collisions_type = item;
+			} else {
+				cout << "Config file value of collisions argument is not valid.\n";
+			}
+		}
+
+		if(strcmp(item.c_str(), "lighting") == 0){
+			gotLighting = true;
+			item_stream >> item;
+
+			if(strcmp(item.c_str(), "none") == 0 || strcmp(item.c_str(), "goraud")){
+				lighting_type = item;
+			} else {
+				cout << "Config file value of lighting argument is not valid.\n";
+			}
+		}
+
+	}
+
+
+	if(not gotLighting)
+		cout << "Config file is missing lighting argument.\n";
+
+	if(not gotCollisions)
+		cout << "Config file is missing collisions argument.\n";
 
 }
+
 
 
 /*

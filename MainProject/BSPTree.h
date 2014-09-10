@@ -74,7 +74,7 @@ public:
 	time_item time;
 
 	//float avg_draw_calls;   //draw_calls_sum / draw_cycles
-
+	bool check_collisions;
 	
 	Texture mazeTexture;
 	std::unique_ptr<Sampler> samplerObject;
@@ -167,6 +167,7 @@ public:
 	GLuint VAO;
 	GLuint VBO;
 	GLuint textureVBO;
+	GLuint normalVBO;
 
 
 	std::vector<BSPTreeNode *> PVNodes;			///////////PVS of node 		//save

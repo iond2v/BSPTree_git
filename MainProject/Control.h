@@ -7,8 +7,9 @@
 #include <iostream>
 #include <memory>
 #include <cctype>   //isdigit
-
+#include <Shlwapi.h>
 #include "Shader.h"
+#include <fstream>
 
 class Font;
 class Text;
@@ -64,7 +65,6 @@ class Parameters {
 
 public:
 	Parameters(int argc, char **argv);
-	unsigned int isPresent(std::string str);
 
 	bool benchmark;
 	unsigned int number_of_frames;
@@ -77,11 +77,23 @@ public:
 
 	bool everything_ok;
 
+	static const std::string config_filename;
+
+	//in file
+	bool collisions;
+	std::string collisions_type;
+
+	bool lighting;
+	std::string lighting_type;
+
+
 private:
 	int argc;
 	char **argv;
 
 	bool isNumber(char *str, unsigned int length);
+	unsigned int isPresent(std::string str);
+	void parseConfigFile();
 };
 
 class Control {

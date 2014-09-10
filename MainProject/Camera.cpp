@@ -55,7 +55,8 @@ Enables having saved multiple paths.
 */
 void Camera::loadWaypoints(std::string name){
 
-	std::string file_with_path = save_path + name;
+
+	std::string file_with_path = save_path + "waypoints_" + name + ".camera";
 	cameraWaypoints = std::unique_ptr<Log>(new Log(file_with_path));
 
 

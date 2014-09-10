@@ -9,6 +9,7 @@ const std::string BSPTree::save_path = ".\\PVS\\";
 BSPTree::BSPTree(std::string filename, vec3 thisToWorldVector, GLuint color)  : sample_query(GL_SAMPLES_PASSED){  ///filename here, leave default constructor enmpty..
 
 	std::cout << "BSP tree constructed\n";
+	check_collisions = true;
 
 	BSPTree::colorUniform = color;
 	modelToWorldVector = thisToWorldVector;
@@ -1240,39 +1241,63 @@ void BSPTreeNode::initVBO(){
 	glBindVertexArray(VAO);
 
 
-	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glGenBuffers(1, &VBO);
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
 
-		glBufferData(GL_ARRAY_BUFFER, (vertices.size()) * 3 * sizeof(float), vertices.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+			glBufferData(GL_ARRAY_BUFFER, vertices.size() * 3 * sizeof(float), vertices.data(), GL_STATIC_DRAW); //again size in Bytes!!!
 	
 
-		glEnableVertexAttribArray(0);
+			glEnableVertexAttribArray(0);
 			
-			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);//asociates vertex data in currently bound VBO to VAO; not part of vao state
+				glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);//asociates vertex data in currently bound VBO to VAO; not part of vao state
 				
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-	////////generate texture mapping... different for floor and walls and ceiling...
-	std::vector<vec2> textureCoordinates;
-	inferTextureMapping(textureCoordinates); //different part of texture for floors, ceiling, walls and portals...
-
-
-
-	glGenBuffers(1, &textureVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, textureVBO);
+		////////generate texture mapping... different for floor and walls and ceiling...
+		std::vector<vec2> textureCoordinates;
+		inferTextureMapping(textureCoordinates); //different part of texture for floors, ceiling, walls and portals...
 
 
-		glBufferData(GL_ARRAY_BUFFER, (textureCoordinates.size()) * 2 * sizeof(float), textureCoordinates.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+
+		glGenBuffers(1, &textureVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, textureVBO);
+
+
+			glBufferData(GL_ARRAY_BUFFER, textureCoordinates.size() * 2 * sizeof(float), textureCoordinates.data(), GL_STATIC_DRAW); //again size in Bytes!!!
 	
 
-		glEnableVertexAttribArray(1);
+			glEnableVertexAttribArray(1);
 			
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+				glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 			
 
-	glBindVertexArray(0);
+		glBindVertexArray(0);
+
+		//each triangle here has the same normal in each of the vertices
+		std::vector<vec3> normals;
+		for(auto triangle : triangles){
+			normals.push_back(triangle.normal);
+			normals.push_back(triangle.normal);
+			normals.push_back(triangle.normal);
+		}
+
+		//create VBO for normals
+		glGenBuffers(1, &normalVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, normalVBO);
+
+
+			glBufferData(GL_ARRAY_BUFFER, normals.size() * 3 * sizeof(float), normals.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+	
+
+			glEnableVertexAttribArray(2);
+			
+				glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+			
+
+		glBindVertexArray(0);
+
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 

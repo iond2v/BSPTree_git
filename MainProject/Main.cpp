@@ -267,7 +267,7 @@ void init(){
 		glBindBuffer(GL_UNIFORM_BUFFER, 0);
 
 	//bind a range within a buffer object to an indexed buffer target
-	//glBindBufferRange(GLenum 	target,  GLuint 	index_where, 	    GLuint buffer_from,  GLintptr offset, GLsizeiptr size);
+	//glBindBufferRange(GLenum 	target,  GLuint 	index_where, 	GLuint buffer_from, GLintptr offset, GLsizeiptr size);
 	glBindBufferRange(GL_UNIFORM_BUFFER, globalMatricesBindingIndex, globalMatricesUBO, 0, sizeof(glm::mat4) * 2);
 
 	control->font->UBO = globalMatricesUBO;  //put to constructor or something.. setFunction
@@ -294,7 +294,8 @@ void init(){
 	cursor->UBO = control->font->UBO;
 	cursor->colorUniform = glGetUniformLocation(control->font->program, "colorUniform");     ///come up wit better interface than this..
 	cursor->sampler_id = glGetUniformLocation(control->font->program, "fontSampler");
-	//after creation of bspTree it gets pointer to its sampler object..
+	
+	//after creation of bspTree cursor gets pointer to its sampler object..
 	cursor->program = control->font->program;
 
 	glEnable(GL_CULL_FACE);  
@@ -379,13 +380,14 @@ generate | load [draw_method num] [benchmark]
 		
 
 	//creates/loads waypoints file for this maze
-	camera.loadWaypoints("waypoints_"+maze->name+".camera");
+	camera.loadWaypoints(maze->name);
 	
 	if(control->parameters->benchmark)
 		camera.convertToFrames(control->parameters->number_of_frames);
 
 	cout << maze->name << endl;
 
+	//this is because of mazes with odd width.
 	float offset;
 	if(maze->x % 2 == 0){
 		offset = 0.0f;
@@ -401,6 +403,8 @@ generate | load [draw_method num] [benchmark]
 								glGetUniformLocation(control->getProgram("maze")->id, "colorUniform")));
 	
 	 
+	bspTree->check_collisions = control->parameters->collisions;
+
 	//create maze texture sampler
 	bspTree->samplerObject = std::unique_ptr<Sampler> (new Sampler());
 
@@ -500,7 +504,8 @@ void display(){
 	if(keys->isPressed('g') && control->parameters->benchmark)				
 		camera.loadNextPosition(fps->getFrameCount());		//now that camera position is dependent on frame number, the place is here
 	
-	bspTree->getNode(bspTree->RootNode, camera.position - bspTree->modelToWorldVector)->checkCollisions(camera);
+	if(bspTree->check_collisions)
+		bspTree->getNode(bspTree->RootNode, camera.position - bspTree->modelToWorldVector)->checkCollisions(camera);
 
 	
 	glutil::MatrixStack camMatrix;

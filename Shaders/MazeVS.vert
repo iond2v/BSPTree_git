@@ -4,6 +4,7 @@
 
 layout(location = 0) in vec4 position;  //sets location directly. to get location use query glGetAttribLocation
 layout(location = 1) in vec2 textureCoordinates;
+layout(location = 2) in vec3 normal;
 
 flat out vec4 theColor; 
 out vec2 coordinates;

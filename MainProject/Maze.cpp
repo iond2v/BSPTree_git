@@ -811,7 +811,7 @@ bool Maze::loadMaze(std::string filename){
 	for(unsigned int row = 0; row < this->y; row++){
 		std::getline(file, maze_row);
 		 
-		for(int column = this->x - 1; column > 0; column--){
+		for(int column = this->x - 1; column >= 0; column--){
 			
 			if(maze_row[column] == '#'){
 				mazeMap[row * x + column] = WALL;
