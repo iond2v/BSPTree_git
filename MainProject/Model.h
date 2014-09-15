@@ -20,6 +20,7 @@ public:
 	GLuint VBO;
 	GLuint IBO;
 	GLuint textureVBO;
+	GLuint normalVBO;
 	
 
 

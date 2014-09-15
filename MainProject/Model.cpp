@@ -23,7 +23,7 @@ Model::~Model(void)
 	glDeleteBuffers(1, &VBO);
 	glDeleteBuffers(1, &IBO);
 	glDeleteBuffers(1, &textureVBO);
-	
+	glDeleteBuffers(1, &normalVBO);
 }
 
 
@@ -158,6 +158,20 @@ void Model::initVAO(){
 
 		glBindVertexArray(0);
 
+		//create VBO for normals
+		glGenBuffers(1, &normalVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, normalVBO);
+
+
+			glBufferData(GL_ARRAY_BUFFER, normals.size() * 3 * sizeof(float), normals.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+	
+
+			glEnableVertexAttribArray(2);
+			
+				glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
+			
+
+		glBindVertexArray(0);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
