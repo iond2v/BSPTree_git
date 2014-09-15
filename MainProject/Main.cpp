@@ -194,6 +194,7 @@ Sets all program specific things. Text, shaders, maze, bsptree...
 */
 void init(){
 		
+	//control->parameters->lighting_type;
 	//Create programs for perspective display of maze and orthographic display of text.
 	{
 		Shader Vshader(GL_VERTEX_SHADER, "../Shaders/MazeVS.vert");

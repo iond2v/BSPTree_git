@@ -5,6 +5,8 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include "basicPolygon.h"
+#include "Utilities.h"
 
 #define not !
 
@@ -18,12 +20,15 @@ public:
 	GLuint VBO;
 	GLuint IBO;
 	GLuint textureVBO;
+	
+
 
 	int numOfVertices;
 
 	std::string filename;
 	std::vector<glm::vec3> vertices;
 	std::vector<GLuint> faces;
+	std::vector<glm::vec3> normals;
 
 
 

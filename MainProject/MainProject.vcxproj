@@ -104,6 +104,7 @@
     <ClCompile Include="queryBuffer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shaders\FontFS.frag" />
@@ -131,6 +132,7 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="time_item.h" />
+    <ClInclude Include="Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\Textures\compositeTexture\compositeTextureStarryCeiling2.png">

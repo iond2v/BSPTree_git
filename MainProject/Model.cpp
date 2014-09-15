@@ -32,6 +32,7 @@ Loads .obj file into vertices.
 */
 bool Model::loadModel(){
 	using namespace std;
+	bool gotNormals = false;
 
 	cout << "\rLoading model: " << filename;
 
@@ -78,11 +79,27 @@ bool Model::loadModel(){
 
 
 		
+		} else if (mark.compare("vn") == 0){
+			gotNormals = true;
+
+			glm::vec3 normal;
+
+			iLineStream >> normal.x;
+			iLineStream >> normal.y;
+			iLineStream >> normal.z;
+
+			normals.push_back(normal);
 		}
 		//dont care about others now
     }
 
 	cout << "\r" << filename << " loaded. " << faces.size() / 3 << " triangles.\n";
+
+	if(not gotNormals){
+		Utilities util;
+		util.addIndexedNormals(filename);
+		cout << "Tried to add normals to model file.\n";
+	}
 
 	return true;
 }
@@ -94,52 +111,53 @@ void Model::initVAO(){
 	glBindVertexArray(VAO);
 
 
-	glGenBuffers(1, &VBO);
-	glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glGenBuffers(1, &VBO);
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
 
-		glBufferData(GL_ARRAY_BUFFER, (vertices.size()) * 3 * sizeof(float), vertices.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+			glBufferData(GL_ARRAY_BUFFER, (vertices.size()) * 3 * sizeof(float), vertices.data(), GL_STATIC_DRAW); //again size in Bytes!!!
 	
 
-		glEnableVertexAttribArray(0);
+			glEnableVertexAttribArray(0);
 			
-			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);//asociates vertex data in currently bound VBO to VAO; not part of vao state
+				glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);//asociates vertex data in currently bound VBO to VAO; not part of vao state
 				
 
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 
-	glGenBuffers(1, &IBO);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
+		glGenBuffers(1, &IBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, faces.size() * sizeof(float), faces.data(), GL_STATIC_DRAW);
+			glBufferData(GL_ELEMENT_ARRAY_BUFFER, faces.size() * sizeof(float), faces.data(), GL_STATIC_DRAW);
 
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
 
-	////////generate texture mapping..
-	std::vector<glm::vec2> textureCoordinates;
+		////////generate texture mapping..
+		std::vector<glm::vec2> textureCoordinates;
 	
-	for(unsigned int i = 0; i < vertices.size(); i++){
-		textureCoordinates.push_back(glm::vec2(0.9f, 0.9f)); //somewhere transparent
+		for(unsigned int i = 0; i < vertices.size(); i++){
+			textureCoordinates.push_back(glm::vec2(0.9f, 0.9f)); //somewhere transparent
 	
-	}
+		}
 
 
-	glGenBuffers(1, &textureVBO);
-	glBindBuffer(GL_ARRAY_BUFFER, textureVBO);
+		glGenBuffers(1, &textureVBO);
+		glBindBuffer(GL_ARRAY_BUFFER, textureVBO);
 
 
-		glBufferData(GL_ARRAY_BUFFER, (textureCoordinates.size()) * 2 * sizeof(float), textureCoordinates.data(), GL_STATIC_DRAW); //again size in Bytes!!!
+			glBufferData(GL_ARRAY_BUFFER, (textureCoordinates.size()) * 2 * sizeof(float), textureCoordinates.data(), GL_STATIC_DRAW); //again size in Bytes!!!
 	
 
-		glEnableVertexAttribArray(1);
+			glEnableVertexAttribArray(1);
 			
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+				glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 			
 
-	glBindVertexArray(0);
+		glBindVertexArray(0);
+
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 

@@ -21,6 +21,7 @@ class dynamicText;
 
 using namespace glm;
 
+
 class Log {
 
 public:

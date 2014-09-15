@@ -1334,7 +1334,7 @@ glDeleteBuffers(1, &textureVBO);
 
 glDeleteBuffers(1, &VAO);
 
-
+glDeleteBuffers(1, &normalVBO);
 }
 
 
