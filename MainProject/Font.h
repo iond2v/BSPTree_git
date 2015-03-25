@@ -15,6 +15,7 @@
 #include "Shader.h"
 
 #include "Control.h"
+#include "doubleBuffer.h"
 
 #define not !
 
@@ -83,31 +84,40 @@ The message is kept but not used after creation of Text
 class Text { // issue when resized it stays fixed distance from bottom.. - reload function... rebuilds data + upload.., remember x, y, size
 
 public:
-	Text(Font *font, const std::string message, uint position_x, uint position_y, uint size);
-	~Text();
+	
 
 	int msg_length;
 	Font *font;
 	GLuint colorUniform;
 
 	bool ready();							//check if data/text is prepared for display - that is it's uploaded and UBO was changed from 0 at any point.
-	void print();							//draws with VAO
+	
 
 protected:
-	Text(Font *font);
 	void addTextData(const std::string &text, uint windowHeight, 
 		uint x, uint y, uint size);			//adds text geometry to data
 
-	void initVAO();							//creates VAO + VBO and binds attribute arrays
-	void uploadData();						//uploads text geometry from data to VBO + clears data vector
+	
+
 
 	bool uploaded;							//used in print to prevent unnecessary bother
 	std::vector<GLfloat> data;				//temporary store for drawing data. Deleted after upload.
 
 	GLuint VAO;
-	GLuint VBO;
 	GLuint UBO;								//for toCamera transform.. currently set always identity
 	GLuint fontSampler;
+};
+
+
+class staticText : public Text {
+
+public:
+	staticText(Font *font, const std::string message, uint position_x, uint position_y, uint size);
+
+	void initVAO();							//creates VAO + VBO and binds attribute arrays
+	GLuint VBO;
+	void uploadData();						//uploads text geometry from data to VBO + clears data vector
+	void print();							//draws with VAO
 };
 
 
@@ -122,12 +132,15 @@ class dynamicText : public Text {  //idea - make use of SubData and some upper l
 
 public:
 	dynamicText(Font *font);
-
+	void initVAO();
+	doubleBuffer VBObuffer;
+	void print();							//draws with VAO, must bind appropriate VBO and use glAttribPointer
+	void printAndSwapBuffers();
 
 	bool modified;
+	void uploadData();						//uploads text geometry from data to frontVBO + clears data vector
 
 	/*
-	want to call this directly but without making it public in base class Text which is static text and has no need to use it at all except once in constructor.
 	This is to be manually called to construct text data from one or more parts on one or more locations on screen.
 	*/
 	void addTextData(const std::string &text, uint windowHeight, uint x, uint y, uint size){ 
@@ -139,15 +152,6 @@ public:
 		modified = true;
 	}
 
-	/*
-	want to call this directly but without making it public in base class Text which is static text and has no need to use it at all except once in constructor.
-	This is to be called before printing.
-	*/
-	void uploadData() {
-
-		Text::uploadData();						//uploads text geometry from data to VBO + clears data vector
-		modified = false;
-	}
 
 
 

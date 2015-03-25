@@ -12,7 +12,7 @@
 //can set key to be toggleable.
 class keyStates {
 
-public:
+public: 
 
 	~keyStates(void){
 		instance = nullptr;

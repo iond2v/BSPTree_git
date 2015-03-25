@@ -12,7 +12,7 @@
 #include <fstream>
 
 class Font;
-class Text;
+class staticText;
 class Control;
 class dynamicText;
 
@@ -121,7 +121,7 @@ public:
 	ShaderProgram *getProgram(std::string name);
 
 	std::unique_ptr<Font> font;
-	std::unique_ptr<Text> helpText;
+	std::unique_ptr<staticText> helpText;
 	std::unique_ptr<bufferedQuery> timestampQuery;
 	std::unique_ptr<bufferedQuery> timeElapsedQuery;
 

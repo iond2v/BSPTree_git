@@ -94,6 +94,7 @@ unsigned int defaults(unsigned int displayMode, int &width, int &height)
 using namespace glm;
 
 void keyPressed(unsigned char key, int x, int y);
+void keyUp(unsigned char key, int x, int y);
 
 
 Camera camera = Camera();							//can set fzNear and fzFar - but constructor supplies default values
@@ -193,12 +194,41 @@ Called after the window and OpenGL are initialized. Called exactly once, before 
 Sets all program specific things. Text, shaders, maze, bsptree...
 */
 void init(){
-		
-	//control->parameters->lighting_type;
+	
+	/*
+	how to achieve multiple rendering modes with different shaders and keep it
+	readable an understandable.
+	Each shader has different uniforms / textures / added features etc..
+	how not to end up with spaghetti?
+
+	----have different draw function for each mode in bsptreenode and call
+		them from bsptree depending on set mode.
+
+	----ditch this entirely.. just try it for myself and move on..
+	*/
+
+
+
+
+
+
+	std::string vert_name = "Basic";
+	std::string frag_name = "Basic";
+
+
+	if(control->parameters->lighting_type.compare("none")){
+		vert_name = "Basic";
+		frag_name = "Basic";
+	} else if(control->parameters->lighting_type.compare("goraud")){
+		vert_name = "Goraud";
+		frag_name = "Goraud";
+	}
+
+
 	//Create programs for perspective display of maze and orthographic display of text.
 	{
-		Shader Vshader(GL_VERTEX_SHADER, "../Shaders/MazeVS.vert");
-		Shader Fshader(GL_FRAGMENT_SHADER, "../Shaders/MazeFS.frag");
+		Shader Vshader(GL_VERTEX_SHADER, "../Shaders/"+vert_name+".vert");
+		Shader Fshader(GL_FRAGMENT_SHADER, "../Shaders/"+frag_name+".frag");
 
 		ShaderProgram *program = new ShaderProgram("maze");
 
@@ -237,7 +267,7 @@ void init(){
 	control->orthographicMatrix.Orthographic(0, control->windowWidth, 0, control->windowHeight); 
 	*/
 
-	//create font
+	//create font, set its program and sampler
 	control->font = std::unique_ptr<Font> (new Font());
 	control->font->addProgram(control->getProgram("font")->id);  
 	
@@ -252,6 +282,8 @@ void init(){
 
 	glSamplerParameteri(control->font->sampler->id, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glSamplerParameteri(control->font->sampler->id, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+
 
 
 	control->modelToWorldMatrixUniform = glGetUniformLocation(control->getProgram("maze")->id, "modelToWorldMatrix");
@@ -308,8 +340,7 @@ void init(){
 	glEnable(GL_DEPTH_TEST);   
 	glDepthFunc(GL_LEQUAL);
 	glDepthMask(GL_TRUE); // true by default
-	
-	glEnable(GL_MULTISAMPLE);
+
 
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glClearDepth(1.0f);
@@ -332,15 +363,13 @@ void init(){
 		"E adds position with time to recorded camera movement\n"
 		"G toggles following recorded movement\n";
 	
-	control->helpText = std::unique_ptr<Text> (new Text(control->font.get(), help, 10, 20, 12));
+	control->helpText = std::make_unique<staticText> (control->font.get(), help, 10, 20, 12);
 
 	fps = std::unique_ptr<fps_counter>(new fps_counter());
 
 
 
-	//consider http://www.boost.org/doc/libs/1_56_0/doc/html/program_options/overview.html#idp344521056
-	//or getopt?
-		
+	
 	//new -> [go] [index num] | [width num depth num [type "default"|"columns"]] [draw_method num] [benchmark num]
 	//alt -> [go] [i num] | [w num d num [t "default"|"columns"]]  [dm num] [b num]
 	//                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -398,12 +427,13 @@ generate | load [draw_method num] [benchmark]
 
 	
 
+	bspTree = std::make_unique<BSPTree>(maze->name + ".pvs", vec3(-((float)maze->x / 2.0f) + offset, 0.0f, 1.5f), glGetUniformLocation(control->getProgram("maze")->id, "colorUniform"));
 
-	bspTree = std::unique_ptr<BSPTree> (new BSPTree(	maze->name+".pvs", 
+	/*bspTree = std::unique_ptr<BSPTree> (new BSPTree(	maze->name+".pvs", 
 								vec3(-((float)maze->x / 2.0f) + offset, 0.0f, 1.5f), 
 								glGetUniformLocation(control->getProgram("maze")->id, "colorUniform")));
 	
-	 
+	 */
 	bspTree->check_collisions = control->parameters->collisions;
 
 	//create maze texture sampler
@@ -469,7 +499,7 @@ generate | load [draw_method num] [benchmark]
 
 	if(control->parameters->go){
 		keyPressed('g', 0, 0); 
-	    keys->release('g');
+		keyUp('g', 0, 0);
 	}
 	
 	//keep cursor hidden and in the middle of the screen
@@ -478,8 +508,8 @@ generate | load [draw_method num] [benchmark]
 
 
 	//make creation of queries one of the last things before main loop
-	control->timestampQuery = std::unique_ptr<bufferedQuery> (new bufferedQuery(GL_TIMESTAMP));
-	control->timeElapsedQuery = std::unique_ptr<bufferedQuery> (new bufferedQuery(GL_TIME_ELAPSED));
+	control->timestampQuery = std::make_unique<bufferedQuery> (GL_TIMESTAMP);
+	control->timeElapsedQuery = std::make_unique<bufferedQuery> (GL_TIME_ELAPSED);
 
 }
 
@@ -551,18 +581,19 @@ void display(){
 
 		//i'd like to draw some cursor here..
 		cursor->draw();
-
+		
 
 		if(control->help)
 			control->helpText->print();
 
 		if(control->stats)
-			fps->stats->print();
+			fps->stats->printAndSwapBuffers();
 
 		if(bspTree->drawing_method == BSPTree::drawing_method_enum::NODES)
-			bspTree->depthInfo->print();
+			bspTree->depthInfo->printAndSwapBuffers();
 				
-		bspTree->drawCalls->print();
+		bspTree->drawCalls->printAndSwapBuffers();
+	
 
 	glUseProgram(0);
 		
@@ -582,6 +613,7 @@ void display(){
 
 	control->frame_number = fps->getFrameCount();
 
+	
 	glutSwapBuffers();
 	glutPostRedisplay();//want to redraw immediately
 }

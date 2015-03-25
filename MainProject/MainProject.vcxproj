@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -18,13 +18,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -94,6 +94,7 @@
     <ClCompile Include="CatmullRom.cpp" />
     <ClCompile Include="Control.cpp" />
     <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="doubleBuffer.cpp" />
     <ClCompile Include="Font.cpp" />
     <ClCompile Include="fps_counter.cpp" />
     <ClCompile Include="KeyStates.cpp" />
@@ -109,8 +110,10 @@
   <ItemGroup>
     <None Include="..\Shaders\FontFS.frag" />
     <None Include="..\Shaders\FontVS.vert" />
-    <None Include="..\Shaders\MazeFS.frag" />
-    <None Include="..\Shaders\MazeVS.vert" />
+    <None Include="..\Shaders\Basic.frag" />
+    <None Include="..\Shaders\Basic.vert" />
+    <None Include="..\Shaders\Goraud.frag" />
+    <None Include="..\Shaders\Goraud.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BSPTreeCreator.h" />
@@ -121,6 +124,7 @@
     <ClInclude Include="CatmullRom.h" />
     <ClInclude Include="Control.h" />
     <ClInclude Include="Cursor.h" />
+    <ClInclude Include="doubleBuffer.h" />
     <ClInclude Include="Font.h" />
     <ClInclude Include="fps_counter.h" />
     <ClInclude Include="KeyStates.h" />

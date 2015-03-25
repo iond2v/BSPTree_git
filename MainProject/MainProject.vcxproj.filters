@@ -71,10 +71,12 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Shaders\MazeFS.frag" />
-    <None Include="..\Shaders\MazeVS.vert" />
     <None Include="..\Shaders\FontFS.frag" />
     <None Include="..\Shaders\FontVS.vert" />
+    <None Include="..\Shaders\Basic.frag" />
+    <None Include="..\Shaders\Basic.vert" />
+    <None Include="..\Shaders\Goraud.frag" />
+    <None Include="..\Shaders\Goraud.vert" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Maze.h">

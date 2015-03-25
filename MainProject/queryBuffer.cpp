@@ -19,7 +19,7 @@ GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN type queries in generate_queries. No su
 Query vs glquery - query buffer can have multiple queries (as in timestamp at index 0 and samples passed at index 1),
 each of which consists of 2 glqueries in front and back buffer which are swapped after getting result of query.
 */
-bufferedQuery::bufferedQuery(GLint query_type) {
+bufferedQuery::bufferedQuery(GLuint query_type) {
 
 	
 	backBuffer = 0, frontBuffer = 1;
@@ -32,7 +32,7 @@ bufferedQuery::bufferedQuery(GLint query_type) {
 Fills back and fron buffer arrays with generated glqueries.
 + puts dummy timestamp glqueries into front bufers to prevent error when running for the first time.
 */
-void bufferedQuery::generateQueries(GLint query_type) {
+void bufferedQuery::generateQueries(GLuint query_type) {
  	
 
 	
@@ -126,13 +126,7 @@ Swaps front and back buffer of query at index query_number.
 void bufferedQuery::swapBuffers() {
  
 	std::swap(backBuffer, frontBuffer);
-   /* if (backBuffer == 1) {
-        backBuffer = 0;
-        frontBuffer = 1;
-    } else {
-        backBuffer = 1;
-        frontBuffer = 0;
-    }*/
+  
 }
 
 

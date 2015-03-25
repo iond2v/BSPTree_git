@@ -233,7 +233,7 @@ bool Font::loadFont(std::string font_file, int size) {
 
 
 /*Everything is handled in constructor; it's only waiting for print to be called.*/
-Text::Text(Font *font, const std::string message, uint position_x, uint position_y, uint size) {
+staticText::staticText(Font *font, const std::string message, uint position_x, uint position_y, uint size) {
 
 	UBO = 0;
 	VAO = 0;
@@ -242,7 +242,7 @@ Text::Text(Font *font, const std::string message, uint position_x, uint position
 	this->font = font;
 	uploaded = false;
 
-	if(not font->loaded)
+	if(font == nullptr || not font->loaded)
 		return;
 
 	msg_length = message.size();
@@ -277,6 +277,7 @@ For every character in text puts its geometry and texture mapping into data vect
 */
 void Text::addTextData(const std::string &text, uint windowHeight, uint x = 10, uint y = 10, uint size = -1) {
 
+	this->uploaded = false;	//new data are not uploaded yet
 
 	if(size == -1)
 		size = font->pixelSize;
@@ -307,6 +308,8 @@ void Text::addTextData(const std::string &text, uint windowHeight, uint x = 10, 
 					data.push_back(font->characters[charIndex].vertexQuad[s * 2] * scale + currentX);
 					data.push_back(font->characters[charIndex].vertexQuad[s * 2 + 1] * scale + currentY);
 
+					if (font->characters[charIndex].vertexQuad[s * 2] * scale + currentX < 5 || font->characters[charIndex].vertexQuad[s * 2 + 1] * scale + currentY < 10)
+						break;
 					//texture mapping coordinates stay the same
 					data.push_back(font->characters[charIndex].textureQuad[s * 2]);
 					data.push_back(font->characters[charIndex].textureQuad[s * 2 + 1]);
@@ -325,7 +328,7 @@ void Text::addTextData(const std::string &text, uint windowHeight, uint x = 10, 
 }
 
 
-void Text::initVAO(){
+void staticText::initVAO(){
 
 
 	glGenVertexArrays(1, &VAO);
@@ -354,7 +357,7 @@ void Text::initVAO(){
 /*
 Uploads data vector to GPU and clears it.
 */
-void Text::uploadData(){
+void staticText::uploadData(){
 
 
 		glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -372,7 +375,7 @@ void Text::uploadData(){
 		
 }
 
-void Text::print(){
+void staticText::print(){
 
 	if(not uploaded)
 		return;
@@ -423,11 +426,12 @@ void Text::print(){
 
 
 /*Constructor to be used in dynamicText class.*/
+/*
 Text::Text(Font *font) {
 
 	UBO = 0;
 	VAO = 0;
-	VBO = 0;
+	
 
 	this->font = font;
 	uploaded = false;
@@ -437,7 +441,7 @@ Text::Text(Font *font) {
 
 	uint height = Control::getInstance()->windowHeight;
 	
-	initVAO();
+	
 
 	//get UBO from Font...
 	UBO = font->UBO;
@@ -445,24 +449,165 @@ Text::Text(Font *font) {
 	fontSampler = glGetUniformLocation(font->program, "fontSampler");
 	colorUniform = glGetUniformLocation(font->program, "colorUniform");
 }  
+*/
 
-Text::~Text(){
-
-if(VAO != 0)
-	glDeleteBuffers(1, &VAO);
-
-if(VBO != 0)
-	glDeleteBuffers(1, &VBO);
-
-
-}
 
 ////////////////////////////////////////////
 /////////////dynamicText/////////
 ///////////////////////////
 
 /*Uses minimal constructor of Text. *///should use own constructor and empty of Text??
-dynamicText::dynamicText(Font *font) : Text(font){
+dynamicText::dynamicText(Font *font) {
+	
+	UBO = 0;
+	VAO = 0;
+	
+	this->font = font;
+	uploaded = false;
+	modified = false; 
+
+	if (font == nullptr || not font->loaded)
+		return;
+
+	msg_length = 0;
+
+	uint height = Control::getInstance()->windowHeight;
+
+	//some phony data to prevent first draw crashing
+	data.push_back(10);
+	data.push_back(10);
+
+	data.push_back(0);
+	data.push_back(0);
+
+	data.push_back(100);
+	data.push_back(10);
+
+	data.push_back(100);
+	data.push_back(0);
+
+	data.push_back(10);
+	data.push_back(20);
+
+	data.push_back(0);
+	data.push_back(20);
+
+	VBObuffer.initBuffer(data.size(), data.data());
+	//VBObuffer.initBuffer(data.size(), data.data());
+	initVAO();
+
+
+	//get UBO from Font...
+	UBO = font->UBO;
+
+	fontSampler = glGetUniformLocation(font->program, "fontSampler");
+	colorUniform = glGetUniformLocation(font->program, "colorUniform");
+}
+
+
+void dynamicText::initVAO(){
+
+
+	glGenVertexArrays(1, &VAO);
+	glBindVertexArray(VAO);
+
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBObuffer.getBack());
+
+	//layout (location = 0) in vec2 inPosition; - triangles
+	//layout (location = 1) in vec2 inCoordinates; - texture
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2 * 2, 0);  //x,y, tx,ty
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2 * 2, (void*)(sizeof(GLfloat) * 2));
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
 	
 
+
+}
+
+
+void dynamicText::uploadData() {
+
+	glBindBuffer(GL_ARRAY_BUFFER, VBObuffer.getFront());
+
+	glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(GLfloat), data.data(), GL_DYNAMIC_DRAW);
+	//glBufferData(GL_ARRAY_BUFFER, 0, nullptr, GL_DYNAMIC_DRAW);
+
+	//glBufferSubData(GL_ARRAY_BUFFER, 0, data.size() * sizeof(GLfloat), data.data());
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	uploaded = true;
+
+	data.clear();
+
+}
+
+void dynamicText::print(){
+
+	if (not uploaded)
+		return;
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+	glDisable(GL_CULL_FACE);  //dont cull.. 
+	glDisable(GL_DEPTH_TEST);
+
+	glEnable(GL_BLEND);		//do blend
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+	glBindVertexArray(VAO);
+	glBindBuffer(GL_ARRAY_BUFFER, VBObuffer.getBack());	//bind back buffer with stable data
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2 * 2, 0);  //x,y, tx,ty
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2 * 2, (void*)(sizeof(GLfloat) * 2));
+
+
+		glActiveTexture(GL_TEXTURE0 + 0);
+		glBindTexture(GL_TEXTURE_2D, font->texture.id);
+
+
+		glProgramUniform1i(font->program, fontSampler, 0);	//set GLSL sampler to sample from texure unit 0 - default
+
+		glUniform4f(colorUniform, 1.0, 1.0, 1.0, 1.0); //use white color
+
+		glBindBuffer(GL_UNIFORM_BUFFER, UBO);
+
+		font->sampler->bindToUnit(0);
+
+
+		glutil::MatrixStack camMatrix;
+
+		//camMatrix.Scale(scale);
+		camMatrix.SetIdentity();
+		glBufferSubData(GL_UNIFORM_BUFFER, sizeof(glm::mat4), sizeof(glm::mat4), glm::value_ptr(camMatrix.Top()));
+
+
+		glDrawArrays(GL_TRIANGLES, 0, msg_length * 6); //6 vertices per character
+
+
+		font->sampler->unbindFromUnit(0);
+		glBindBuffer(GL_UNIFORM_BUFFER, 0);
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindVertexArray(0);
+
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);
+
+	glDisable(GL_BLEND);
+}
+
+void dynamicText::printAndSwapBuffers(){
+
+	this->print();
+
+	if (this->modified){
+		VBObuffer.swapBuffers();
+		modified = false;
+	}
 }

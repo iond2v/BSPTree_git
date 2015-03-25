@@ -12,7 +12,7 @@ class bufferedQuery
 {
 public:
 
-	bufferedQuery(GLint query_type);
+	bufferedQuery(GLuint query_type);
 	~bufferedQuery(void);
 
 	//returns queryID for issuing queries.
@@ -30,7 +30,7 @@ private:
 
 
 	void swapBuffers();
-	void generateQueries(GLint query_type);
+	void generateQueries(GLuint query_type);
 
 	unsigned int result_of_query();
 
